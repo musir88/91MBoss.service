@@ -1,0 +1,47 @@
+
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "client_init2() missing 1 required positional argument: 'result'", 'admin': ''}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "client_init2() missing 1 required positional argument: 'result'", 'admin': ''}
+{'phone': '919901066213', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "client_init2() missing 1 required positional argument: 'result'", 'admin': ''}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "client_init2() missing 1 required positional argument: 'result'", 'admin': ''}
+{'phone': '919901066213', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "client_init2() missing 1 required positional argument: 'result'", 'admin': ''}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "client_init2() missing 1 required positional argument: 'result'", 'admin': ''}
+{'phone': '919901066213', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "client_init2() missing 1 required positional argument: 'result'", 'admin': ''}
+{'phone': '919901066213', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "client_init2() missing 1 required positional argument: 'result'", 'admin': ''}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "client_init2() missing 1 required positional argument: 'result'", 'admin': ''}
+{'phone': '919901066213', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "client_init2() missing 1 required positional argument: 'result'"}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "client_init2() missing 1 required positional argument: 'result'"}
+{'phone': '919901066213', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "proxy_set() missing 1 required positional argument: 'self'"}
+{'phone': '919901066213', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "proxy_set() missing 1 required positional argument: 'self'"}
+{'phone': '919901066213', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "proxy_set() missing 1 required positional argument: 'self'"}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "proxy_set() missing 1 required positional argument: 'self'"}
+{'phone': '919901066213', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '919901066213', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '919901066213', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '919901066213', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '919901066213', 'code': 'getChannel_init', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '919901066213', 'code': 'client.connect', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'client.connect', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'client.connect', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'client.connect', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'client.connect', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '919901066213', 'code': 'TelegramClient', 'status': False, 'messageEnglish': "'api_id'"}
+{'phone': '917602129536', 'code': 'TelegramClient', 'status': False, 'messageEnglish': "'api_id'"}
+{'phone': '919901066213', 'code': 'TelegramClient', 'status': False, 'messageEnglish': "'api_id'"}
+{'phone': '919901066213', 'code': 'TelegramClient', 'status': False, 'messageEnglish': "'api_id'"}
+{'phone': '917602129536', 'code': 'TelegramClient', 'status': False, 'messageEnglish': "'api_id'"}
+{'phone': '919901066213', 'code': 'TelegramClient', 'status': False, 'messageEnglish': "'api_id'"}
+{'phone': '919901066213', 'code': 'TelegramClient', 'status': False, 'messageEnglish': "'api_id'"}
+{'phone': '919901066213', 'code': 'client.connect', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '919901066213', 'code': 'client.connect', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '919901066213', 'code': 'client.connect', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'client.connect', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '919901066213', 'code': 'client.connect', 'status': False, 'messageEnglish': "'str' object cannot be interpreted as an integer"}
+{'phone': '917602129536', 'code': 'TelegramClient', 'status': False, 'messageEnglish': "name 'config' is not defined"}
