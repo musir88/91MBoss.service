@@ -15,12 +15,24 @@ def main():
         file_folder = [
             'session',
             'Message',
+            'log',
+            # 'log/client',
+            'log/群发日志/',
+            'log/群发日志/client',
+            'log/自动回复日志/',
+            'log/自动回复日志/client',
             'Message/【私信广告词】',
             'Message/【群发广告词】',
             '91MBoss',
             '91MBoss/config',
             '91MBoss/error_log',
             '91MBoss/CronTab',
+            '91MBoss-session',
+            '91MBoss-session/群发禁言',
+            '91MBoss-session/待加群号',
+            '91MBoss-session/官方销号',
+            '91MBoss-session/群发账号',
+
         ]
         for path in file_folder:
             if not os.path.exists(path):
@@ -61,6 +73,7 @@ def main():
                 "StartGroupJoinTask": '2',  # 启动加群任务
                 "StartPrivateLetterTask":'2',#启动私信任务
                 "StartPrivateLetterBombingTask":'2',#启动私信轰炸任务
+                "automaticReply":'',#自动回复
             }
             fo = codecs.open(path, "a", 'utf-8')
             fo.write(json.dumps(content))

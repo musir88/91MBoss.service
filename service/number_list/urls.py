@@ -5,5 +5,8 @@ from . import views
 
 urlpatterns = [
     path('index', views.index, name='number_index'),
+    path('number_nojoin', views.number_nojoin, name='number_nojoin'),
+    path('number_jinyan', views.number_jinyan, name='number_jinyan'),
+    path('number_xiaohao', views.number_xiaohao, name='number_xiaohao'),
     path('get_oknumber', views.get_oknumber, name='get_oknumber'),
 ]

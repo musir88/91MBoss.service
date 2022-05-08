@@ -20,6 +20,10 @@
         border-radius: 15%;
     }
 
+    .input-group-text{
+        width:160px;
+    }
+
 </style>
 
 <div class="container-fluid">
@@ -29,41 +33,54 @@
 
     <form class="row g-3" action="{% url 'channel_send' %}" method="post">
        <div class="g-3 row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">客户号</label>
-            <div class="col-auto">
+           <div class="input-group">
+                <span class="input-group-text">客户号</span>
+
                 <input type="text" class="form-control" value="{{ context.config.client_number }}" name="client_number">
             </div>
         </div>
 
         <div class="g-3 row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">群发间隔时间</label>
-            <div class="col-auto">
+           <div class="input-group">
+                <span class="input-group-text">群发间隔时间</span>
                 <input type="text" class="form-control" value="{{ context.config.sleep_time }}" name="sleep_time" id="sleep_time">
-            </div>
+               <span class="input-group-text">秒</span>
+           </div>
         </div>
 
         <div class="g-3 row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">是否启用伪内容</label>
-            <div class="col-auto">
+           <div class="input-group">
+                <span class="input-group-text">是否启用伪内容</span>
                 <input type="text" class="form-control" value="{{ context.config.is_fake_content }}" name="is_fake_content">
-            </div>
+               <span class="input-group-text">1-启用，2-不启用</span>
+           </div>
         </div>
 
         <div class="g-3 row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">伪内容生效时间</label>
-            <div class="col-auto">
+           <div class="input-group">
+                <span class="input-group-text">伪内容生效时间</span>
                 <input type="text" class="form-control" value="{{ context.config.fake_content_sleep_time }}" name="fake_content_sleep_time">
-            </div>
+               <span class="input-group-text">秒</span>
+           </div>
         </div>
+
 
         <div class="g-3 row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">群发工作状态</label>
-            <div class="col-auto">
-                <input type="text" class="form-control" value="{{ context.config.StartGroupSendTask }}" name="StartGroupSendTask" id="StartGroupSendTask">
+            <div class="input-group">
+                <span class="input-group-text">自动回复</span>
+                <textarea required class="form-control" aria-label="With textarea" name="automaticReply">{{ context.config.automaticReply }}</textarea>
             </div>
         </div>
 
 
+
+        <div class="g-3 row">
+            <div class="input-group">
+                <span class="input-group-text">群发工作状态</span>
+                <input type="text" class="form-control" value="{{ context.config.StartGroupSendTask }}" name="StartGroupSendTask" id="StartGroupSendTask">
+                <span class="input-group-text">1-启用，2-停止</span>
+            </div>
+        </div>
 
 
         <div class="col-auto">
