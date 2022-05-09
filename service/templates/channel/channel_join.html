@@ -1,6 +1,31 @@
 {% extends "common/layout.html" %}
 {% block 'content' %}
 
+<style>
+    #console-log{
+        max-height:300px;
+        overflow:auto;
+    }
+
+    #console-log::-webkit-scrollbar-track {
+        background-color: #dee2e6;
+    }
+
+    #console-log::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    #console-log::-webkit-scrollbar-thumb {
+        background-color: #adb5bd;
+        border-radius: 15%;
+    }
+
+    .input-group-text{
+        width:160px;
+    }
+
+</style>
+
 <div class="container-fluid">
 
     <div class="container p-5 my-5 border">
@@ -156,9 +181,9 @@
                     var string = getNowTime()+" 账号： " + Work_number.session_string
 
                     if (result.status === false) {
-                        string = string + " → 群发失败：" + result.message;
+                        string = string + " → 加群失败：" + result.message;
                     } else {
-                        string = string + " → 【" + result.channel.channel.username +"：" + result.channel.channel.name + "】 → " + result.send_content
+                        string = string + " → " + result.message
                     }
                     $("#console-log").prepend("<p>"+string+ " </p>");
 

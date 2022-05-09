@@ -18,6 +18,7 @@ def main():
             'log',
             # 'log/client',
             'log/群发日志/',
+            'log/加群日志/',
             'log/群发日志/client',
             'log/自动回复日志/',
             'log/自动回复日志/client',

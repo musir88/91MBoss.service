@@ -159,12 +159,14 @@ async def get_Channel(session):
         # client = TelegramClient('session/' + phone, 18252973, '7996fe1f8cd8223ddbca884fccdfa880')
         client = client_init2(result)
     except Exception as e:
+        await client.disconnect()
         result = await telethonErrorMessage(result, e, 'TelegramClient')
         return result
 
     try:
         await client.connect()
     except Exception as e:
+        await client.disconnect()
         result = await telethonErrorMessage(result, e, 'client.connect')
         return result
 
@@ -228,20 +230,28 @@ def emptyChannel(result):
 
 
 async def sremovesessionNumber(result):
-    # path = "session/" + phone + ".session"
-    try:
-        phone = str(result['phone'])
-        path = result['path'] + phone + ".session"
-        # 复制到新目录
-        shutil.copyfile(path, "91MBoss-session/官方销号/" + phone + ".session")
 
+    # path = "session/" + phone + ".session"
+    phone = str(result['phone'])
+    path = result['path'] + phone + ".session"
+    try:
+        # 复制到新目录
+        # shutil.copyfile(path, "91MBoss-session/官方销号/" + phone + ".session")
+        shutil.move(path, "91MBoss-session/官方销号/" + phone + ".session")
+    except Exception as e:
+        print("sremovesessionNumber1: "+str(e))
+
+    return True
+
+    try:
         # 再删除当前目录
         if os.path.exists(path) == True:
+            time.sleep(1)
             os.remove(path)
 
         return True
     except Exception as e:
-        return False
+        print("sremovesessionNumber2: "+str(e))
 
 
 async def get_sendChannel(session):
@@ -309,6 +319,7 @@ async def automaticReply(session, reply_content):
         client = client_init2(result)
         await client.connect()
     except Exception as e:
+        print("com " + str(e))
         await client.disconnect()
         result = await telethonErrorMessage(result, e)
         return result
@@ -317,6 +328,7 @@ async def automaticReply(session, reply_content):
         dialog_list = client.iter_dialogs()
     except Exception as e:
         await client.disconnect()
+        print("iter_dialogs " + str(e))
         result = await telethonErrorMessage(result, e, 'getChannel')
         return result
 
@@ -404,6 +416,20 @@ async def channel_sendsubmit(request):
             "message": "获取配置文件错误：" + str(e),
         }, ensure_ascii=False))
 
+
+    # 本次发送的群
+    try:
+        channel = await get_sendChannel(data['session_string'])
+        if channel['status'] == False:
+            return HttpResponse(json.dumps(channel, ensure_ascii=False))
+    except Exception as e:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": "获取本次发送的群错误：" + str(e),
+        }, ensure_ascii=False))
+
+
+
     # 先自动回复客户咨询
     try:
         automaticReply_result = await automaticReply(str(data['session_string']), config['automaticReply'])
@@ -418,16 +444,13 @@ async def channel_sendsubmit(request):
             "message": "自动回复错误：" + automaticReply_result['message'],
         }, ensure_ascii=False))
 
-    # 本次发送的群
-    try:
-        channel = await get_sendChannel(data['session_string'])
-        if channel['status'] == False:
-            return HttpResponse(json.dumps(channel, ensure_ascii=False))
-    except Exception as e:
-        return HttpResponse(json.dumps({
-            "status": False,
-            "message": "获取本次发送的群错误：" + str(e),
-        }, ensure_ascii=False))
+
+
+
+
+
+
+
 
     # 本次发送的消息
     try:
@@ -593,6 +616,15 @@ def send_log(content, prefix=''):
     fo.close()
 
     return True
+
+def joinchannel_log(content):
+    path = "log/加群日志/" + str(date.today()) + ".log"
+    fo = codecs.open(path, "a", 'utf-8')
+    fo.write("\n" + content)
+    fo.close()
+
+    return True
+
 
 
 def get_sendContent():
@@ -829,25 +861,28 @@ async def channel_joinsubmit(request):
 
     # 开始加群
     try:
-        channel_result = await joinChannel(data['session_string'], channel)
+        channel_result = await joinChannel(data['session_string'], channel['channel'])
         channel_result['channel'] == channel
         if channel_result['status'] == False:
+
+            if str(channel_result['message']).find("A wait of") != -1:
+                channel_result['message'] = "频繁 " + channel_result['message']
+                channel_result['code'] = "Await"
+
             return HttpResponse(json.dumps(channel_result, ensure_ascii=False))
         return HttpResponse(json.dumps(channel_result, ensure_ascii=False))
     except Exception as e:
         return HttpResponse(json.dumps({
             "channel": channel,
             "status": False,
-            "message": "获取本次加的群错误：" + str(e),
+            "message": "本次加群错误：" + str(e),
         }, ensure_ascii=False))
 
 
 
-async def joinChannel(session, channel):
+async def joinChannel(session, channel=''):
     phone = str(session)
     channel = str(channel)
-    print(phone)
-    print(channel)
 
     result = {}
     result['phone'] = phone
@@ -867,206 +902,132 @@ async def joinChannel(session, channel):
     try:
         await client(JoinChannelRequest(channel))
         result['status'] = True
+
+        joinlog_cnotent = str(time.strftime("%Y-%m-%d %H:%M:%S")) + " → " + phone + " → " + channel + " → 加群成功"
+        joinchannel_log(joinlog_cnotent)
+        result['message'] = joinlog_cnotent
+
     except Exception as e:
         await client.disconnect()
+
         result = await telethonErrorMessage(result, e, 'JoinChannelRequest')
-        return json.dumps(result, ensure_ascii=False)
+        joinlog_cnotent = str(time.strftime("%Y-%m-%d %H:%M:%S")) + " → " + phone + " → " + channel + " → 加群失败："+result['message']
+        joinchannel_log(joinlog_cnotent)
 
-    send_log_cnotent = phone + " → " + channel + " → 加群成功"
-
-
-
-
-
+        result['message'] = result['message']
+        return result
 
     await asyncio.sleep(2)
 
-        is_VERIFY = False
+    is_VERIFY = False
 
-        try:
-            photos = await client.get_messages(channel, 30)
-        except Exception as e:
-            await client.disconnect()
-            result = await telethonErrorMessage(result, e, 'get_channelmessages')
-            return json.dumps(result, ensure_ascii=False)
+    try:
+        photos = await client.get_messages(channel, 30)
+    except Exception as e:
+        await client.disconnect()
+        result = await telethonErrorMessage(result, "破解群验证获取验证消息失败："+str(e))
+        return result
 
-        # try:
-        for x in photos:
-            if hasattr(x, 'reply_markup') == True and x.reply_markup != None and x.mentioned == True:
-                # print(x.message)
-                # 记录日志
-                # 验证CHANNEL
-                send_log_cnotent = phone + " → " + channel + "\n" + x.message + "\n"
-                # verifychannellog(send_log_cnotent, admin)
+    # try:
+    for x in photos:
+        if hasattr(x, 'reply_markup') == True and x.reply_markup != None and x.mentioned == True:
+            # print(x.message)
+            # 记录日志
+            # 验证CHANNEL
+            send_log_cnotent = phone + " → " + channel + "\n" + x.message + "\n"
+            # verifychannellog(send_log_cnotent, admin)
 
-                is_VERIFY = True
+            is_VERIFY = True
 
-                # print("==============")
-                # print(len(x.reply_markup.rows))
-                # print(x.reply_markup.rows)
-                # print("==============")
 
-                # print(1)
-                if len(x.reply_markup.rows) == 1:
-                    result['verify'] = True
-                    # print(2)
-                    # asyncio.create_task(x.click(0))
-                    # time.sleep(1)
-                    # print(str(x.reply_markup.rows[0].buttons[0]) + " → " + channel)
-                    # print(str(x.reply_markup.rows[0].buttons[0].data) + " → " + channel)
+            if len(x.reply_markup.rows) == 1:
+                result['verify'] = True
+
+                if hasattr(x.reply_markup.rows[0].buttons[0], 'url') == True:
+                    bot_url = x.reply_markup.rows[0].buttons[0].url
+
+                    if str(bot_url).find("?") != -1:
+
+                        boturl_array = str(bot_url).split("?")
+                        Order = re.sub("=", " ", boturl_array[1])
+
+                        # webbrowser.open("https://my.telegram.org?domain=policr_mini_bot&start=verification_v1_-1001354379829")
+                        # 破解二次验证机器人   敲门砖
+                        # await client.send_message(boturl_array[0], '/start '+str(bot_url).split("start=")[1])
+
+                        try:
+                            await client.send_message(boturl_array[0], "/" + Order)
+                        except Exception as e:
+                            await client.disconnect()
+                            result = await telethonErrorMessage(result, e, 'channel多步验证开始发送命令 ①')
+                            return result
+
+                        try:
+                            await asyncio.sleep(2)
+                            bot_message = await client.get_messages(boturl_array[0], 3)
+                        except Exception as e:
+                            await client.disconnect()
+                            result = await telethonErrorMessage(result, e, 'channel多步验证 ②')
+                            return result
+
+                        for botphotos_x in bot_message:
+
+                            # 针对个别群破解
+                            if str(botphotos_x.message).find('那条河流是在湖南境内的') != -1:
+                                try:
+                                    # print(botphotos_x.reply_markup.rows)
+                                    # print(botphotos_x.reply_markup['rows'])
+                                    rows = botphotos_x.reply_markup.rows
+                                except Exception as e:
+                                    await client.disconnect()
+                                    result = await telethonErrorMessage(result, e, 'channel多步验证 ③')
+                                    return result
+
+
                     # await x.click(0)
 
-                    # print(x.message)
+                    # https: // t.me / +nncvrweqRs44Y2Yx
+                    # KeyboardButtonUrl(text='前往验证', url='https://t.me/+nncvrweqRs44Y2Yx') → https: // t.me / hugoblog
+                else:
+                    # print(str(x.reply_markup.rows[0].buttons[0]) + " → " + channel+ " → " + phone)
+                    await x.click(0)
+                break
 
-                    if hasattr(x.reply_markup.rows[0].buttons[0], 'url') == True:
-                        bot_url = x.reply_markup.rows[0].buttons[0].url
-                        # print(bot_url)
-                        # print(str(x.reply_markup.rows[0].buttons[0]) + " → " + channel + " → " + phone)
-                        # await x.click(x.reply_markup.rows[0].buttons[0].text)
-                        # await x.click(bot_url)
-                        # await client(ImportChatInviteRequest(bot_url))
-                        # await client.send_message('@policr_mini_bot', "/start")
+            if len(x.reply_markup.rows) > 1:
+                try:
+                    if str(x.message).find("请按顺序点击") != -1:
+                        message = str(x.message)
+                        message = message.split("\n")
+                        message = message.pop()
 
-                        if str(bot_url).find("?") != -1:
-                            boturl_log(str(bot_url) + " → " + channel + " → " + phone, admin)
+                        message = re.sub("（", "(", message)
+                        message = re.sub("）", ")", message)
+                        message = re.findall(r'[(](.*?)[)]', message)[0]
+                        message = message.split("、")
+                        # print(message)
+                        for row_idx, row in x.reply_markup.rows:
+                            for bottons in row.buttons:
+                                for son_idx, son in message:
+                                    if son == bottons.text:
+                                        result['verify'] = True
+                                        print(str(bottons.text) + " → " + channel)
+                                        # asyncio.create_task(x.click(bottons.data))
+                                        await asyncio.sleep(1)
+                                        print(row_idx)
+                                        print(son_idx)
+                                        await x.click(row_idx, son_idx)
+                                        # await x.click(bottons.data)
+                except Exception as e:
+                    await client.disconnect()
+                    result = await telethonErrorMessage(result, e, '请按顺序点击-no')
+                    return result
 
-                            boturl_array = str(bot_url).split("?")
-                            # print(boturl_array[0])
-                            # print(boturl_array)
-
-                            Order = re.sub("=", " ", boturl_array[1])
-
-                            # await client.send_message(boturl_array[0], bot_url)
-                            # await client.send_message(boturl_array[0], bot_url)
-                            # webbrowser.open("tg://resolve?domain=policr_mini_bot&start=verification_v1_-1001354379829")
-                            # requests.get("https://my.telegram.org?domain=policr_mini_bot&start=verification_v1_-1001354379829")
-                            # webbrowser.open("https://my.telegram.org?domain=policr_mini_bot&start=verification_v1_-1001354379829")
-
-                            # await client.send_message(boturl_array[0], '/start '+str(bot_url).split("start=")[1])
-
-                            try:
-                                await client.send_message(boturl_array[0], "/" + Order)
-                            except Exception as e:
-                                await client.disconnect()
-                                result = await telethonErrorMessage(result, e, 'channel多步验证开始发送命令 ①')
-                                return json.dumps(result, ensure_ascii=False)
-
-                            try:
-                                await asyncio.sleep(2)
-                                bot_message = await client.get_messages(boturl_array[0], 3)
-                            except Exception as e:
-                                await client.disconnect()
-                                result = await telethonErrorMessage(result, e, 'channel多步验证 ②')
-                                return json.dumps(result, ensure_ascii=False)
-
-                            # print(bot_message)
-
-                            for botphotos_x in bot_message:
-
-                                # print(botphotos_x.message)
-
-                                # 针对个别群破解
-                                if str(botphotos_x.message).find('那条河流是在湖南境内的') != -1:
-                                    try:
-                                        # print('==================')
-                                        print(botphotos_x)
-                                        # print('==================')
-                                        # print(botphotos_x.reply_markup)
-                                        # print('==================')
-                                        # print(botphotos_x.reply_markup.rows)
-                                        # print(botphotos_x.reply_markup['rows'])
-                                        # print('==================')
-                                        # for bottons_key,bottons_son in botphotos_x.reply_markup.rows:
-                                        #
-                                        # print(bottons_son)
-                                        #     print(bottons_son)
-                                        #     print(bottons_son.text)
-                                    except Exception as e:
-                                        await client.disconnect()
-                                        result = await telethonErrorMessage(result, e, 'channel多步验证 ③')
-                                        return json.dumps(result, ensure_ascii=False)
-
-                            # 针
-                            # for bottons_key,bottons_son in botphotos_x.reply_markup.row:
-                            #     print(bottons_key)
-                            #     print(bottons_son)
-
-                            #     print(botphotos_x.message)
-                            # #     print(botphotos_x.media)
-                            #     if hasattr(botphotos_x,'reply_markup') == True and botphotos_x.reply_markup != None:
-                            # #         # print(len(botphotos_x.reply_markup.rows))
-                            # #         print(botphotos_x.reply_markup.rows)
-                            #         if str(botphotos_x.message).find('那条河流是在湖南境内的') != -1 :
-                            #             for bottons_son_idx, bottons_son in botphotos_x.reply_markup:
-                            #                 if str(bottons_son.text).find('浏阳河') != -1:
-                            #                     print(str(bottons_son))
-                            #         # await x.click(bottons_son_idx)
-                            #         break
-
-                        # await x.click(0)
-
-                        # https: // t.me / +nncvrweqRs44Y2Yx
-                        # KeyboardButtonUrl(text='前往验证', url='https://t.me/+nncvrweqRs44Y2Yx') → https: // t.me / hugoblog
-
-                        send_log_cnotent = phone + " → " + channel + "\n bot_url:" + bot_url + "\n"
-                        verifychannellog(send_log_cnotent, admin)
-                    else:
-                        # print(str(x.reply_markup.rows[0].buttons[0]) + " → " + channel+ " → " + phone)
-                        await x.click(0)
-
-                    # await client.send_message('@lzh2020', str(x.reply_markup.rows[0].buttons[0].text)+" → "+channel)
-                    # print(3)
-                    break
-
-                if len(x.reply_markup.rows) > 1:
-                    # print(str(x.reply_markup.rows))
-                    # print(x.message)
-
-                    try:
-                        if str(x.message).find("请按顺序点击") != -1:
-                            message = str(x.message)
-                            message = message.split("\n")
-                            message = message.pop()
-
-                            message = re.sub("（", "(", message)
-                            message = re.sub("）", ")", message)
-                            message = re.findall(r'[(](.*?)[)]', message)[0]
-                            message = message.split("、")
-                            # print(message)
-                            for row_idx, row in x.reply_markup.rows:
-                                for bottons in row.buttons:
-                                    for son_idx, son in message:
-                                        if son == bottons.text:
-                                            result['verify'] = True
-                                            print(str(bottons.text) + " → " + channel)
-                                            # asyncio.create_task(x.click(bottons.data))
-                                            await asyncio.sleep(1)
-                                            print(row_idx)
-                                            print(son_idx)
-                                            await x.click(row_idx, son_idx)
-                                            # await x.click(bottons.data)
-                    except Exception as e:
-                        await client.disconnect()
-                        result = await telethonErrorMessage(result, e, '请按顺序点击-no')
-                        return json.dumps(result, ensure_ascii=False)
-
-                if is_VERIFY == False:
-                    # NOVERIFY_CHANNEL
-                    send_log_cnotent = channel
-                    NOVERIFY_CHANNEL(send_log_cnotent, admin)
-
-        # except Exception as e:
-        #     await client.disconnect()
-        #     result = await self.telethonErrorMessage(result, e, 'click-no')
-        #     return json.dumps(result, ensure_ascii=False)
-
-        await client.disconnect()
-        result['submit'] = 'join_channel'
-        return json.dumps(result, ensure_ascii=False)
-
+            # if is_VERIFY == False:
+            #     # NOVERIFY_CHANNEL
+            #     send_log_cnotent = channel
+            #     NOVERIFY_CHANNEL(send_log_cnotent, admin)
 
 
     await client.disconnect()
-    result['status'] = True
     return result
 
