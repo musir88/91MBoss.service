@@ -29,7 +29,7 @@ def main():
             '91MBoss/CronTab',
             '91MBoss-session',
             '91MBoss-session/群发禁言',
-            '91MBoss-session/待加群号',
+            '91MBoss-session/加群帐号',
             '91MBoss-session/官方销号',
             '91MBoss-session/群发账号',
 
@@ -107,7 +107,6 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
-
 
 if __name__ == '__main__':
     main()

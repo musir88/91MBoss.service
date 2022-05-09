@@ -1,0 +1,56 @@
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+
+
+    <ul class="list-unstyled ps-0">
+
+<!--      <li class="mb-1">-->
+<!--        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#main-collapse" aria-expanded="true">-->
+<!--          主页-->
+<!--        </button>-->
+<!--        <div class="collapse show" id="main-collapse">-->
+<!--          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">-->
+<!--            <li><a href="#" class="link-dark rounded">主页</a></li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--      <li class="border-top my-3"></li>-->
+
+
+
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+          账号管理
+        </button>
+        <div class="collapse show" id="home-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'number_index' %}" class="link-dark rounded">群发账号</a></li>
+            <li><a href="{% url 'number_nojoin' %}" class="link-dark rounded">未加群号</a></li>
+            <li><a href="{% url 'number_jinyan' %}" class="link-dark rounded">群发禁言</a></li>
+<!--            <li><a href="{% url 'number_index' %}" class="link-dark rounded">私信双向</a></li>-->
+<!--            <li><a href="{% url 'number_index' %}" class="link-dark rounded">私信频繁</a></li>-->
+            <li><a href="{% url 'number_xiaohao' %}" class="link-dark rounded">官方销号</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="border-top my-3"></li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+          群发管理
+        </button>
+        <div class="collapse" id="dashboard-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'channel_send' %}" class="link-dark rounded">群发控制台</a></li>
+            <li><a href="{% url 'channel_sendContent' %}" class="link-dark rounded">群发广告词</a></li>
+<!--            <li><a href="{% url 'channel_join' %}" class="link-dark rounded">自动回复</a></li>-->
+          </ul>
+        </div>
+      </li>
+
+      <li class="border-top my-3"></li>
+
+    </ul>
+
+
+      </div>
+    </nav>

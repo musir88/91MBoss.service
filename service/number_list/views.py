@@ -25,7 +25,7 @@ def index(request):
 def number_nojoin(request):
 
     session_number = []
-    for file in os.listdir("91MBoss-session/待加群号"):
+    for file in os.listdir("91MBoss-session/加群帐号"):
         file_name = str(file)
         session_number.append({
             'session_string':file_name,

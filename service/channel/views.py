@@ -223,7 +223,7 @@ def emptyChannel(result):
     path = result['path'] + phone + ".session"
 
     # 复制到新目录
-    shutil.copyfile(path, "91MBoss-session/待加群号/" + phone + ".session")
+    shutil.copyfile(path, "91MBoss-session/加群帐号/" + phone + ".session")
 
     # 再删除当前目录
     if os.path.exists(path) == True:

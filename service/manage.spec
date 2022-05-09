@@ -6,16 +6,16 @@ block_cipher = None
 
 a = Analysis(
     ['manage.py'],
-    pathex=['C:\\Users\\Administrator\\PycharmProjects\\91MBoss.service\\service'],
+    pathex=[],
     binaries=[],
     datas=[],
     hiddenimports=[
-    "number_list",
-    "number_list.urls",
-    "channel",
-    "channel.urls",
-    "user"
-    "user.urls",
+        "number_list",
+        "number_list.urls",
+        "channel",
+        "channel.urls",
+        "user",
+        "user.urls",
     ],
     hookspath=[],
     hooksconfig={},
@@ -55,4 +55,3 @@ coll = COLLECT(
     upx_exclude=[],
     name='manage',
 )
-

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-6q08^9_3!&4io+1-o0uks2^u*st!m4e&y5xkc07i5#--)uy(sj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1","0.0.0.0","64.188.16.166"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1","0.0.0.0"]
 
 
 # Application definition
@@ -112,11 +112,13 @@ USE_I18N = True
 
 USE_TZ = True
 
+# USE_TZ = False,
+# TIME_ZONE = 'Asia/Shanghai'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'collectstatic')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
@@ -124,3 +126,5 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+

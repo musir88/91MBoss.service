@@ -16,13 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include, path
-from django.conf.urls import static
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('number_list/', include('number_list.urls')),
     path('channel/', include('channel.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-# urlpatterns += static.static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
