@@ -30,28 +30,28 @@ async def telethonErrorMessage(result={}, e='', code='1000'):
     #     result['admin'] = ''
 
     if str(e).find('The user has been deleted/deactivated') != -1:
-        result['message'] = '用户已被删除/停'
-        result['messageChinese'] = '用户已被删除/停用'
+        result['message'] = '掉线/或官方销号'
+        result['messageChinese'] = str(e)
         path = "session/supok/" + result['phone'] + ".session"
         await sremovesessionNumber(result)
 
     if str(e).find('The used phone number has been banned from Telegram and cannot be used anymore') != -1:
         # del result['messageEnglish']
-        result['message'] = '用户已被官方禁用'
-        result['messageChinese'] = '用户已被官方禁用'
+        result['message'] = '掉线/或官方销号'
+        result['messageChinese'] = str(e)
         await sremovesessionNumber(result)
         # USER_BANNED_IN_CHANNEL(result)
 
-    if str(e).find('The key is not registered in the system (caused by ResolveUsernameRequest)') != -1:
+    if str(e).find('The key is not registered in the system') != -1:
         # del result['messageEnglish']
-        result['message'] = '用户已被官方禁用'
-        result['messageChinese'] = '用户已被官方禁用'
+        result['message'] = '掉线/或官方销号'
+        result['messageChinese'] = str(e)
         USER_BANNED_IN_CHANNEL(result)
 
     if str(e).find("You're banned from sending messages in supergroups/channels") != -1:
         # del result['messageEnglish']
-        result['message'] = '用户已被官方禁止公开发言'
-        result['messageChinese'] = '用户已被官方禁止公开发言'
+        result['message'] = '官方禁发言'
+        result['messageChinese'] = str(e)
 
         # 转移到 禁用列表
         USER_BANNED_IN_CHANNEL(result)
@@ -71,6 +71,9 @@ async def telethonErrorMessage(result={}, e='', code='1000'):
         # del result['messageEnglish']
         result['message'] = '在指定的聊天中执行此操作需要聊天管理员权限（例如，在不属于您的频道中发送消息），或用于频道或组的权限无效'
         result['messageChinese'] = '在指定的聊天中执行此操作需要聊天管理员权限（例如，在不属于您的频道中发送消息），或用于频道或组的权限无效'
+
+
+
 
     fo = codecs.open("91MBoss/error_log/" + str(date.today()) + ".log", "a", 'utf-8')
     fo.write("\n" + str(result))
@@ -109,7 +112,7 @@ def emptyChannel(result):
     return True
 
 
-def sremovesessionNumber(result):
+async def sremovesessionNumber(result):
     # path = "session/" + phone + ".session"
     phone = str(result['phone'])
     path = result['path'] + phone + ".session"
@@ -246,9 +249,12 @@ def get_oknumber(request):
 
 async def get_telegram_message(request):
     result = {}
-    phone = request.POST['phone']
+    result['path'] = "91MBoss-session/群发账号/"
+    phone = request.GET['phone']
     phone = re.sub(".session", "", phone)
     result['phone'] = phone
+
+    # print(result)
 
     try:
         client = client_init2(result)
@@ -256,7 +262,8 @@ async def get_telegram_message(request):
     except Exception as e:
         await client.disconnect()
         result = await telethonErrorMessage(result, e)
-        return HttpResponse(json.dumps(result, ensure_ascii=False))
+        # return HttpResponse(json.dumps(result, ensure_ascii=False))
+        return HttpResponse(result['message'])
 
     try:
         photos = await client.get_messages(777000, 1)
@@ -266,11 +273,37 @@ async def get_telegram_message(request):
     except Exception as e:
         await client.disconnect()
         result = await telethonErrorMessage(result, e)
-        return HttpResponse(json.dumps(result, ensure_ascii=False))
+        return HttpResponse(result['message'])
+        # return HttpResponse(json.dumps(result, ensure_ascii=False))
 
     await client.disconnect()
+
+    return HttpResponse(result['code'])
+
+    # return HttpResponse(json.dumps({
+    #     'status':True,
+    #     'message':result['code']
+    # }, ensure_ascii=False))
+
+
+def get_joinchannel(request):
+    session_number = []
+    for file in os.listdir("91MBoss-session/加群帐号/"):
+        file_name = str(file)
+
+        if str(file_name).find('-journal') != -1:
+            continue
+
+        file_name = re.sub(".session", "", file_name)
+
+        session_number.append({
+            'session_string':file_name,
+        })
+
+    if len(session_number) > 1:
+        random.shuffle(session_number)
+
     return HttpResponse(json.dumps({
         'status':True,
-        'message':result['code']
+        'list':session_number
     }, ensure_ascii=False))
-

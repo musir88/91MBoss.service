@@ -14,6 +14,7 @@ from django.shortcuts import redirect
 import os
 import shutil
 import socks
+import asyncio
 from faker import Faker
 from selectolax.parser import HTMLParser
 from telethon import TelegramClient, events
@@ -74,22 +75,21 @@ async def telethonErrorMessage(result={}, e='', code='1000'):
     #     result['admin'] = ''
 
     if str(e).find('The user has been deleted/deactivated') != -1:
-        result['message'] = '用户已被删除/停'
-        result['messageChinese'] = '用户已被删除/停用'
-        path = "session/supok/" + result['phone'] + ".session"
+        result['message'] = '掉线/或官方销号'
+        result['messageChinese'] = str(e)
         await sremovesessionNumber(result)
 
     if str(e).find('The used phone number has been banned from Telegram and cannot be used anymore') != -1:
         # del result['messageEnglish']
-        result['message'] = '用户已被官方禁用'
-        result['messageChinese'] = '用户已被官方禁用'
+        result['message'] = '掉线/或官方销号'
+        result['messageChinese'] = str(e)
         await sremovesessionNumber(result)
         # USER_BANNED_IN_CHANNEL(result)
 
-    if str(e).find('The key is not registered in the system (caused by ResolveUsernameRequest)') != -1:
+    if str(e).find('The key is not registered in the system') != -1:
         # del result['messageEnglish']
-        result['message'] = '用户已被官方禁用'
-        result['messageChinese'] = '用户已被官方禁用'
+        result['message'] = '掉线/或官方销号'
+        result['messageChinese'] = str(e)
         USER_BANNED_IN_CHANNEL(result)
 
     if str(e).find("You're banned from sending messages in supergroups/channels") != -1:
@@ -193,46 +193,55 @@ async def get_Channel(session):
 
 
 def USER_BANNED_IN_CHANNEL(result):
-    # path = "session/" + phone + ".session"
-    phone = str(result['phone'])
-    path = result['path'] + phone + ".session"
-    # 复制到新目录
-    shutil.copyfile(path, "91MBoss-session/群发禁言/" + phone + ".session")
 
-    # 再删除当前目录
-    if os.path.exists(path) == True:
-        os.remove(path)
+    try:
+        # path = "session/" + phone + ".session"
+        phone = str(result['phone'])
+        path = result['path'] + phone + ".session"
+        # 复制到新目录
+        shutil.copyfile(path, "91MBoss-session/群发禁言/" + phone + ".session")
 
-    return True
+        # 再删除当前目录
+        if os.path.exists(path) == True:
+            os.remove(path)
+        return True
+    except Exception as e:
+        return False
 
 
 def emptyChannel(result):
     # path = "session/" + phone + ".session"
-    phone = str(result['phone'])
-    path = result['path'] + phone + ".session"
+    try:
+        phone = str(result['phone'])
+        path = result['path'] + phone + ".session"
 
-    # 复制到新目录
-    shutil.copyfile(path, "91MBoss-session/加群帐号/" + phone + ".session")
+        # 复制到新目录
+        shutil.copyfile(path, "91MBoss-session/加群帐号/" + phone + ".session")
 
-    # 再删除当前目录
-    if os.path.exists(path) == True:
-        os.remove(path)
+        # 再删除当前目录
+        if os.path.exists(path) == True:
+            os.remove(path)
 
-    return True
+        return True
+    except Exception as e:
+        return False
 
 
-def sremovesessionNumber(result):
+async def sremovesessionNumber(result):
     # path = "session/" + phone + ".session"
-    phone = str(result['phone'])
-    path = result['path'] + phone + ".session"
-    # 复制到新目录
-    shutil.copyfile(path, "91MBoss-session/官方销号/" + phone + ".session")
+    try:
+        phone = str(result['phone'])
+        path = result['path'] + phone + ".session"
+        # 复制到新目录
+        shutil.copyfile(path, "91MBoss-session/官方销号/" + phone + ".session")
 
-    # 再删除当前目录
-    if os.path.exists(path) == True:
-        os.remove(path)
+        # 再删除当前目录
+        if os.path.exists(path) == True:
+            os.remove(path)
 
-    return True
+        return True
+    except Exception as e:
+        return False
 
 
 async def get_sendChannel(session):
@@ -311,7 +320,13 @@ async def automaticReply(session, reply_content):
         result = await telethonErrorMessage(result, e, 'getChannel')
         return result
 
-    get_me = await client.get_me()
+    try:
+        get_me = await client.get_me()
+    except Exception as e:
+        await client.disconnect()
+        result = await telethonErrorMessage(result, e, 'get_me')
+        return result
+
 
     async for dialog in dialog_list:
 
@@ -393,9 +408,14 @@ async def channel_sendsubmit(request):
     try:
         automaticReply_result = await automaticReply(str(data['session_string']), config['automaticReply'])
     except Exception as e:
+        automaticReply_result = await telethonErrorMessage({
+            "phone": str(data['session_string']),
+            "path": "91MBoss-session/群发账号/",
+        }, str(e))
+
         return HttpResponse(json.dumps({
             "status": False,
-            "message": "自动回复错误：" + str(e),
+            "message": "自动回复错误：" + automaticReply_result['message'],
         }, ensure_ascii=False))
 
     # 本次发送的群
@@ -431,7 +451,8 @@ async def channel_sendsubmit(request):
     try:
         result = await tg_sendMessage(param)
         if result['status'] == False:
-            result['message'] = "【" + channel.channel.username + ":" + channel.channel.name + "】" + result['message']
+            result['channel'] = channel
+            # result['message'] = "【" + channel.channel.username + ":" + channel.channel.name + "】" + result['message']
             return HttpResponse(json.dumps(result, ensure_ascii=False))
     except Exception as e:
 
@@ -737,7 +758,315 @@ def channel_save(request):
     return render(request, 'channel/channel_save.html', {'context': context})
 
 
+async def get_joinChannel(session_string):
+    phone = str(session_string)
+
+    path = "91MBoss/data/channel_join.json"
+    if not os.path.exists(path):
+        f = open("91MBoss/data/channel.json", encoding="utf-8")
+        channel_all = f.read()
+        f.close()
+        channel_all = json.loads(channel_all)
+        if len(channel_all) < 1:
+            return {
+                "status":False,
+                "message":"至少添加一条群链接"
+            }
+
+        fo = codecs.open(path, "a", 'utf-8')
+        fo.write(json.dumps(channel_all))
+        fo.close()
+
+    # 取一条群链接
+    f = open(path, encoding="utf-8")
+    channel_all = f.read()
+    f.close()
+    join_channel_all = json.loads(channel_all)
+    if len(join_channel_all) < 1:
+        return {
+            "status":False,
+            "code":'empty_channel',
+            "message":"已经加完一轮，需要重新开始请再次刷新当前页面"
+        }
+
+
+    # 取这次发的群
+    random.shuffle(join_channel_all)
+    channel = join_channel_all.pop()
+
+    # 保存剩下得 群
+    os.remove(str(path))
+    fo = codecs.open(path, "a", 'utf-8')
+    fo.write(json.dumps(join_channel_all))
+    fo.close()
+
+    return {
+        "status": True,
+        "channel": channel,
+    }
+
+
+async def channel_joinsubmit(request):
+    data = request.POST
+
+    if 'session_string' not in data:
+        return HttpResponse(json.dumps({
+            'status': False,
+            'message': "session_string 空"
+        }, ensure_ascii=False))
+
+
+    # 本次加的群
+    try:
+        channel = await get_joinChannel(data['session_string'])
+        if channel['status'] == False:
+            return HttpResponse(json.dumps(channel, ensure_ascii=False))
+    except Exception as e:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": "获取本次加的群错误：" + str(e),
+        }, ensure_ascii=False))
+
+    # 开始加群
+    try:
+        channel_result = await joinChannel(data['session_string'], channel)
+        channel_result['channel'] == channel
+        if channel_result['status'] == False:
+            return HttpResponse(json.dumps(channel_result, ensure_ascii=False))
+        return HttpResponse(json.dumps(channel_result, ensure_ascii=False))
+    except Exception as e:
+        return HttpResponse(json.dumps({
+            "channel": channel,
+            "status": False,
+            "message": "获取本次加的群错误：" + str(e),
+        }, ensure_ascii=False))
 
 
 
+async def joinChannel(session, channel):
+    phone = str(session)
+    channel = str(channel)
+    print(phone)
+    print(channel)
+
+    result = {}
+    result['phone'] = phone
+    result['channel'] = channel
+    result['submit'] = 'join_channel'
+
+    result['path'] = "91MBoss-session/加群帐号/"
+
+    try:
+        client = client_init2(result)
+        await client.connect()
+    except Exception as e:
+        await client.disconnect()
+        result = await telethonErrorMessage(result, e, 'connect')
+        return result
+
+    try:
+        await client(JoinChannelRequest(channel))
+        result['status'] = True
+    except Exception as e:
+        await client.disconnect()
+        result = await telethonErrorMessage(result, e, 'JoinChannelRequest')
+        return json.dumps(result, ensure_ascii=False)
+
+    send_log_cnotent = phone + " → " + channel + " → 加群成功"
+
+
+
+
+
+
+    await asyncio.sleep(2)
+
+        is_VERIFY = False
+
+        try:
+            photos = await client.get_messages(channel, 30)
+        except Exception as e:
+            await client.disconnect()
+            result = await telethonErrorMessage(result, e, 'get_channelmessages')
+            return json.dumps(result, ensure_ascii=False)
+
+        # try:
+        for x in photos:
+            if hasattr(x, 'reply_markup') == True and x.reply_markup != None and x.mentioned == True:
+                # print(x.message)
+                # 记录日志
+                # 验证CHANNEL
+                send_log_cnotent = phone + " → " + channel + "\n" + x.message + "\n"
+                # verifychannellog(send_log_cnotent, admin)
+
+                is_VERIFY = True
+
+                # print("==============")
+                # print(len(x.reply_markup.rows))
+                # print(x.reply_markup.rows)
+                # print("==============")
+
+                # print(1)
+                if len(x.reply_markup.rows) == 1:
+                    result['verify'] = True
+                    # print(2)
+                    # asyncio.create_task(x.click(0))
+                    # time.sleep(1)
+                    # print(str(x.reply_markup.rows[0].buttons[0]) + " → " + channel)
+                    # print(str(x.reply_markup.rows[0].buttons[0].data) + " → " + channel)
+                    # await x.click(0)
+
+                    # print(x.message)
+
+                    if hasattr(x.reply_markup.rows[0].buttons[0], 'url') == True:
+                        bot_url = x.reply_markup.rows[0].buttons[0].url
+                        # print(bot_url)
+                        # print(str(x.reply_markup.rows[0].buttons[0]) + " → " + channel + " → " + phone)
+                        # await x.click(x.reply_markup.rows[0].buttons[0].text)
+                        # await x.click(bot_url)
+                        # await client(ImportChatInviteRequest(bot_url))
+                        # await client.send_message('@policr_mini_bot', "/start")
+
+                        if str(bot_url).find("?") != -1:
+                            boturl_log(str(bot_url) + " → " + channel + " → " + phone, admin)
+
+                            boturl_array = str(bot_url).split("?")
+                            # print(boturl_array[0])
+                            # print(boturl_array)
+
+                            Order = re.sub("=", " ", boturl_array[1])
+
+                            # await client.send_message(boturl_array[0], bot_url)
+                            # await client.send_message(boturl_array[0], bot_url)
+                            # webbrowser.open("tg://resolve?domain=policr_mini_bot&start=verification_v1_-1001354379829")
+                            # requests.get("https://my.telegram.org?domain=policr_mini_bot&start=verification_v1_-1001354379829")
+                            # webbrowser.open("https://my.telegram.org?domain=policr_mini_bot&start=verification_v1_-1001354379829")
+
+                            # await client.send_message(boturl_array[0], '/start '+str(bot_url).split("start=")[1])
+
+                            try:
+                                await client.send_message(boturl_array[0], "/" + Order)
+                            except Exception as e:
+                                await client.disconnect()
+                                result = await telethonErrorMessage(result, e, 'channel多步验证开始发送命令 ①')
+                                return json.dumps(result, ensure_ascii=False)
+
+                            try:
+                                await asyncio.sleep(2)
+                                bot_message = await client.get_messages(boturl_array[0], 3)
+                            except Exception as e:
+                                await client.disconnect()
+                                result = await telethonErrorMessage(result, e, 'channel多步验证 ②')
+                                return json.dumps(result, ensure_ascii=False)
+
+                            # print(bot_message)
+
+                            for botphotos_x in bot_message:
+
+                                # print(botphotos_x.message)
+
+                                # 针对个别群破解
+                                if str(botphotos_x.message).find('那条河流是在湖南境内的') != -1:
+                                    try:
+                                        # print('==================')
+                                        print(botphotos_x)
+                                        # print('==================')
+                                        # print(botphotos_x.reply_markup)
+                                        # print('==================')
+                                        # print(botphotos_x.reply_markup.rows)
+                                        # print(botphotos_x.reply_markup['rows'])
+                                        # print('==================')
+                                        # for bottons_key,bottons_son in botphotos_x.reply_markup.rows:
+                                        #
+                                        # print(bottons_son)
+                                        #     print(bottons_son)
+                                        #     print(bottons_son.text)
+                                    except Exception as e:
+                                        await client.disconnect()
+                                        result = await telethonErrorMessage(result, e, 'channel多步验证 ③')
+                                        return json.dumps(result, ensure_ascii=False)
+
+                            # 针
+                            # for bottons_key,bottons_son in botphotos_x.reply_markup.row:
+                            #     print(bottons_key)
+                            #     print(bottons_son)
+
+                            #     print(botphotos_x.message)
+                            # #     print(botphotos_x.media)
+                            #     if hasattr(botphotos_x,'reply_markup') == True and botphotos_x.reply_markup != None:
+                            # #         # print(len(botphotos_x.reply_markup.rows))
+                            # #         print(botphotos_x.reply_markup.rows)
+                            #         if str(botphotos_x.message).find('那条河流是在湖南境内的') != -1 :
+                            #             for bottons_son_idx, bottons_son in botphotos_x.reply_markup:
+                            #                 if str(bottons_son.text).find('浏阳河') != -1:
+                            #                     print(str(bottons_son))
+                            #         # await x.click(bottons_son_idx)
+                            #         break
+
+                        # await x.click(0)
+
+                        # https: // t.me / +nncvrweqRs44Y2Yx
+                        # KeyboardButtonUrl(text='前往验证', url='https://t.me/+nncvrweqRs44Y2Yx') → https: // t.me / hugoblog
+
+                        send_log_cnotent = phone + " → " + channel + "\n bot_url:" + bot_url + "\n"
+                        verifychannellog(send_log_cnotent, admin)
+                    else:
+                        # print(str(x.reply_markup.rows[0].buttons[0]) + " → " + channel+ " → " + phone)
+                        await x.click(0)
+
+                    # await client.send_message('@lzh2020', str(x.reply_markup.rows[0].buttons[0].text)+" → "+channel)
+                    # print(3)
+                    break
+
+                if len(x.reply_markup.rows) > 1:
+                    # print(str(x.reply_markup.rows))
+                    # print(x.message)
+
+                    try:
+                        if str(x.message).find("请按顺序点击") != -1:
+                            message = str(x.message)
+                            message = message.split("\n")
+                            message = message.pop()
+
+                            message = re.sub("（", "(", message)
+                            message = re.sub("）", ")", message)
+                            message = re.findall(r'[(](.*?)[)]', message)[0]
+                            message = message.split("、")
+                            # print(message)
+                            for row_idx, row in x.reply_markup.rows:
+                                for bottons in row.buttons:
+                                    for son_idx, son in message:
+                                        if son == bottons.text:
+                                            result['verify'] = True
+                                            print(str(bottons.text) + " → " + channel)
+                                            # asyncio.create_task(x.click(bottons.data))
+                                            await asyncio.sleep(1)
+                                            print(row_idx)
+                                            print(son_idx)
+                                            await x.click(row_idx, son_idx)
+                                            # await x.click(bottons.data)
+                    except Exception as e:
+                        await client.disconnect()
+                        result = await telethonErrorMessage(result, e, '请按顺序点击-no')
+                        return json.dumps(result, ensure_ascii=False)
+
+                if is_VERIFY == False:
+                    # NOVERIFY_CHANNEL
+                    send_log_cnotent = channel
+                    NOVERIFY_CHANNEL(send_log_cnotent, admin)
+
+        # except Exception as e:
+        #     await client.disconnect()
+        #     result = await self.telethonErrorMessage(result, e, 'click-no')
+        #     return json.dumps(result, ensure_ascii=False)
+
+        await client.disconnect()
+        result['submit'] = 'join_channel'
+        return json.dumps(result, ensure_ascii=False)
+
+
+
+    await client.disconnect()
+    result['status'] = True
+    return result
 

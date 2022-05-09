@@ -26,7 +26,8 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                <th scope="col">未加群号（{{ context.session_number_count }}）个</th>
+                <th scope="col">加群帐号（{{ context.session_number_count }}）个</th>
+                <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -35,12 +36,32 @@
                     <td>
                         {{ i.session_string }}
                     </td>
+                    <td>
+                       <a url="{% url 'get_telegram_message' %}?phone={{ i.session_string }}" href=javascript:; onclick="Bs91m.get_telegram_message(this)" phone="{{ i.session_string }}">
+                            <button type="button" class="btn btn-danger btn-sm">获取验证码</button>
+                        </a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
 </div>
+<script>
+
+    $(function(){
+        Bs91m.get_telegram_message = function(t){
+            var url = $(t).attr("url");
+            var win = window.open(url, "获取验证码", "height=300, width=600");
+
+
+            setTimeout(function(){ win.document.title= $(t).attr("phone")+" → 获取验证码"; }, 1500);
+        }
+
+    })
+
+
+</script>
 
 
 {% endblock 'content' %}

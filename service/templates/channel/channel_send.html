@@ -77,8 +77,23 @@
         <div class="g-3 row">
             <div class="input-group">
                 <span class="input-group-text">群发工作状态</span>
-                <input type="text" class="form-control" value="{{ context.config.StartGroupSendTask }}" name="StartGroupSendTask" id="StartGroupSendTask">
-                <span class="input-group-text">1-开始，2-停止</span>
+<!--                <input type="text" class="form-control" value="{{ context.config.StartGroupSendTask }}" name="StartGroupSendTask" id="StartGroupSendTask">-->
+<!--                <span class="input-group-text">1-开始，2-停止</span>-->
+                <select class="form-select" aria-label="Default select example" name="StartGroupSendTask" id="StartGroupSendTask">
+                    {% if context.config.StartGroupSendTask == '2' %}
+                        <option selected value="2">停止</option>
+                    {% else %}
+                        <option value="2">停止</option>
+                    {% endif %}
+
+
+                    {% if context.config.StartGroupSendTask == '1' %}
+                        <option value="1" selected>开始</option>
+                    {% else %}
+
+                        <option value="1">开始</option>
+                    {% endif %}
+                </select>
             </div>
         </div>
 
@@ -246,6 +261,7 @@
 
 
             var StartGroupSendTask = $("#StartGroupSendTask").val();
+            console.log(StartGroupSendTask)
             if (StartGroupSendTask == '1'){ // 任务开启工作
                 // 间隔时间
 

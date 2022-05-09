@@ -25,7 +25,7 @@
         <div class="collapse show" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="{% url 'number_index' %}" class="link-dark rounded">群发账号</a></li>
-            <li><a href="{% url 'number_nojoin' %}" class="link-dark rounded">未加群号</a></li>
+            <li><a href="{% url 'number_nojoin' %}" class="link-dark rounded">加群帐号</a></li>
             <li><a href="{% url 'number_jinyan' %}" class="link-dark rounded">群发禁言</a></li>
 <!--            <li><a href="{% url 'number_index' %}" class="link-dark rounded">私信双向</a></li>-->
 <!--            <li><a href="{% url 'number_index' %}" class="link-dark rounded">私信频繁</a></li>-->
@@ -35,10 +35,10 @@
       </li>
       <li class="border-top my-3"></li>
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
           群发管理
         </button>
-        <div class="collapse" id="dashboard-collapse">
+        <div class="collapse show" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="{% url 'channel_send' %}" class="link-dark rounded">群发控制台</a></li>
             <li><a href="{% url 'channel_sendContent' %}" class="link-dark rounded">群发广告词</a></li>
@@ -49,10 +49,10 @@
 
       <li class="border-top my-3"></li>
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#jiachannel-collapse" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#jiachannel-collapse" aria-expanded="true">
           加群管理
         </button>
-        <div class="collapse" id="jiachannel-collapse">
+        <div class="collapse show" id="jiachannel-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="{% url 'channel_join' %}" class="link-dark rounded">加群控制台</a></li>
             <li><a href="{% url 'channel_save' %}" class="link-dark rounded">群组库</a></li>
