@@ -148,17 +148,6 @@ def channel_send(request):
     return render(request, 'channel/channel_send.html', {'context': context})
 
 
-def channel_join(request):
-    if request.method == 'GET':
-        template = loader.get_template('channel/channel_join.html')
-        context = {
-            'latest_question_list': 'opio',
-        }
-        return HttpResponse(template.render(context, request))
-
-    if request.method == 'POST':
-        data = {}
-
 
 async def get_Channel(session):
     result = {}
@@ -674,6 +663,81 @@ def channel_delContent(request):
     if os.path.exists(path):
         os.remove(str(path))
     return redirect('channel_sendContent')
+
+
+
+def channel_init():
+    path = "91MBoss/data/channel.json"
+    if not os.path.exists(path):
+        fo = codecs.open(path, "a", 'utf-8')
+        fo.write(json.dumps([]))
+        fo.close()
+
+    path = "91MBoss/config/channel_join.config.json"
+    if not os.path.exists(path):
+        fo = codecs.open(path, "a", 'utf-8')
+        fo.write(json.dumps({
+            "sleep_time":3,#等待时间
+            "StartGroupJoinTask":'2',#任务执行开关 默认关闭
+        }))
+        fo.close()
+
+    return True
+
+
+def channel_join(request):
+    channel_init()
+    path = "91MBoss/config/channel_join.config.json"
+
+    if request.method == 'POST':
+        os.remove(path)
+        fo = codecs.open(path, "a", 'utf-8')
+        fo.write(json.dumps({
+            "sleep_time": request.POST['sleep_time'],  # 等待时间
+            "StartGroupJoinTask": request.POST['StartGroupJoinTask'],  # 任务执行开关 默认关闭
+        }))
+        fo.close()
+        return redirect('channel_join')
+
+    f = open(path, encoding="utf-8")
+    channel_join_config = f.read()
+    f.close()
+    channel_join_config = json.loads(channel_join_config)
+
+    context = {
+        'channel_join_config': channel_join_config,
+    }
+    return render(request, 'channel/channel_join.html', {'context': context})
+
+
+def channel_save(request):
+    channel_init()
+    path = "91MBoss/data/channel.json"
+
+    if request.method == 'POST':
+        channel_string = request.POST['channel']
+        channel = []
+        for i in channel_string.split("\n"):
+            channel.append(i.replace("\r",''))
+        os.remove(path)
+        fo = codecs.open(path, "a", 'utf-8')
+        fo.write(json.dumps(channel))
+        fo.close()
+
+        return redirect('channel_save')
+
+    f = open(path, encoding="utf-8")
+    channel = f.read()
+    f.close()
+    channel = "\n".join(json.loads(channel))
+
+    context = {
+        'channel': channel,
+    }
+    return render(request, 'channel/channel_save.html', {'context': context})
+
+
+
 
 
 

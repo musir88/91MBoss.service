@@ -27,6 +27,7 @@ def main():
             '91MBoss/config',
             '91MBoss/error_log',
             '91MBoss/CronTab',
+            '91MBoss/data',
             '91MBoss-session',
             '91MBoss-session/群发禁言',
             '91MBoss-session/加群帐号',

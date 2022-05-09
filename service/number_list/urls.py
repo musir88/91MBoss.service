@@ -9,4 +9,5 @@ urlpatterns = [
     path('number_jinyan', views.number_jinyan, name='number_jinyan'),
     path('number_xiaohao', views.number_xiaohao, name='number_xiaohao'),
     path('get_oknumber', views.get_oknumber, name='get_oknumber'),
+    path('get_telegram_message', views.get_telegram_message, name='get_telegram_message'),
 ]

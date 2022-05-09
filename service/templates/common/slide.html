@@ -48,6 +48,22 @@
       </li>
 
       <li class="border-top my-3"></li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#jiachannel-collapse" aria-expanded="false">
+          加群管理
+        </button>
+        <div class="collapse" id="jiachannel-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'channel_join' %}" class="link-dark rounded">加群控制台</a></li>
+            <li><a href="{% url 'channel_save' %}" class="link-dark rounded">群组库</a></li>
+<!--            <li><a href="{% url 'channel_join' %}" class="link-dark rounded">自动回复</a></li>-->
+          </ul>
+        </div>
+      </li>
+
+      <li class="border-top my-3"></li>
+
+
 
     </ul>
 

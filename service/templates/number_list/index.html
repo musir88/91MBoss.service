@@ -26,7 +26,8 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                <th scope="col">群发账号（{{ context.session_number_count }}）个</th>
+                    <th scope="col">群发账号（{{ context.session_number_count }}）个</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +35,11 @@
                 <tr>
                     <td>
                         {{ i.session_string }}
+                    </td>
+                    <td>
+                        <a href="{% url 'get_telegram_message' %}?name={{ i.name }}">
+                            <button type="button" class="btn btn-danger btn-sm">获取验证码</button>
+                        </a>
                     </td>
                 </tr>
                 {% endfor %}

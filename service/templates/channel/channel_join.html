@@ -1,9 +1,71 @@
 {% extends "common/layout.html" %}
 {% block 'content' %}
 
+<div class="container-fluid">
+
+    <div class="container p-5 my-5 border">
 
 
-channel_join
+    <form class="row g-3" action="{% url 'channel_join' %}" method="post">
+       <div class="g-3 row">
+        </div>
+
+        <div class="g-3 row">
+            <div class="input-group">
+                <span class="input-group-text">sleep_time</span>
+                <input type="text" class="form-control" value="{{ context.channel_join_config.sleep_time }}" name="sleep_time" id="sleep_time">
+                <span class="input-group-text">秒</span>
+            </div>
+        </div>
+
+        <div class="g-3 row">
+            <div class="input-group">
+                <span class="input-group-text">StartGroupJoinTask</span>
+
+                <select class="form-select" aria-label="Default select example" name="StartGroupJoinTask">
+                    {% if context.channel_join_config.StartGroupJoinTask == '2' %}
+                        <option selected value="2">停止</option>
+                    {% else %}
+                        <option value="2">停止</option>
+                    {% endif %}
+
+
+                    {% if context.channel_join_config.StartGroupJoinTask == '1' %}
+                        <option value="1" selected>开始</option>
+                    {% else %}
+
+                        <option value="1">开始</option>
+                    {% endif %}
+
+
+                </select>
+
+
+<!--                <input type="text" class="form-control" value="{{ context.config.StartGroupSendTask }}" name="StartGroupSendTask" id="StartGroupSendTask">-->
+            </div>
+        </div>
+
+
+
+
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">保存</button>
+        </div>
+
+    </form>
+
+
+
+    </div>
+
+
+
+    <div class="container p-5 my-5 border" id="console-log"></div>
+
+</div>
+
+
+
 
 
 
