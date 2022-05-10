@@ -21,6 +21,7 @@ from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.account import UpdateUsernameRequest
 from telethon.tl.functions.account import UpdateProfileRequest
+from telethon.tl.functions.photos import UploadProfilePhotoRequest
 from telethon.tl.functions.channels import LeaveChannelRequest
 
 
@@ -172,8 +173,25 @@ def index(request):
     session_number = []
     for file in os.listdir("91MBoss-session/群发账号"):
         file_name = str(file)
+
+        file_name_string = re.sub(".session", "", file_name)
+        path_info = "91MBoss/data/TemplateInfo/"+str(file_name_string)+".json"
+        if os.path.exists(path_info):
+            f = open(path_info, encoding="utf-8")
+            content = f.read()
+            Template = json.loads(content)
+            f.close()
+        else:
+            Template={
+                "first_name":"",
+                "last_name":"",
+                "phone":"",
+                "username":"",
+            }
+
         session_number.append({
             'session_string':file_name,
+            'Template':Template,
         })
 
     context = {
@@ -345,12 +363,9 @@ async def manual_login(request):
 
         try:
             client = client_init2(login_param)
-            # client = TelegramClient(login_param['path'] + phone, 18252973, '7996fe1f8cd8223ddbca884fccdfa880')
         except Exception as e:
             result = await telethonErrorMessage(login_param, e, "client_init2")
-            # print(result)
             message = result['message']
-            # return HttpResponse(result)
 
             context = {
                 'session_number': session_number,
@@ -367,9 +382,7 @@ async def manual_login(request):
         except Exception as e:
             await client.disconnect()
             result = await telethonErrorMessage(login_param, e, "connect")
-            # print(result)
             message = result['message']
-            # return HttpResponse(result)
             context = {
                 'session_number': session_number,
                 'verification_code': verification_code,
@@ -485,7 +498,7 @@ def template_manage(request):
         file_name = str(file)
         file_name = re.sub(".json", "", file_name)
 
-        f = open(path + "/" + file_name + ".json", encoding="utf-8")
+        f = open(path + file_name + ".json", encoding="utf-8")
         content = f.read()
         content = json.loads(content)
         f.close()
@@ -532,11 +545,237 @@ def template_manage_del(request):
 
 
 
+def template_manage_console(request):
+    path = "91MBoss/template/"
+
+    return render(request, 'number_list/template_manage_console.html')
 
 
+def get_setTemplate(request):
+
+    session_number = []
+    for file in os.listdir("91MBoss-session/设置模板/"):
+
+        file_name = str(file)
+
+        if str(file_name).find('-journal') != -1:
+            continue
+
+        file_name = re.sub(".session", "", file_name)
+
+        session_number.append({
+            "session_string":file_name
+        })
+
+    return HttpResponse(json.dumps({
+        'status':True,
+        'list':session_number
+    }, ensure_ascii=False))
 
 
+async def get_setTemplate_first(session):
+    session = str(session)
+    path = "91MBoss/template/"
+
+    Templatelist = []
+    for file in os.listdir(path):
+        file_name = str(file)
+        Templatelist.append(file_name)
+
+    if len(Templatelist) < 1:
+        return {
+            'status': False,
+            "message": "没有摸版"
+        }
+
+    # 取摸版
+    random.shuffle(Templatelist)
+    Template_name = Templatelist.pop()
+
+    f = open(path + "/" + Template_name, encoding="utf-8")
+    content = f.read()
+    Template = json.loads(content)
+    f.close()
 
 
+    return {
+        'status': True,
+        'Template': Template,
+        "message":""
+    }
 
 
+async def setTemplate(request):
+    data = request.POST
+
+    if 'session_string' not in data:
+        return HttpResponse(json.dumps({
+            'status': False,
+            'message': "session_string 空"
+        }, ensure_ascii=False))
+
+
+    # 取摸版
+    try:
+        setTemplate_first = await get_setTemplate_first(data['session_string'])
+        if setTemplate_first['status'] == False:
+            return HttpResponse(json.dumps(setTemplate_first, ensure_ascii=False))
+    except Exception as e:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": "取模板错误：" + str(e),
+        }, ensure_ascii=False))
+
+
+    # 开始设置
+    set_param = {
+        "sesssion_string":data['session_string'],
+        "template":setTemplate_first
+    }
+    try:
+        TelethonSetTemplate_result = await TelethonSetTemplate(set_param)
+        TelethonSetTemplate_result['setTemplate_first'] =setTemplate_first
+        if TelethonSetTemplate_result['status'] == False:
+            return HttpResponse(json.dumps(TelethonSetTemplate_result, ensure_ascii=False))
+        return HttpResponse(json.dumps(TelethonSetTemplate_result, ensure_ascii=False))
+    except Exception as e:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "set_param": set_param,
+            "message": "设置模板错误：" + str(e),
+        }, ensure_ascii=False))
+
+
+async def TelethonSetTemplate(set_param):
+
+    phone = str(set_param['sesssion_string'])
+    template = set_param['template']['Template']
+
+    last_name = template["last_name"]
+    first_name = template["first_name"]
+    about = template["about"]
+    some_file = template["avatar"]
+
+    result = {
+        "phone":phone,
+        "path":"91MBoss-session/设置模板/"
+    }
+
+    try:
+        client = client_init2(result)
+    except Exception as e:
+        result = await telethonErrorMessage(result, e, "client_init2")
+        return result
+
+    try:
+        await client.connect()
+    except Exception as e:
+        await client.disconnect()
+        result = await telethonErrorMessage(result, e, "connect")
+        return result
+
+    try:
+        if last_name != '' and first_name != '':
+            await client(UpdateProfileRequest(
+                first_name=first_name,
+                last_name=last_name,
+            ))
+    except Exception as e:
+        await client.disconnect()
+        result = await telethonErrorMessage(result, "last_name"+str(e), 1002)
+        return result
+
+    try:
+        if about != '':
+            await client(UpdateProfileRequest(about=about))
+    except Exception as e:
+        await client.disconnect()
+        result = await telethonErrorMessage(result, "about"+str(e), 1002)
+        return result
+
+    try:
+        if some_file != '':
+            await client(UploadProfilePhotoRequest(
+                await client.upload_file(some_file)
+            ))
+    except Exception as e:
+        await client.disconnect()
+        result = await telethonErrorMessage(result, "some_file:"+str(e), 1002)
+        return result
+
+
+    try:
+
+        get_me = await client.get_me()
+        noticeAdminParams = {}
+        noticeAdminParams['first_name'] = get_me.first_name
+        noticeAdminParams['last_name'] = get_me.last_name
+        noticeAdminParams['username'] = get_me.username
+        noticeAdminParams['phone'] = phone
+        await client.disconnect()
+
+        # 记录摸版设置信息
+        write_getMe_result = write_getMe(noticeAdminParams)
+
+        # 结束
+        return {
+            "status":True,
+            "messasge":phone+"设置模板成功"
+        }
+    except Exception as e:
+        await client.disconnect()
+        result = await telethonErrorMessage(result, e, 1008)
+        return result
+
+    await client.disconnect()
+
+    return {
+        "status": True,
+        "messasge": phone + "设置模板成功"
+    }
+
+    return result
+
+
+def write_getMe(param):
+    path = "91MBoss/data/TemplateInfo/"+str(param['phone'])+".json"
+    if os.path.exists(path):
+        os.remove(str(path))
+
+    fo = codecs.open(path, "a", 'utf-8')
+    fo.write(json.dumps(param, ensure_ascii=False))
+    fo.close()
+
+    return True
+
+
+def TemplateNumber_list(request):
+    session_number = []
+    for file in os.listdir("91MBoss-session/设置模板"):
+        file_name = str(file)
+
+        file_name_string = re.sub(".session", "", file_name)
+        path_info = "91MBoss/data/TemplateInfo/"+str(file_name_string)+".json"
+        if os.path.exists(path_info):
+            f = open(path_info, encoding="utf-8")
+            content = f.read()
+            Template = json.loads(content)
+            f.close()
+        else:
+            Template={
+                "first_name":"",
+                "last_name":"",
+                "phone":"",
+                "username":"",
+            }
+
+        session_number.append({
+            'session_string':file_name,
+            'Template':Template,
+        })
+
+    context = {
+        'session_number': session_number,
+        'session_number_count': len(session_number),
+    }
+    return render(request, 'number_list/TemplateNumber_list.html',  {'context': context})

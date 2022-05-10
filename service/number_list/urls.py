@@ -14,5 +14,9 @@ urlpatterns = [
     path('manual_login', views.manual_login, name='manual_login'),
     path('template_manage', views.template_manage, name='template_manage'),
     path('template_manage_del', views.template_manage_del, name='template_manage_del'),
+    path('template_manage_console', views.template_manage_console, name='template_manage_console'),
+    path('get_setTemplate', views.get_setTemplate, name='get_setTemplate'),
+    path('setTemplate', views.setTemplate, name='setTemplate'),
+    path('TemplateNumber_list', views.TemplateNumber_list, name='TemplateNumber_list'),
 
 ]

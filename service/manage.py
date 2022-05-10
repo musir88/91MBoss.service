@@ -29,6 +29,7 @@ def main():
             '91MBoss/error_log',
             '91MBoss/CronTab',
             '91MBoss/data',
+            '91MBoss/data/TemplateInfo',
             '91MBoss/template',
             '91MBoss/template-avatar',
             '91MBoss-session',
@@ -37,6 +38,7 @@ def main():
             '91MBoss-session/官方销号',
             '91MBoss-session/群发账号',
             '91MBoss-session/手工登录',
+            '91MBoss-session/设置模板',
             '91MBoss-session/手工登录/登录成功',
 
         ]
