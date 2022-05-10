@@ -23,22 +23,24 @@
     </div>
 
     <div class="row">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                <th scope="col">群发禁言（{{ context.session_number_count }}）个</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for i in context.session_number %}
-                <tr>
-                    <td>
-                        {{ i.session_string }}
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <div style="padding-bottom: 30px;height:700px;overflow:auto;">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">群发禁言（{{ context.session_number_count }}）个</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in context.session_number %}
+                    <tr>
+                        <td>
+                            {{ i.session_string }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 

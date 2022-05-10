@@ -317,12 +317,22 @@ async def automaticReply(session, reply_content):
 
     try:
         client = client_init2(result)
-        await client.connect()
     except Exception as e:
-        print("com " + str(e))
         await client.disconnect()
+        print("client_init2 " + str(e))
         result = await telethonErrorMessage(result, e)
         return result
+
+
+    try:
+        await client.connect()
+    except Exception as e:
+        await client.disconnect()
+        print("connect " + str(e))
+        result = await telethonErrorMessage(result, e)
+        return result
+
+
 
     try:
         dialog_list = client.iter_dialogs()
@@ -336,6 +346,7 @@ async def automaticReply(session, reply_content):
         get_me = await client.get_me()
     except Exception as e:
         await client.disconnect()
+        print("get_me " + str(e))
         result = await telethonErrorMessage(result, e, 'get_me')
         return result
 
@@ -443,8 +454,6 @@ async def channel_sendsubmit(request):
             "status": False,
             "message": "自动回复错误：" + automaticReply_result['message'],
         }, ensure_ascii=False))
-
-
 
 
 
@@ -766,6 +775,11 @@ def channel_join(request):
 def channel_save(request):
     channel_init()
     path = "91MBoss/data/channel.json"
+
+
+    if os.path.exists("91MBoss/data/channel_join.json") == True:
+        os.remove("91MBoss/data/channel_join.json")
+
 
     if request.method == 'POST':
         channel_string = request.POST['channel']

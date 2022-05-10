@@ -11,5 +11,8 @@ urlpatterns = [
     path('get_oknumber', views.get_oknumber, name='get_oknumber'),
     path('get_telegram_message', views.get_telegram_message, name='get_telegram_message'),
     path('get_joinchannel', views.get_joinchannel, name='get_joinchannel'),
+    path('manual_login', views.manual_login, name='manual_login'),
+    path('template_manage', views.template_manage, name='template_manage'),
+    path('template_manage_del', views.template_manage_del, name='template_manage_del'),
 
 ]

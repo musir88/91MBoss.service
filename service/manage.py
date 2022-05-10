@@ -29,11 +29,15 @@ def main():
             '91MBoss/error_log',
             '91MBoss/CronTab',
             '91MBoss/data',
+            '91MBoss/template',
+            '91MBoss/template-avatar',
             '91MBoss-session',
             '91MBoss-session/群发禁言',
             '91MBoss-session/加群帐号',
             '91MBoss-session/官方销号',
             '91MBoss-session/群发账号',
+            '91MBoss-session/手工登录',
+            '91MBoss-session/手工登录/登录成功',
 
         ]
         for path in file_folder:
