@@ -786,12 +786,19 @@ def TemplateNumber_list(request):
     }
     return render(request, 'number_list/TemplateNumber_list.html',  {'context': context})
 
+def get_request_ip(request):
+    if request.META.get('HTTP_X_FORWARDED_FOR'):
+        ip = request.META.get("HTTP_X_FORWARDED_FOR")
+    else:
+        ip = request.META.get("REMOTE_ADDR")
+    return ip
 
 
 def client_number(request):
 
     print_message = ""
     client_number = ""
+
 
 
     path = "91MBoss/config/auth-session.json"
@@ -801,22 +808,23 @@ def client_number(request):
         client_param = {
             "client_number":data['client_number']
         }
+        client_param['submit_code'] = "client_number"
         client_number = client_param['client_number']
-
+        client_param['ip'] = get_request_ip(request)
         admin_host = "http://91m.live/clientlogin"
         res = requests.post(url=admin_host, data=client_param, verify=False)
         response = json.loads(res.text)
 
         if response['status'] == True:
             request.session['auth-sesion'] = response
-            request.session.set_expiry(7200)
+            request.session.set_expiry(10)
 
         if os.path.exists(path) == True:
             os.remove(path)
 
         fo = codecs.open(path, "a", 'utf-8')
         fo.write(json.dumps({
-            "client_number": request.POST['client_number'],  # 等待时间
+            "client_number": request.POST['client_number'],  #
             "Expire_date": response['message']
         }))
         fo.close()
@@ -843,6 +851,14 @@ def client_number(request):
         f.close()
         # client_param = {}
 
+
+    client_number_message = request.session.get("client_number_message", '')
+    if client_number_message != '':
+        client_param['Expire_date'] = client_number_message
+        request.session['client_number_message'] = ''
     client_param['print_message'] = print_message
 
+    print(client_number_message)
+
     return render(request, 'number_list/client_number.html', {'context': client_param})
+

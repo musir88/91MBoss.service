@@ -751,6 +751,8 @@ def channel_join(request):
     channel_init()
     path = "91MBoss/config/channel_join.config.json"
 
+    # print(request)
+
     if request.method == 'POST':
         os.remove(path)
         fo = codecs.open(path, "a", 'utf-8')
@@ -759,6 +761,10 @@ def channel_join(request):
             "StartGroupJoinTask": request.POST['StartGroupJoinTask'],  # 任务执行开关 默认关闭
         }))
         fo.close()
+
+        if os.path.exists("91MBoss/data/channel_join.json") == True:
+            os.remove("91MBoss/data/channel_join.json")
+
         return redirect('channel_join')
 
     f = open(path, encoding="utf-8")
@@ -854,6 +860,9 @@ async def get_joinChannel(session_string):
 
 async def channel_joinsubmit(request):
     data = request.POST
+
+
+
 
     if 'session_string' not in data:
         return HttpResponse(json.dumps({
