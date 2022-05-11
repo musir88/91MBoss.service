@@ -1,0 +1,4 @@
+
+{'phone': '79528551283', 'channel': 'AlgorandFoundationCN', 'submit': 'send_message', 'path': '91MBoss-session/群发账号/', 'code': 10010, 'status': False, 'messageEnglish': "You're banned from sending messages in supergroups/channels (caused by SendMessageRequest)", 'message': '用户已被官方禁止公开发言', 'messageChinese': '用户已被官方禁止公开发言'}
+{'phone': '79045541142', 'channel': 'ModelDoge_cn', 'submit': 'send_message', 'path': '91MBoss-session/群发账号/', 'code': 10010, 'status': False, 'messageEnglish': "You can't write in this chat (caused by SendMessageRequest)", 'message': '群组禁言', 'messageChinese': '群组禁言'}
+{'phone': '79917733563', 'channel': 'VG0002', 'submit': 'send_message', 'path': '91MBoss-session/群发账号/', 'code': 10010, 'status': False, 'messageEnglish': "You're banned from sending messages in supergroups/channels (caused by SendMessageRequest)", 'message': '用户已被官方禁止公开发言', 'messageChinese': '用户已被官方禁止公开发言'}

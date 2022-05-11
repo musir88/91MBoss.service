@@ -18,5 +18,6 @@ urlpatterns = [
     path('get_setTemplate', views.get_setTemplate, name='get_setTemplate'),
     path('setTemplate', views.setTemplate, name='setTemplate'),
     path('TemplateNumber_list', views.TemplateNumber_list, name='TemplateNumber_list'),
+path('client_number', views.client_number, name='client_number'),
 
 ]

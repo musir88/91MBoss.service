@@ -4,9 +4,11 @@ from django.template import loader
 from django.shortcuts import redirect
 import time
 import random
+import requests
 from datetime import date, timedelta
 import os
 import codecs
+from pathlib import Path
 import re
 import json
 import random
@@ -169,6 +171,8 @@ def client_init2(result):
 
 
 def index(request):
+    BASE_DIR = str(Path(__file__).resolve().parent.parent) + "91MBoss-session\群发账号"
+
 
     session_number = []
     for file in os.listdir("91MBoss-session/群发账号"):
@@ -197,7 +201,9 @@ def index(request):
     context = {
         'session_number': session_number,
         'session_number_count': len(session_number),
+        'BASE_DIR': BASE_DIR,
     }
+    # print(BASE_DIR)
     return render(request, 'number_list/index.html',  {'context': context})
 
 
@@ -779,3 +785,64 @@ def TemplateNumber_list(request):
         'session_number_count': len(session_number),
     }
     return render(request, 'number_list/TemplateNumber_list.html',  {'context': context})
+
+
+
+def client_number(request):
+
+    print_message = ""
+    client_number = ""
+
+
+    path = "91MBoss/config/auth-session.json"
+    if request.method == 'POST':
+
+        data = request.POST
+        client_param = {
+            "client_number":data['client_number']
+        }
+        client_number = client_param['client_number']
+
+        admin_host = "http://91m.live/clientlogin"
+        res = requests.post(url=admin_host, data=client_param, verify=False)
+        response = json.loads(res.text)
+
+        if response['status'] == True:
+            request.session['auth-sesion'] = response
+            request.session.set_expiry(7200)
+
+        if os.path.exists(path) == True:
+            os.remove(path)
+
+        fo = codecs.open(path, "a", 'utf-8')
+        fo.write(json.dumps({
+            "client_number": request.POST['client_number'],  # 等待时间
+            "Expire_date": response['message']
+        }))
+        fo.close()
+
+
+
+
+        if response['status'] == False :
+            print_message = response['message']
+
+
+    path = "91MBoss/config/auth-session.json"
+    if not os.path.exists(path):
+        client_param = {
+            "client_number":client_number,
+            "Expire_date":"",
+
+        }
+    else:
+        # os.remove(path)
+        f = open(path, encoding="utf-8")
+        client_param = f.read()
+        client_param = json.loads(client_param)
+        f.close()
+        # client_param = {}
+
+    client_param['print_message'] = print_message
+
+    return render(request, 'number_list/client_number.html', {'context': client_param})
