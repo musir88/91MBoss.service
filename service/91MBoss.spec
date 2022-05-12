@@ -9,7 +9,9 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=[],
-    hiddenimports=[],
+    hiddenimports=[
+
+    ],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],

@@ -14,6 +14,7 @@ a = Analysis(
         "number_list.urls",
         "channel",
         "channel.urls",
+        "channel.middleware",
         "user",
         "user.urls"
     ],
