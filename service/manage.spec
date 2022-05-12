@@ -15,7 +15,7 @@ a = Analysis(
         "channel",
         "channel.urls",
         "user",
-        "user.urls",
+        "user.urls"
     ],
     hookspath=[],
     hooksconfig={},

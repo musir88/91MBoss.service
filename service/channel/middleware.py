@@ -10,7 +10,7 @@ admin_host = "http://91m.live/clientlogin"
 
 class AUTH91MBoss(MiddlewareMixin):
     def process_request(self, request):
-        print("md1  process_request 方法。", id(request))  # 在视图之前执行
+        # print("md1  process_request 方法。", id(request))  # 在视图之前执行
 
         is_ajax = request.META.get('HTTP_X_REQUESTED_WITH')
 
@@ -40,7 +40,6 @@ class AUTH91MBoss(MiddlewareMixin):
                 res = requests.post(url=admin_host, data=client_param, verify=False)
                 response = json.loads(res.text)
                 # print(response)
-
 
 
                 if response['status'] == False:
