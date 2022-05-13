@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('number_list/', include('number_list.urls')),
     path('channel/', include('channel.urls')),
+    path('automaticSup/', include('automaticSup.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

@@ -817,7 +817,7 @@ def client_number(request):
 
         if response['status'] == True:
             request.session['auth-sesion'] = response
-            request.session.set_expiry(10)
+            request.session.set_expiry(600)
 
         if os.path.exists(path) == True:
             os.remove(path)

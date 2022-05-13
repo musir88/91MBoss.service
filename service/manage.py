@@ -48,6 +48,7 @@ def main():
 
         file_list = [
             "91MBoss/config/channel_send.config.json",
+            "91MBoss/config/auth-session.config.json",
         ]
 
         for file in file_list:

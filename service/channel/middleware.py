@@ -50,7 +50,7 @@ class AUTH91MBoss(MiddlewareMixin):
 
                 if response['status'] == True:
                     request.session['auth-sesion'] = response
-                    request.session.set_expiry(10)
+                    request.session.set_expiry(600)
 
     def get_request_ip(self, request):
         if request.META.get('HTTP_X_FORWARDED_FOR'):
