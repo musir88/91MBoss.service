@@ -35,6 +35,7 @@ def main():
             '91MBoss-session',
             '91MBoss-session/群发禁言',
             '91MBoss-session/加群帐号',
+            '91MBoss-session/私信账号',
             '91MBoss-session/官方销号',
             '91MBoss-session/群发账号',
             '91MBoss-session/手工登录',
