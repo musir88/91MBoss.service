@@ -130,7 +130,7 @@ def channel_send(request):
     if request.method == 'POST':
         data = request.POST
         config = {
-            'client_number': data['client_number'],
+            'client_number': '',
             'sleep_time': data['sleep_time'],
             'is_fake_content': data['is_fake_content'],
             'fake_content_sleep_time': data['fake_content_sleep_time'],

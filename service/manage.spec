@@ -16,7 +16,9 @@ a = Analysis(
         "channel.urls",
         "channel.middleware",
         "user",
-        "user.urls"
+        "user.urls",
+        "automaticSup",
+        "automaticSup.urls"
     ],
     hookspath=[],
     hooksconfig={},

@@ -1,5 +1,5 @@
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="position-sticky pt-3">
+      <div class="position-sticky pt-3" style="height: 100%;overflow: auto;">
 
 
     <ul class="list-unstyled ps-0">
@@ -63,6 +63,39 @@
         </div>
       </li>
 
+
+
+
+        <li class="border-top my-3"></li>
+
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#PrivateLetter-collapse" aria-expanded="true">
+          私信/私信
+        </button>
+        <div class="collapse show" id="PrivateLetter-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="{% url 'user_numberList' %}" class="link-dark rounded">私信账号</a></li>
+              <li><a href="{% url 'user_console' %}" class="link-dark rounded">控制台</a></li>
+            <li><a href="{% url 'user_advertiseContent' %}" class="link-dark rounded">广告词</a></li>
+            <li><a href="{% url 'user_save' %}" class="link-dark rounded">用户库</a></li>
+          </ul>
+        </div>
+      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <li class="border-top my-3"></li>
 
       <li class="mb-1">
@@ -78,8 +111,36 @@
         </div>
       </li>
 
-      <li class="border-top my-3"></li>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--      <li class="border-top my-3"></li>-->
+<!--      <li class="mb-1">-->
+<!--        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#AutomaticSup-collapse" aria-expanded="true">-->
+<!--          自动注册-->
+<!--        </button>-->
+<!--        <div class="collapse" id="AutomaticSup-collapse">-->
+<!--          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">-->
+<!--              <li><a href="{% url 'automaticSupSms_man' %}" class="link-dark rounded">sms_man</a></li>-->
+
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </li>-->
+
+      <li class="border-top my-3"></li>
     </ul>
 
 

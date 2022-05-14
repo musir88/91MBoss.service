@@ -32,6 +32,13 @@
         }
       }
 
+      .sidebar{
+        height:100%,
+        overflow:auto
+      }
+
+
+
 
     </style>
 
@@ -44,16 +51,16 @@
     </script>
 
   </head>
-  <body>
+  <body style="height: 100%;overflow-y: hidden;">
 
 
 {% include "common/head.html" %}
 
-<div class="container-fluid">
+<div class="container-fluid" >
   <div class="row">
 
     {% include "common/slide.html" %}
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <main class="col-md-10 ms-sm-auto col-lg-10 px-md-4" style="height:100%;overflow:auto;padding-top: 50px;">
       {% block 'content' %} {% endblock %}
 
 
@@ -61,6 +68,7 @@
 
     </main>
   </div>
+
 </div>
 
 

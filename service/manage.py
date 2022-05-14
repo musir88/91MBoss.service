@@ -19,6 +19,8 @@ def main():
             # 'log/client',
             'log/群发日志/',
             'log/加群日志/',
+            'log/私信日志/',
+            'log/私信日志/client',
             'log/群发日志/client',
             'log/自动回复日志/',
             'log/自动回复日志/client',
@@ -36,6 +38,7 @@ def main():
             '91MBoss-session/群发禁言',
             '91MBoss-session/加群帐号',
             '91MBoss-session/私信账号',
+            '91MBoss-session/私信双向',
             '91MBoss-session/官方销号',
             '91MBoss-session/群发账号',
             '91MBoss-session/手工登录',
@@ -50,6 +53,7 @@ def main():
         file_list = [
             "91MBoss/config/channel_send.config.json",
             "91MBoss/config/auth-session.config.json",
+            "91MBoss/config/user_send.config.json",
         ]
 
         for file in file_list:
@@ -63,6 +67,27 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+
+
+    try:
+        path = "91MBoss/config/auth-session.json"
+        f = open(path, encoding="utf-8")
+        content = f.read()
+        f.close()
+
+        if content == '':
+
+            content = {
+                "client_number":'',
+                "Expire_date":'请输入客户号',
+            }
+            fo = codecs.open(path, "a", 'utf-8')
+            fo.write(json.dumps(content))
+            fo.close()
+
+    except Exception as e:
+
+        print(str(e))
 
 
 
@@ -97,12 +122,29 @@ def main():
 
 
 
+    try:
+        path = "91MBoss/config/user_send.config.json"
+        f = open(path, encoding="utf-8")
+        content = f.read()
+        f.close()
 
+        if content == '':
 
+            content = {
+                "sleep_time":'8',
+                "is_fake_content":'2',
+                "fake_content_sleep_time":'2',
+                "bombingNum":'2',#工作次数
+                "StartGroupSendTask":'2',#启动任务
+                "numberNum":'2',#启动任务
+            }
+            fo = codecs.open(path, "a", 'utf-8')
+            fo.write(json.dumps(content))
+            fo.close()
 
+    except Exception as e:
 
-
-
+        print(str(e))
 
 
 
