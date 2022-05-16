@@ -1,0 +1,2 @@
+
+{'phone': '919770816947', 'username': 'rmb860', 'submit': 'send_message', 'path': '91MBoss-session/私信账号/', 'code': 10010, 'status': False, 'messageEnglish': 'Too many requests (caused by SendMessageRequest)', 'message': '私信双向：Too many requests (caused by SendMessageRequest)', 'messageChinese': '群组禁止访问', 'result_code': 'del_table'}

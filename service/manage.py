@@ -54,6 +54,7 @@ def main():
             "91MBoss/config/channel_send.config.json",
             "91MBoss/config/auth-session.config.json",
             "91MBoss/config/user_send.config.json",
+            "91MBoss/config/sup.smsman.json",
         ]
 
         for file in file_list:
@@ -89,6 +90,22 @@ def main():
 
         print(str(e))
 
+    try:
+        path = "91MBoss/config/sup.smsman.json"
+        f = open(path, encoding="utf-8")
+        content = f.read()
+        f.close()
+
+        if content == '':
+            content = {
+               "SecretKey":""
+            }
+            fo = codecs.open(path, "a", 'utf-8')
+            fo.write(json.dumps(content))
+            fo.close()
+
+    except Exception as e:
+        print(str(e))
 
 
     try:

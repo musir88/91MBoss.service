@@ -31,55 +31,22 @@
     <div class="container p-5 my-5 border">
 
 
-    <form class="row g-3" action="{% url 'channel_send' %}" method="post">
+    <form class="row g-3" action="{% url 'automaticSupSms_man' %}" method="post">
        <div class="g-3 row">
            <div class="input-group">
-                <span class="input-group-text">秘钥</span>
-                <input type="text" class="form-control" value="{{ context.config.client_number }}" name="client_number">
-            </div>
-        </div>
-
-        <div class="g-3 row">
-           <div class="input-group">
-                <span class="input-group-text">是否启用</span>
-                <input type="text" class="form-control" value="{{ context.config.is_fake_content }}" name="is_fake_content">
-               <span class="input-group-text">1-启用，2-不启用</span>
+                <span class="input-group-text" style="width:80px;">秘钥</span>
+                <input type="text" class="form-control" value="{{ context.config.SecretKey }}" name="SecretKey">
+                <span class="input-group-text" style="width:80px;">
+                    <button type="submit" class="btn btn-primary btn-sm">保存</button>
+                </span>
            </div>
         </div>
 
-
-
-
-
-
-
-
-        <div class="g-3 row">
-            <div class="input-group">
-                <span class="input-group-text">工作状态</span>
-<!--                <input type="text" class="form-control" value="{{ context.config.StartGroupSendTask }}" name="StartGroupSendTask" id="StartGroupSendTask">-->
-<!--                <span class="input-group-text">1-开始，2-停止</span>-->
-                <select class="form-select" aria-label="Default select example" name="StartGroupSendTask" id="StartGroupSendTask">
-                    {% if context.config.StartGroupSendTask == '2' %}
-                        <option selected value="2">停止</option>
-                    {% else %}
-                        <option value="2">停止</option>
-                    {% endif %}
-
-
-                    {% if context.config.StartGroupSendTask == '1' %}
-                        <option value="1" selected>开始</option>
-                    {% else %}
-
-                        <option value="1">开始</option>
-                    {% endif %}
-                </select>
-            </div>
-        </div>
-
+<!--vH4RJgGPcbUrV-8h0lYZjYAPEa4ebJTQ-->
 
         <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3">保存</button>
+            <button type="button" class="btn btn-primary mb-3" id="submit">开始</button>
+            <button type="button" class="btn btn-primary mb-3" id="submit2">停止</button>
         </div>
 
     </form>

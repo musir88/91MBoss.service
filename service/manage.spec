@@ -17,8 +17,12 @@ a = Analysis(
         "channel.middleware",
         "user",
         "user.urls",
+        "collection",
+        "collection.urls",
         "automaticSup",
-        "automaticSup.urls"
+        "automaticSup.urls",
+        "tzdata",
+        "tzdata.zoneinfo",
     ],
     hookspath=[],
     hooksconfig={},

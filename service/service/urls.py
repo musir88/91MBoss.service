@@ -25,5 +25,6 @@ urlpatterns = [
     path('channel/', include('channel.urls')),
     path('user/', include('user.urls')),
     path('automaticSup/', include('automaticSup.urls')),
+    path('collection/', include('collection.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

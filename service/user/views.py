@@ -18,7 +18,6 @@ import os
 import shutil
 import socks
 import asyncio
-from faker import Faker
 from selectolax.parser import HTMLParser
 from telethon import TelegramClient, events
 from telethon.tl.functions.channels import JoinChannelRequest
@@ -526,7 +525,8 @@ async def user_sendsubmit(request):
             "message": string + " → " + "获取私信广告词错误：" + str(e),
         }, ensure_ascii=False))
 
-    fake = Faker("zh_CN")
+
+    fake_name = ''.join(random.sample(['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f','e', 'd', 'c', 'b', 'a'], random.randint(3,6)))
 
     try:
         config = get_config("91MBoss/config/user_send.config.json")
@@ -535,7 +535,7 @@ async def user_sendsubmit(request):
             "phone": str(data['session']),
             "username": str(data['username']),
             "content": str(send_content['content']['message']),
-            "fake_content": fake.name(),  # 伪内容
+            "fake_content": fake_name,  # 伪内容
             "is_fake_content": config['is_fake_content'],  # 伪内容开关
             "fake_content_sleep_time": config['fake_content_sleep_time'],  # 伪内容开关
         }
@@ -680,7 +680,7 @@ def send_log(content, prefix=''):
     path = path + str(date.today()) + ".log"
 
     fo = codecs.open(path, "a", 'utf-8')
-    fo.write("\n" + content)
+    fo.write("\n\n=====================================================\n\n" + content)
     fo.close()
 
     return True

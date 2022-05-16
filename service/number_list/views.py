@@ -14,7 +14,6 @@ import json
 import random
 import shutil
 import socks
-from faker import Faker
 from selectolax.parser import HTMLParser
 from telethon import TelegramClient, sync
 from telethon.errors import SessionPasswordNeededError
@@ -288,6 +287,9 @@ async def get_telegram_message(request):
 
     if not os.path.exists(result['path']+phone+".session"):
         result['path'] = "91MBoss-session/加群帐号/"
+
+    if not os.path.exists(result['path']+phone+".session"):
+        result['path'] = "91MBoss-session/私信账号/"
 
     if not os.path.exists(result['path']+phone+".session"):
         return HttpResponse(result['path']+phone+"群发账号、加群帐号 文件夹下都没有账号：" + phone)

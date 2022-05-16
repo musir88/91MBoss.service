@@ -85,17 +85,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
       <li class="border-top my-3"></li>
 
       <li class="mb-1">
@@ -107,6 +96,20 @@
               <li><a href="{% url 'TemplateNumber_list' %}" class="link-dark rounded">设置模板账号</a></li>
               <li><a href="{% url 'template_manage_console' %}" class="link-dark rounded">模板控制台</a></li>
             <li><a href="{% url 'template_manage' %}" class="link-dark rounded">模板管理</a></li>
+          </ul>
+        </div>
+      </li>
+
+
+      <li class="border-top my-3"></li>
+
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collection-collapse" aria-expanded="true">
+          采集
+        </button>
+        <div class="collapse show" id="collection-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="{% url 'collection_channelUser' %}" class="link-dark rounded">采集指定群成员</a></li>
           </ul>
         </div>
       </li>
@@ -125,20 +128,18 @@
 
 
 
+      <li class="border-top my-3"></li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#AutomaticSup-collapse" aria-expanded="true">
+          自动注册
+        </button>
+        <div class="collapse" id="AutomaticSup-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="{% url 'automaticSupSms_man' %}" class="link-dark rounded">sms_man</a></li>
 
-
-<!--      <li class="border-top my-3"></li>-->
-<!--      <li class="mb-1">-->
-<!--        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#AutomaticSup-collapse" aria-expanded="true">-->
-<!--          自动注册-->
-<!--        </button>-->
-<!--        <div class="collapse" id="AutomaticSup-collapse">-->
-<!--          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">-->
-<!--              <li><a href="{% url 'automaticSupSms_man' %}" class="link-dark rounded">sms_man</a></li>-->
-
-<!--          </ul>-->
-<!--        </div>-->
-<!--      </li>-->
+          </ul>
+        </div>
+      </li>
 
       <li class="border-top my-3"></li>
     </ul>

@@ -15,7 +15,6 @@ import os
 import shutil
 import socks
 import asyncio
-from faker import Faker
 from selectolax.parser import HTMLParser
 from telethon import TelegramClient, events
 from telethon.tl.functions.channels import JoinChannelRequest
