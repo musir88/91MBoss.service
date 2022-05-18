@@ -1,0 +1,115 @@
+{% extends "common/layout.html" %}
+{% block 'content' %}
+
+<style>
+    #console-log{
+        max-height:300px;
+        overflow:auto;
+    }
+
+    #console-log::-webkit-scrollbar-track {
+        background-color: #dee2e6;
+    }
+
+    #console-log::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    #console-log::-webkit-scrollbar-thumb {
+        background-color: #adb5bd;
+        border-radius: 15%;
+    }
+
+    .input-group-text{
+        width:160px;
+    }
+
+</style>
+
+<div class="container-fluid">
+
+    <div class="container p-5 my-5 border">
+
+
+        <form class="row g-3" action="{% url 'sup_smsmain' %}" method="post">
+           <div class="g-3 row">
+               <div class="input-group">
+
+                    <input type="text" class="form-control" value="{{ context.api_data.phone }}" name="phone">
+               </div>
+           </div>
+
+           <div class="g-3 row">
+               <div class="input-group">
+                    <input type="text" class="form-control" value="{{ context.api_data.api_respose }}" name="api_respose">
+               </div>
+           </div>
+
+
+           <div class="g-3 row">
+               <div class="input-group">
+                   <span class="input-group-text" style="width:80px;">验证码</span>
+                    <input type="text" class="form-control" value="" name="code">
+               </div>
+           </div>
+
+
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary btn-sm">提交</button>
+
+            </div>
+
+        </form>
+
+
+    </div>
+
+    <div class="container p-5 my-5 border" id="console-log">
+        <p>{{ context.result.message }}</p>
+    </div>
+
+</div>
+
+<script>
+    function addZero(s){
+        return s<10 ? ('0'+s):s;
+    }
+
+
+
+    function getNowTime(){
+        date = new Date();
+
+        // 年
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+
+
+        return "【"+year + "-" + addZero(month) + "-" + addZero(day) + " " + addZero(hour) + ":" + addZero(minute) + ":" +addZero(second)+"】";
+    }
+
+
+    Bs91m = {}
+
+
+    $(function(){
+
+
+
+
+
+
+    });
+
+
+
+
+</script>
+
+
+{% endblock 'content' %}
+

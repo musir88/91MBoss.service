@@ -28,6 +28,7 @@ def main():
             'Message/【群发广告词】',
             '91MBoss',
             '91MBoss/config',
+            '91MBoss/config/api',
             '91MBoss/error_log',
             '91MBoss/CronTab',
             '91MBoss/data',
@@ -98,7 +99,8 @@ def main():
 
         if content == '':
             content = {
-               "SecretKey":""
+                "SecretKey":"",
+                "nation":""
             }
             fo = codecs.open(path, "a", 'utf-8')
             fo.write(json.dumps(content))
