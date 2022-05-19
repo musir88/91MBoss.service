@@ -119,7 +119,7 @@
                     var sup = "{% url 'sup_smsmain' %}" + "?api_respose=" + result['api_respose'] +"&phone="+ result['phone']
                     console.log(sup);
                     var myWindow = window.open(sup,'','width=880,height=600');
-
+                    console.log(myWindow)
                     // 检查成功与否
 
 
@@ -155,10 +155,20 @@
         });
 
 
+
+
     });
 
-
-
+        window.addEventListener('message',(msg)=>{
+            console.log(msg.data);
+            $("#console-log").prepend("<p>"+getNowTime()+ msg.data.p +" </p>");
+            //M = JSON.stringify(msg.data)
+            //console.log(M.replace(/^(\s|")+|(\s|")+$/g, ''));
+            if ("son_close" == msg.data.code) {
+                console.log("重新开始");
+                Bs91m.start();
+            }
+        })
 
 </script>
 

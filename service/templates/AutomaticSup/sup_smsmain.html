@@ -41,7 +41,13 @@
 
            <div class="g-3 row">
                <div class="input-group">
-                    <input type="text" class="form-control" value="{{ context.api_data.api_respose }}" name="api_respose">
+                    <input type="text" class="form-control" value="{{ context.api_data.api_respose }}" name="api_respose" id="api_respose">
+               </div>
+           </div>
+
+           <div class="g-3 row">
+               <div class="input-group">
+                    <input type="text" class="form-control" value="{{ context.result.phone_code_hash }}" name="phone_code_hash" >
                </div>
            </div>
 
@@ -49,13 +55,14 @@
            <div class="g-3 row">
                <div class="input-group">
                    <span class="input-group-text" style="width:80px;">验证码</span>
-                    <input type="text" class="form-control" value="" name="code">
+                    <input type="text" class="form-control" value="" name="code" id="sup_code">
                </div>
            </div>
 
+            <input type="hidden" value="{{ context.result.submit_code }}" id="submit_code">
 
             <div class="col-auto">
-                <button type="submit" class="btn btn-primary btn-sm">提交</button>
+                <button type="submit" class="btn btn-primary btn-sm" id="submit">提交</button>
 
             </div>
 
@@ -93,13 +100,84 @@
     }
 
 
-    Bs91m = {}
+
+
+
+    Bs91m = {};
+    Bs91m.timing = 0;
+
+
+    Bs91m.get_smsmain_code = function(){
+        Bs91m.timing = Bs91m.timing + 1;
+
+        if (Bs91m.timing > 1000) {
+            window.opener.postMessage({
+                p: "{{ context.api_data.api_respose }}"+"超过5分钟主动放弃",
+                code:"son_close"
+            });
+            window.close();
+            return false;
+        }
+
+        console.log(Bs91m.timing);
+
+
+        var api_respose = $("#api_respose").val();
+        $.ajax({
+            url:"{% url 'sup_smsmain_getcode' %}",
+            error:function(xhr){
+                $("#console-log").prepend("<p>"+getNowTime() + "错误提示： " + xhr.status + " " + xhr.statusText +"</p>");
+                setTimeout(function(){ Bs91m.get_smsmain_code() }, 3000);
+		    },
+		    async:false,
+		    success:function(result){
+                console.log(result)
+                $("#console-log").prepend("<p>"+getNowTime() + result['message'] +"</p>");
+
+                if (result.status === true) {
+                    $("#sup_code").val(result['code']);
+                    $("#submit").click();
+
+                } else {
+                    if (result.submit_code && result.submit_code == 'close') {
+                        window.opener.postMessage({
+                            p:"{{ context.api_data.api_respose }}" + " → " + result['message'],
+                            code:"son_close"
+                        });
+                        window.close();
+                        return false;
+                    }
+
+                    setTimeout(function(){ Bs91m.get_smsmain_code() }, 1800);
+                }
+
+		    },
+		    dataType:"json",
+		    data:{
+		        api_respose:api_respose,
+		        timing:Bs91m.timing
+		    },
+		    type:"POST"
+		});
+
+    }
 
 
     $(function(){
 
+        var submit_code = $("#submit_code").val();
+        if (submit_code == 'close') {
+
+            window.opener.postMessage({
+                p:"{{ context.api_data.api_respose }}" + " → " + "{{ context.result.message }}",
+                code:"son_close"
+            });
+            window.close();
+            return false;
+        }
 
 
+        setTimeout(function(){ Bs91m.get_smsmain_code() }, 1800);
 
 
 

@@ -34,7 +34,8 @@ from telethon.tl.functions.channels import LeaveChannelRequest
 
 def client_init(result):
     proxy_param = proxy_set()
-    proxy = (socks.SOCKS5, proxy_param['host'], proxy_param['port'], proxy_param['username'], proxy_param['password'])
+    proxy = (socks.SOCKS5, "'216.185.46.23", "49161", 'tigerfpv', "V4LEgUcmy7")
+    # proxy = (socks.SOCKS5, proxy_param['host'], proxy_param['port'], proxy_param['username'], proxy_param['password'])
 
     print("client_init:"+str(proxy_param))
     config = {}
@@ -58,7 +59,12 @@ def client_init(result):
         os.mkdir("91MBoss-session/自动注册/注册成功")
 
 
-    return TelegramClient(path+'/' + result['phone'], int(result['api_id']), result['api_hash'], proxy=proxy)
+    return TelegramClient(
+        path+'/' + str(result['phone']),
+        int(result['api_id']),
+        str(result['api_hash'])
+        # proxy=proxy
+    )
 
 
 def proxy_set():
@@ -76,8 +82,65 @@ def proxy_set():
     ]
     return random.choice(proxy)
 
+def sms_man_rejectActivation(result):
+    respose = result['api_respose'].split(":")
+    print(respose)
+    print(respose[1])
+    api = "http://api.sms-man.com/stubs/handler_api.php"
+
+    config = get_config("91MBoss/config/sup.smsman.json")
+    api_param = {
+        "action":"setStatus",
+        "api_key":config['SecretKey'],
+        "id":respose[1],
+        "status":-1,
+    }
+    respose = requests.post(url=api, data=api_param, verify=False)
+    respose = respose.text
+    return respose
 
 
+
+def error_response(result):
+    result['submit_code'] = ''
+
+    if str(result['message']).find("The used phone number has been banned from Telegram and cannot be used anymore") != -1 :
+        result['submit_code'] = "close"
+        result['message'] = "官方禁用 " + str(result['message'])
+
+    if str(result['message']).find("A wait of") != -1:
+        result['submit_code'] = "close"
+        result['message'] = "开发号频繁 " + str(result['message'])
+
+    if str(result['message']).find("Two-steps verification is enabled and a password is required") != -1:
+        result['submit_code'] = "close"
+        result['message'] = "启用两步验证，需要密码（由SignInRequest引起）" + str(result['message'])
+
+
+    if str(result['message']).find("未出码") != -1:
+        result['submit_code'] = "close"
+
+
+    if result['submit_code'] == "close":
+        if result['api_code'] == "sms-man":
+            rejectActivation_respose = sms_man_rejectActivation(result)
+            result['rejectActivation_respose'] = str(rejectActivation_respose)
+
+
+
+
+
+    string = "【 "+str(time.strftime("%Y-%m-%d %H:%M:%S"))+" 】"
+    for item in result:
+        string = str(string) + "\n"+str(item)+" → " + str(result[item])
+
+
+
+    fo = codecs.open("91MBoss/error_log/sup" + str(date.today()) + ".log", "a", 'utf-8')
+    fo.write("\n\n=============================================\n\n" + str(string))
+    fo.close()
+
+    return result
 
 
 def get_config(path):
@@ -99,6 +162,8 @@ async def sup_smsmain(request):
         "api_hash":"943cbfa09dd409ad53fba7ebce2ad477",
     }
 
+    result['api_code'] = 'sms-man'
+
     if request.method == 'GET':
         data = request.GET
         api_data = {
@@ -114,42 +179,53 @@ async def sup_smsmain(request):
             'api_respose': data['api_respose'],
             'sup_step': '2',
             'code': data['code'],
+            'phone_code_hash': data['phone_code_hash']
         }
+        result['phone_code_hash'] = api_data['phone_code_hash']
+        print(api_data)
 
     context = {
         "api_data": api_data,
     }
 
     result['phone'] = api_data['phone']
+    result['api_respose'] = api_data['api_respose']
+
 
     try:
         client = client_init(result)
     except Exception as e:
         result['status'] = False
-        result['message'] = str(e)
+        result['message'] = "client_init:"+str(e)
         context['result'] = result
         return render(request, 'AutomaticSup/sup_smsmain.html', {"context": context})
 
     try:
         await client.connect()
     except Exception as e:
+        await client.disconnect()
         result['status'] = False
-        result['message'] = str(e)
+        result['message'] =  "connect:"+str(e)
         context['result'] = result
         return render(request, 'AutomaticSup/sup_smsmain.html', {"context": context})
 
     if str(api_data['sup_step']) == '1':
         try:
-            await client.send_code_request(result['phone'], force_sms=True)
-            await client.disconnect()
+            sent = await client.send_code_request(result['phone'], force_sms=True)
+            print('===================================================')
+            print(sent)
+            phone_code_hash = sent.phone_code_hash
             result['status'] = True
+            result['phone_code_hash'] = phone_code_hash
             result['message'] = '发送验证码成功'
             context['result'] = result
+            await client.disconnect()
             return render(request, 'AutomaticSup/sup_smsmain.html', {"context": context})
         except Exception as e:
             await client.disconnect()
             result['status'] = False
             result['message'] = str(e)
+            result = error_response(result)
             context['result'] = result
             return render(request, 'AutomaticSup/sup_smsmain.html', {"context": context})
 
@@ -167,13 +243,16 @@ async def sup_smsmain(request):
                 code=api_data['code'],
                 first_name=first_name,
                 last_name=last_name,
-                phone=result['phone']
+                phone=result['phone'],
+                phone_code_hash=api_data['phone_code_hash']
             )
-
+            result['phone_code_hash'] = api_data['phone_code_hash']
+            shutil.copyfile("91MBoss-session/自动注册/" + result['phone'] + ".session", "91MBoss-session/自动注册/注册成功/" + result['phone'] + ".session")
         except Exception as e:
             await client.disconnect()
             result['status'] = False
             result['message'] = str(e)
+            result = error_response(result)
             context['result'] = result
             return render(request, 'AutomaticSup/sup_smsmain.html', {"context": context})
 
@@ -204,7 +283,8 @@ async def sup_smsmain(request):
 
         await client.disconnect()
         result['status'] = True
-        result['message'] = "成功"
+        result['message'] = "SUP-成功"
+        result['submit_code'] = "close"
         context['result'] = result
         return render(request, 'AutomaticSup/sup_smsmain.html', {"context": context})
 
@@ -225,6 +305,7 @@ def sms_man(request):
     }
 
     return render(request, 'AutomaticSup/sms_man.html', {"context":context})
+
 
 
 def get_smsmainNumber(request):
@@ -255,11 +336,78 @@ def get_smsmainNumber(request):
             "status": True,
             "phone": result[2],
             "api_respose": respose,
-            "message": "账号:" + str(respose),
+            "message": str(country)+"账号:" + str(respose) ,
         }, ensure_ascii=False))
     else:
         return HttpResponse(json.dumps({
             "status": False,
             "message": "没有账号:" + str(respose),
         }, ensure_ascii=False))
+
+
+def sup_smsmain_getcode(request):
+    data = request.POST
+    timing = data['timing']
+    api_respose = data['api_respose']
+
+    if int(timing) >200:
+        result = error_response({
+            'api_code':"sms-man",
+            'api_respose':str(api_respose),
+            'message':str(api_respose)+" 超过5分钟未出码主动放弃",
+        })
+
+        return HttpResponse(json.dumps({
+            "status": False,
+            "submit_code": "close",
+            "message": str(data['api_respose']) + " → " + str(result['message']),
+        }, ensure_ascii=False))
+
+
+
+
+
+    api_respose = api_respose.split(":")
+    api_id = api_respose[1]
+
+    config = get_config("91MBoss/config/sup.smsman.json")
+    country_list = config['nation'].split(",")
+    SecretKey = config['SecretKey']
+
+    api = "https://api.sms-man.com/stubs/handler_api.php"
+    api_param = {
+        "id": api_id,
+        "action": "getStatus",
+        "api_key": SecretKey
+    }
+    respose = requests.post(url=api, data=api_param, verify=False)
+    respose = respose.text
+
+    if 'STATUS_CANCEL' == str(respose):
+
+        result = error_response({
+            'api_code':"sms-man",
+            'api_respose':str(api_respose),
+            'message':str(respose),
+        })
+
+        return HttpResponse(json.dumps({
+            "status": False,
+            "submit_code": "close",
+            "message": str(data['api_respose'])+" 超时："+str(respose),
+        }, ensure_ascii=False))
+
+    if str(respose).find("STATUS_OK") != -1:
+        result = respose.split(":")
+        print(result)
+        return HttpResponse(json.dumps({
+            "status": True,
+            "message": str(data['api_respose']) + " ==> " + str(respose),
+            "code": str(result[1]),
+        }, ensure_ascii=False))
+
+    return HttpResponse(json.dumps({
+        "status": False,
+        "message": str(data['api_respose'])+" 没有获取到: " + str(respose),
+    }, ensure_ascii=False))
 
