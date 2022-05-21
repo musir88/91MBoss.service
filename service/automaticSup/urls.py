@@ -8,6 +8,7 @@ urlpatterns = [
     path('get_smsmainNumber', views.get_smsmainNumber, name='get_smsmainNumber'),
     path('sup_smsmain', views.sup_smsmain, name='sup_smsmain'),
     path('sup_smsmain_getcode', views.sup_smsmain_getcode, name='sup_smsmain_getcode'),
+    path('automaticSup_api1', views.automaticSup_api1, name='automaticSup_api1'),
 #
 
 ]

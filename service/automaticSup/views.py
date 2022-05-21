@@ -37,7 +37,7 @@ def client_init(result):
     proxy = (socks.SOCKS5, "'216.185.46.23", "49161", 'tigerfpv', "V4LEgUcmy7")
     # proxy = (socks.SOCKS5, proxy_param['host'], proxy_param['port'], proxy_param['username'], proxy_param['password'])
 
-    print("client_init:"+str(proxy_param))
+    # print("client_init:"+str(proxy_param))
     config = {}
     config['proxy'] = proxy
     config['api'] = {
@@ -49,7 +49,10 @@ def client_init(result):
         os.remove(path)
 
     fo = codecs.open(path, "a", 'utf-8')
-    fo.write(str(config))
+    fo.write({
+        "api_id":int(result['api_id']),
+        "api_hash":str(result['api_hash']),
+    })
     fo.close()
 
     path = "91MBoss-session/自动注册"
@@ -82,10 +85,51 @@ def proxy_set():
     ]
     return random.choice(proxy)
 
+
+def api_idhash():
+    proxy = [
+        {'api_id': 18806282, 'api_hash': 'cbfa09dd409ad53fba7ebce2ad477'},
+        {'api_id': 15718961, 'api_hash': '6355e6f68264228fbf0bff8891ad0370'},
+        {'api_id': 17345465, 'api_hash': '1fcfcffb77d010b5235b13e840a158ef'},
+        {'api_id': 12971859, 'api_hash': '2f5003c9d36f74d32bbd252391a386f8'},
+        {'api_id': 14545894, 'api_hash': '6d3d71e021a42cfe83f03c888f7a8c28'},
+        {'api_id': 12564222, 'api_hash': 'e5f301c0c350c9a49b7adac287c3100f'},
+        {'api_id': 13869498, 'api_hash': '3bb10d91b3b12994f3de37839fa98a3b'},
+        {'api_id': 14849339, 'api_hash': '371ec4e9d10e482035d177cd2c55056e'},
+        {'api_id': 15579305, 'api_hash': '5b139aeb5136fb5d794e9a3eb02d9397'},
+    ]
+
+    path = "91MBoss/config/api_config/"
+    list = []
+    for file in os.listdir(path):
+        file_name = str(file)
+        list.append(file_name)
+
+    if len(list) < 1:
+        return {
+            "status": False,
+            "message": "没有设置开发号",
+            'api': ''
+        }
+
+    random.shuffle(list)
+    content = list.pop()
+
+    f = open(path + content, encoding="utf-8")
+    content = f.read()
+    content = json.loads(content)
+    f.close()
+    return {
+        'status':True,
+        'api':content
+    }
+
+
+
 def sms_man_rejectActivation(result):
     respose = result['api_respose'].split(":")
-    print(respose)
-    print(respose[1])
+    # print(respose)
+    # print(respose[1])
     api = "http://api.sms-man.com/stubs/handler_api.php"
 
     config = get_config("91MBoss/config/sup.smsman.json")
@@ -162,6 +206,14 @@ async def sup_smsmain(request):
         "api_hash":"943cbfa09dd409ad53fba7ebce2ad477",
     }
 
+    idhash = api_idhash()
+    result = idhash['api']
+    if idhash['status'] == False and request.method == 'GET':
+        result['status'] = False
+        context = {}
+        context['result'] = result
+        return render(request, 'AutomaticSup/sup_smsmain.html', {"context": context})
+
     result['api_code'] = 'sms-man'
 
     if request.method == 'GET':
@@ -182,7 +234,14 @@ async def sup_smsmain(request):
             'phone_code_hash': data['phone_code_hash']
         }
         result['phone_code_hash'] = api_data['phone_code_hash']
-        print(api_data)
+        # print(api_data)
+
+        if "api_hash" in data:
+            result['api_hash'] = data['api_hash']
+
+        if "api_id" in data:
+            result['api_id'] = data['api_id']
+
 
     context = {
         "api_data": api_data,
@@ -212,8 +271,8 @@ async def sup_smsmain(request):
     if str(api_data['sup_step']) == '1':
         try:
             sent = await client.send_code_request(result['phone'], force_sms=True)
-            print('===================================================')
-            print(sent)
+            # print('===================================================')
+            # print(sent)
             phone_code_hash = sent.phone_code_hash
             result['status'] = True
             result['phone_code_hash'] = phone_code_hash
@@ -331,7 +390,7 @@ def get_smsmainNumber(request):
 
     if respose.find("ACCESS_NUMBER") != -1:
         result = respose.split(":")
-        print(result[2])
+        # print(result[2])
         return HttpResponse(json.dumps({
             "status": True,
             "phone": result[2],
@@ -350,11 +409,11 @@ def sup_smsmain_getcode(request):
     timing = data['timing']
     api_respose = data['api_respose']
 
-    if int(timing) >200:
+    if int(timing) >400:
         result = error_response({
             'api_code':"sms-man",
             'api_respose':str(api_respose),
-            'message':str(api_respose)+" 超过5分钟未出码主动放弃",
+            'message':str(api_respose)+" 取码400次未出码主动放弃",
         })
 
         return HttpResponse(json.dumps({
@@ -362,9 +421,6 @@ def sup_smsmain_getcode(request):
             "submit_code": "close",
             "message": str(data['api_respose']) + " → " + str(result['message']),
         }, ensure_ascii=False))
-
-
-
 
 
     api_respose = api_respose.split(":")
@@ -399,7 +455,7 @@ def sup_smsmain_getcode(request):
 
     if str(respose).find("STATUS_OK") != -1:
         result = respose.split(":")
-        print(result)
+        # print(result)
         return HttpResponse(json.dumps({
             "status": True,
             "message": str(data['api_respose']) + " ==> " + str(respose),
@@ -410,4 +466,13 @@ def sup_smsmain_getcode(request):
         "status": False,
         "message": str(data['api_respose'])+" 没有获取到: " + str(respose),
     }, ensure_ascii=False))
+
+def automaticSup_api1(request):
+
+
+
+
+    return render(request, 'AutomaticSup/automaticSup_api1.html', {"context": {
+
+    }})
 

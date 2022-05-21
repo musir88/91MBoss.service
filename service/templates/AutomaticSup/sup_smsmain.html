@@ -32,9 +32,21 @@
 
 
         <form class="row g-3" action="{% url 'sup_smsmain' %}" method="post">
+            <div class="g-3 row">
+               <div class="input-group">
+                    <input type="text" class="form-control" value="{{ context.result.api_id }}" name="api_id">
+               </div>
+            </div>
+
+            <div class="g-3 row">
+               <div class="input-group">
+                    <input type="text" class="form-control" value="{{ context.result.api_hash }}" name="api_hash">
+               </div>
+           </div>
+
+
            <div class="g-3 row">
                <div class="input-group">
-
                     <input type="text" class="form-control" value="{{ context.api_data.phone }}" name="phone">
                </div>
            </div>
@@ -127,7 +139,7 @@
             url:"{% url 'sup_smsmain_getcode' %}",
             error:function(xhr){
                 $("#console-log").prepend("<p>"+getNowTime() + "错误提示： " + xhr.status + " " + xhr.statusText +"</p>");
-                setTimeout(function(){ Bs91m.get_smsmain_code() }, 3000);
+                setTimeout(function(){ Bs91m.get_smsmain_code() }, 800);
 		    },
 		    async:false,
 		    success:function(result){
@@ -148,7 +160,7 @@
                         return false;
                     }
 
-                    setTimeout(function(){ Bs91m.get_smsmain_code() }, 1800);
+                    setTimeout(function(){ Bs91m.get_smsmain_code() }, 800);
                 }
 
 		    },
@@ -177,7 +189,7 @@
         }
 
 
-        setTimeout(function(){ Bs91m.get_smsmain_code() }, 1800);
+        setTimeout(function(){ Bs91m.get_smsmain_code() }, 800);
 
 
 

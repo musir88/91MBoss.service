@@ -152,19 +152,61 @@ def proxy_set():
     return random.choice(proxy)
 
 
+def get_telethonapi():
+    path = "91MBoss/config/api_config/"
+
+    list = []
+    for file in os.listdir(path):
+        file_name = str(file)
+        list.append(file_name)
+
+    random.shuffle(list)
+    content = list.pop()
+
+    f = open(path + content, encoding="utf-8")
+    content = f.read()
+    content = json.loads(content)
+    f.close()
+    return content
+
+def set_config(path, content):
+    if os.path.exists(path) ==True:
+        os.remove(path)
+    fo = codecs.open(path, "a", 'utf-8')
+    fo.write(json.dumps(content))
+    fo.close()
+    return True
+
+def get_config(path):
+    f = open(path, encoding="utf-8")
+    content = f.read()
+    f.close()
+    return json.loads(content)
+
+
+
+
 def client_init2(result):
     proxy_param = proxy_set()
 
     proxy = (socks.SOCKS5, proxy_param['host'], proxy_param['port'], proxy_param['username'], proxy_param['password'])
     # print(result)
     # print("client_init2:" + str(proxy_param))
-    return TelegramClient(result['path'] + result['phone'], 18252973, '7996fe1f8cd8223ddbca884fccdfa880')
+
+
+    api_path = "91MBoss/config/api/"+str(result['phone'])+".json"
+    if not os.path.exists(api_path):
+        api_content = get_telethonapi()
+        api_content['session_phone'] =result['phone']
+        set_config(api_path, api_content)
+    api_content = get_config(api_path)
+
+
+    return TelegramClient(result['path'] + result['phone'], int(api_content['api_id']), str(api_content['api_hash']))
+
+
+    # return TelegramClient(result['path'] + result['phone'], 18252973, '7996fe1f8cd8223ddbca884fccdfa880')
     # return TelegramClient('session/' + result['phone'], 18252973, '7996fe1f8cd8223ddbca884fccdfa880', proxy=proxy)
-
-
-
-
-
 
 
 
@@ -864,3 +906,70 @@ def client_number(request):
 
     return render(request, 'number_list/client_number.html', {'context': client_param})
 
+def set_api_configContent(path, content):
+    list = []
+    for file in os.listdir(path):
+        file_name = str(file)
+        file_name = re.sub(".json", "", file_name)
+        list.append(int(file_name))
+    if len(list) < 1:
+        path = path + "/1.json"
+    else:
+        path = path + "/" + str(max(list) + 1) + ".json"
+
+    fo = codecs.open(path, "a", 'utf-8')
+    fo.write(json.dumps(content, ensure_ascii=False))
+    fo.close()
+
+    return True
+
+
+
+
+def set_telethon_apidata(request):
+    path = "91MBoss/config/api_config"
+
+    if request.method == 'POST':
+        data = request.POST
+        content = {
+            'api_id': data['api_id'],
+            'api_hash': data['api_hash'],
+            'phone': data['phone'],
+        }
+        set_api_configContent(path, content)
+        return redirect('set_telethon_apidata')
+
+
+
+
+    list = []
+    for file in os.listdir(path):
+        file_name = str(file)
+        file_name = re.sub(".json", "", file_name)
+
+        f = open(path + "/" + file_name + ".json", encoding="utf-8")
+        content = f.read()
+        content = json.loads(content)
+        f.close()
+
+        list.append({
+            "name": file_name,
+            "content": content,
+        })
+
+    context = {
+        'latest_question_list': 'opio',
+        'list': list,
+        'content_count': len(list),
+    }
+    # print(context)
+    return render(request, 'number_list/set_telethon_apidata.html', {'context': context})
+
+def telethon_delapiConfig(request):
+    path = "91MBoss/config/api_config/"
+    data = request.GET
+    path = path + str(data['name']) + ".json"
+
+    if os.path.exists(path):
+        os.remove(str(path))
+    return redirect('set_telethon_apidata')

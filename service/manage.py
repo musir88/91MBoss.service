@@ -29,6 +29,7 @@ def main():
             '91MBoss',
             '91MBoss/config',
             '91MBoss/config/api',
+            '91MBoss/config/api_config',
             '91MBoss/error_log',
             '91MBoss/CronTab',
             '91MBoss/data',

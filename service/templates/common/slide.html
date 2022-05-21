@@ -70,7 +70,7 @@
 
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#PrivateLetter-collapse" aria-expanded="true">
-          私信/私信
+          私信管理
         </button>
         <div class="collapse show" id="PrivateLetter-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -89,7 +89,7 @@
 
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#template-collapse" aria-expanded="true">
-          设置模板
+          模板管理
         </button>
         <div class="collapse show" id="template-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -105,7 +105,7 @@
 
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collection-collapse" aria-expanded="true">
-          采集
+          采集管理
         </button>
         <div class="collapse show" id="collection-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -116,33 +116,43 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
       <li class="border-top my-3"></li>
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#AutomaticSup-collapse" aria-expanded="true">
           自动注册
         </button>
-        <div class="collapse" id="AutomaticSup-collapse">
+        <div class="collapse show" id="AutomaticSup-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li><a href="{% url 'automaticSupSms_man' %}" class="link-dark rounded">sms_man</a></li>
+              <li><a href="{% url 'automaticSup_api1' %}" class="link-dark rounded">API 接码注册</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="border-top my-3"></li>
+
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#set_telethon_apidata-collapse" aria-expanded="true">
+          开发号管理
+        </button>
+        <div class="collapse" id="set_telethon_apidata-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="{% url 'set_telethon_apidata' %}" class="link-dark rounded">开发号</a></li>
 
           </ul>
         </div>
       </li>
 
       <li class="border-top my-3"></li>
+
+
+
+
+
+
     </ul>
+
+
+
 
 
       </div>

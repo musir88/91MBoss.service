@@ -18,6 +18,8 @@ urlpatterns = [
     path('get_setTemplate', views.get_setTemplate, name='get_setTemplate'),
     path('setTemplate', views.setTemplate, name='setTemplate'),
     path('TemplateNumber_list', views.TemplateNumber_list, name='TemplateNumber_list'),
-path('client_number', views.client_number, name='client_number'),
+    path('client_number', views.client_number, name='client_number'),
+    path('set_telethon_apidata', views.set_telethon_apidata, name='set_telethon_apidata'),
+    path('telethon_delapiConfig', views.telethon_delapiConfig, name='telethon_delapiConfig'),
 
 ]

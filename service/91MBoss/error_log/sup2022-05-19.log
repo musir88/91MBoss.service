@@ -431,3 +431,4421 @@ status → False
 message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
 submit_code → close
 rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 02:00:23 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60177755354
+api_respose → ACCESS_NUMBER:114055527:60177755354
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 02:00:24 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60179433642
+api_respose → ACCESS_NUMBER:114055532:60179433642
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 02:01:21 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60175138934
+api_respose → ACCESS_NUMBER:114055687:60175138934
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 02:01:26 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60174859946
+api_respose → ACCESS_NUMBER:114055715:60174859946
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 02:03:06 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone_code_hash → 015c2f9fc57425b0d1
+phone → 60175739320
+api_respose → ACCESS_NUMBER:114055941:60175739320
+status → False
+message → 启用两步验证，需要密码（由SignInRequest引起）Two-steps verification is enabled and a password is required (caused by SignInRequest)
+submit_code → close
+rejectActivation_respose → BAD_STATUS
+
+=============================================
+
+【 2022-05-19 02:06:07 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone_code_hash → 86de330e786a9ef657
+phone → 601124126862
+api_respose → ACCESS_NUMBER:114055586:601124126862
+status → False
+message → 启用两步验证，需要密码（由SignInRequest引起）Two-steps verification is enabled and a password is required (caused by SignInRequest)
+submit_code → close
+rejectActivation_respose → BAD_STATUS
+
+=============================================
+
+【 2022-05-19 02:22:03 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114055553', '60174864266']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 02:22:42 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114055580', '60174853032']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 02:23:00 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60174859656
+api_respose → ACCESS_NUMBER:114059627:60174859656
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 02:24:02 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 601124150035
+api_respose → ACCESS_NUMBER:114059825:601124150035
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 02:24:25 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 601124026195
+api_respose → ACCESS_NUMBER:114059936:601124026195
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 02:41:12 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114060165:601128946392
+message → ACCESS_NUMBER:114060165:601128946392 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 02:41:38 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 601172699048
+api_respose → ACCESS_NUMBER:114063786:601172699048
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 04:11:00 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 917845079890
+api_respose → ACCESS_NUMBER:114084184:917845079890
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 04:13:33 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919883573393
+api_respose → ACCESS_NUMBER:114084750:919883573393
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 04:21:04 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919064721029
+api_respose → ACCESS_NUMBER:114086717:919064721029
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 04:21:57 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919068809266
+api_respose → ACCESS_NUMBER:114086936:919068809266
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 04:22:48 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 916306568269
+api_respose → ACCESS_NUMBER:114087124:916306568269
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 04:27:56 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919581085348
+api_respose → ACCESS_NUMBER:114088230:919581085348
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 04:28:52 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919619895309
+api_respose → ACCESS_NUMBER:114088417:919619895309
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 04:37:04 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919043492217
+api_respose → ACCESS_NUMBER:114090099:919043492217
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 04:37:54 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 918099675046
+api_respose → ACCESS_NUMBER:114090269:918099675046
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 04:44:55 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919785331534
+api_respose → ACCESS_NUMBER:114092035:919785331534
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 04:53:37 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919344421066
+api_respose → ACCESS_NUMBER:114093761:919344421066
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 04:58:34 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114090244', '916005467224']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 05:09:57 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919650144374
+api_respose → ACCESS_NUMBER:114097628:919650144374
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 05:10:14 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 918903373913
+api_respose → ACCESS_NUMBER:114097710:918903373913
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 05:13:19 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919864579098
+api_respose → ACCESS_NUMBER:114098511:919864579098
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 05:15:02 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 917603941813
+api_respose → ACCESS_NUMBER:114098953:917603941813
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 05:24:39 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114098045:919263014491
+message → ACCESS_NUMBER:114098045:919263014491 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 05:49:47 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114104417:919745576285
+message → ACCESS_NUMBER:114104417:919745576285 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 06:15:13 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 918453718367
+api_respose → ACCESS_NUMBER:114112941:918453718367
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 06:38:30 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919548772619
+api_respose → ACCESS_NUMBER:114117899:919548772619
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 06:42:01 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone_code_hash → 1b942d0e985b9cc9a7
+phone → 918601598657
+api_respose → ACCESS_NUMBER:114118470:918601598657
+status → False
+message → 启用两步验证，需要密码（由SignInRequest引起）Two-steps verification is enabled and a password is required (caused by SignInRequest)
+submit_code → close
+rejectActivation_respose → BAD_STATUS
+
+=============================================
+
+【 2022-05-19 06:55:14 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60174843067
+api_respose → ACCESS_NUMBER:114120893:60174843067
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 06:55:59 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60175370644
+api_respose → ACCESS_NUMBER:114121020:60175370644
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 06:57:11 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60142508840
+api_respose → ACCESS_NUMBER:114121276:60142508840
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 06:59:34 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60142477282
+api_respose → ACCESS_NUMBER:114121682:60142477282
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 07:01:54 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 601123815894
+api_respose → ACCESS_NUMBER:114122136:601123815894
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 07:02:58 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114118978', '639069559641']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:17:38 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114120935', '601137500848']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:18:45 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114121304', '60174841597']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:18:52 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114121309', '601124068245']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:20:34 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114122567', '60177946692']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:21:26 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114124688', '601137560994']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:21:55 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114121680', '601137513037']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:21:59 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60174865172
+api_respose → ACCESS_NUMBER:114125411:60174865172
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 07:22:00 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114122254', '601137582978']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:22:01 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114121849', '60177939952']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:22:02 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114121686', '601137560611']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:22:06 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114121605', '60174840972']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:22:15 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114122444', '60179456348']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:25:21 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60174843911
+api_respose → ACCESS_NUMBER:114125973:60174843911
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 07:27:14 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114125227', '60174860834']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:27:14 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114125057', '601124059812']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:27:16 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114125499', '60174842402']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:27:17 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114125071', '601124027853']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:27:19 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114125470', '601124059484']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:27:20 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114125577', '601124059407']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:27:21 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114125642', '60174865459']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:27:24 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114125678', '60177945697']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:28:39 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60177754573
+api_respose → ACCESS_NUMBER:114126618:60177754573
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 07:33:13 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60175677385
+api_respose → ACCESS_NUMBER:114127423:60175677385
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 07:33:17 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60175677385
+api_respose → ACCESS_NUMBER:114127423:60175677385
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → NO_ACTIVATION
+
+=============================================
+
+【 2022-05-19 07:35:32 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60175676550
+api_respose → ACCESS_NUMBER:114127848:60175676550
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 07:35:36 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60175676550
+api_respose → ACCESS_NUMBER:114127848:60175676550
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → NO_ACTIVATION
+
+=============================================
+
+【 2022-05-19 07:50:19 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114126620', '601121910952']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:50:21 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114126520', '60177926237']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:50:50 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114126626', '60177920106']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:50:51 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114126590', '601121940471']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:51:31 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114126674', '60174841978']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:51:34 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114126828', '60177930117']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:51:34 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114126909', '60174864024']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:51:56 】
+api_id → 12564222
+api_hash → e5f301c0c350c9a49b7adac287c3100f
+api_code → sms-man
+phone → 60175676505
+api_respose → ACCESS_NUMBER:114131248:60175676505
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 07:52:11 】
+api_id → 12564222
+api_hash → e5f301c0c350c9a49b7adac287c3100f
+api_code → sms-man
+phone → 60174842907
+api_respose → ACCESS_NUMBER:114131321:60174842907
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 07:52:26 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114126938', '601137562855']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:53:59 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone → 601124029850
+api_respose → ACCESS_NUMBER:114131826:601124029850
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 07:54:12 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60174865517
+api_respose → ACCESS_NUMBER:114131916:60174865517
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:55:42 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60174853251
+api_respose → ACCESS_NUMBER:114132252:60174853251
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:55:52 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone_code_hash → b077e6a0651633a627
+phone → 60175677334
+api_respose → ACCESS_NUMBER:114132157:60175677334
+status → False
+message → 启用两步验证，需要密码（由SignInRequest引起）Two-steps verification is enabled and a password is required (caused by SignInRequest)
+submit_code → close
+rejectActivation_respose → BAD_STATUS
+
+=============================================
+
+【 2022-05-19 07:57:07 】
+api_id → 12564222
+api_hash → e5f301c0c350c9a49b7adac287c3100f
+api_code → sms-man
+phone → 60174864597
+api_respose → ACCESS_NUMBER:114132608:60174864597
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 07:59:17 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114128096', '601124059423']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 07:59:50 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 601124028675
+api_respose → ACCESS_NUMBER:114133248:601124028675
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 08:01:10 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114126475', '601137532958']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:06:36 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114129721', '601137559973']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:08:41 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 601137483891
+api_respose → ACCESS_NUMBER:114135178:601137483891
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 08:09:18 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 60175739332
+api_respose → ACCESS_NUMBER:114135290:60175739332
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 08:16:49 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114132252', '60174853251']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:16:59 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 60104367268
+api_respose → ACCESS_NUMBER:114136737:60104367268
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 08:17:58 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114131916', '60174865517']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:18:56 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114132463', '60175136649']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:21:34 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114133210', '60174906287']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:22:13 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114132883', '60174865365']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:22:33 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 60179363561
+api_respose → ACCESS_NUMBER:114137843:60179363561
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 08:22:52 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 601117603235
+api_respose → ACCESS_NUMBER:114137923:601117603235
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:23:17 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 60174864908
+api_respose → ACCESS_NUMBER:114137977:60174864908
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 08:23:30 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114133549', '601124059187']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:24:00 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114133985', '601124059017']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:25:32 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114134226', '601124068169']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:27:55 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone → 919036156271
+api_respose → ACCESS_NUMBER:114138940:919036156271
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 08:29:30 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 60174864713
+api_respose → ACCESS_NUMBER:114139279:60174864713
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 08:30:18 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60174853286
+api_respose → ACCESS_NUMBER:114139420:60174853286
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:31:42 】
+api_id → 12564222
+api_hash → e5f301c0c350c9a49b7adac287c3100f
+api_code → sms-man
+phone → 60108912043
+api_respose → ACCESS_NUMBER:114139759:60108912043
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 08:32:04 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114135410', '601124068603']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:33:02 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114135451', '60174863938']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:37:23 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114136485', '60179359486']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:38:50 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 60175683491
+api_respose → ACCESS_NUMBER:114141335:60175683491
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 08:40:33 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 601124023142
+api_respose → ACCESS_NUMBER:114141658:601124023142
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 08:41:53 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone → 601117581148
+api_respose → ACCESS_NUMBER:114141899:601117581148
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 08:43:48 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114137923', '601117603235']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:45:08 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 60174842624
+api_respose → ACCESS_NUMBER:114142597:60174842624
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → <html>
+<head><title>429 Too Many Requests</title></head>
+<body>
+<center><h1>429 Too Many Requests</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+
+
+=============================================
+
+【 2022-05-19 08:46:04 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 60174830962
+api_respose → ACCESS_NUMBER:114142782:60174830962
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 08:53:56 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114139420', '60174853286']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:54:06 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60177931826
+api_respose → ACCESS_NUMBER:114144317:60177931826
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:55:47 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114139964', '601124032387']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 08:59:06 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114140702', '60179434120']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:00:05 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone → 601140738479
+api_respose → ACCESS_NUMBER:114145132:601140738479
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:02:18 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:02:21 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 918084304424
+api_respose → ACCESS_NUMBER:114145613:918084304424
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:02:21 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:02:25 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:02:29 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:02:32 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:02:37 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:02:40 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:03:47 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:04:31 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114142127', '60174864535']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:04:52 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 916295281478
+api_respose → ACCESS_NUMBER:114146099:916295281478
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:05:10 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:05:23 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 919773905695
+api_respose → ACCESS_NUMBER:114146191:919773905695
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:05:37 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 60179453167
+api_respose → ACCESS_NUMBER:114146229:60179453167
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:06:02 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 919315668176
+api_respose → ACCESS_NUMBER:114146291:919315668176
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:06:39 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:07:56 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:09:22 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:10:06 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114143149', '601137579653']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:10:35 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone → 919877272153
+api_respose → ACCESS_NUMBER:114147162:919877272153
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:10:54 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:12:06 】
+api_id → 12564222
+api_hash → e5f301c0c350c9a49b7adac287c3100f
+api_code → sms-man
+phone → 917047677650
+api_respose → ACCESS_NUMBER:114147440:917047677650
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:12:07 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114143430', '60174853653']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:12:19 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 919572531639
+api_respose → ACCESS_NUMBER:114147491:919572531639
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:12:21 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone_code_hash → 21fdb78815f861b72d
+phone → 919508804543
+api_respose → ACCESS_NUMBER:114145489:919508804543
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:13:13 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114143886', '60179428340']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:13:14 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 917838749072
+api_respose → ACCESS_NUMBER:114147641:917838749072
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:13:40 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 919598094814
+api_respose → ACCESS_NUMBER:114147711:919598094814
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:13:44 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114145489', '919508804543']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:14:25 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 918856091771
+api_respose → ACCESS_NUMBER:114147833:918856091771
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:14:39 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone_code_hash → 184aeebfc1d3aa75dd
+phone → 918474850120
+api_respose → ACCESS_NUMBER:114147782:918474850120
+status → False
+message → 启用两步验证，需要密码（由SignInRequest引起）Two-steps verification is enabled and a password is required (caused by SignInRequest)
+submit_code → close
+rejectActivation_respose → BAD_STATUS
+
+=============================================
+
+【 2022-05-19 09:14:44 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114144214', '601137501829']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:16:38 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114144317', '60177931826']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:10 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:14 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:16 】
+api_id → 12564222
+api_hash → e5f301c0c350c9a49b7adac287c3100f
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:19 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:22 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:25 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:28 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:31 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:34 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:39 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:42 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:46 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:49 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:52 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:56 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:17:58 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:18:02 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:18:06 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:18:11 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:19:16 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:20:23 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone → 60104371768
+api_respose → ACCESS_NUMBER:114148838:60104371768
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:20:40 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:22:05 】
+api_id → 12564222
+api_hash → e5f301c0c350c9a49b7adac287c3100f
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:22:14 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114144683', '60177932679']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:23:27 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:24:54 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:24:58 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114145630', '60179453875']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:25:53 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114145986', '919641814889']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:26:18 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone_code_hash → 80620770282dd848c5
+phone → 917309604972
+api_respose → ACCESS_NUMBER:114148157:917309604972
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:26:29 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone → 917559241868
+api_respose → ACCESS_NUMBER:114149842:917559241868
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:26:56 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 60104363491
+api_respose → ACCESS_NUMBER:114149930:60104363491
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:27:37 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 60174865318
+api_respose → ACCESS_NUMBER:114150090:60174865318
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:27:45 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114148157', '917309604972']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:28:39 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 919328104127
+api_respose → ACCESS_NUMBER:114150265:919328104127
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:29:44 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60174864897
+api_respose → ACCESS_NUMBER:114150471:60174864897
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:29:57 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60174861964
+api_respose → ACCESS_NUMBER:114150512:60174861964
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:30:04 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 919897022389
+api_respose → ACCESS_NUMBER:114150531:919897022389
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:33:16 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114146560', '601124059799']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:35:14 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114147760', '60179358113']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:37:04 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114147953', '919398786480']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:37:20 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 919084098758
+api_respose → ACCESS_NUMBER:114151894:919084098758
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:37:49 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 917666429710
+api_respose → ACCESS_NUMBER:114152005:917666429710
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:39:04 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 918278891017
+api_respose → ACCESS_NUMBER:114152250:918278891017
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:39:31 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone → 601123807868
+api_respose → ACCESS_NUMBER:114152339:601123807868
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:41:06 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114148426', '919934044384']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:42:52 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114149004', '918859515244']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:43:33 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone_code_hash → 8265b4acc149a50935
+phone → 60174863910
+api_respose → ACCESS_NUMBER:114153141:60174863910
+status → False
+message → 启用两步验证，需要密码（由SignInRequest引起）Two-steps verification is enabled and a password is required (caused by SignInRequest)
+submit_code → close
+rejectActivation_respose → BAD_STATUS
+
+=============================================
+
+【 2022-05-19 09:45:47 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 919285581339
+api_respose → ACCESS_NUMBER:114153702:919285581339
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:47:01 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 919479505257
+api_respose → ACCESS_NUMBER:114153954:919479505257
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:47:29 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919548367469
+api_respose → ACCESS_NUMBER:114154050:919548367469
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:49:23 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114149691', '60174906338']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:50:57 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114150512', '60174861964']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:51:09 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114150471', '60174864897']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:52:35 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 919523475875
+api_respose → ACCESS_NUMBER:114155049:919523475875
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:54:41 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114151183', '917759012819']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:54:42 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919269917487
+api_respose → ACCESS_NUMBER:114155386:919269917487
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 09:56:23 】
+api_id → 12564222
+api_hash → e5f301c0c350c9a49b7adac287c3100f
+api_code → sms-man
+phone → 919674330462
+api_respose → ACCESS_NUMBER:114155691:919674330462
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:57:45 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone → 919162075212
+api_respose → ACCESS_NUMBER:114156043:919162075212
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:58:27 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone → 918967422267
+api_respose → ACCESS_NUMBER:114156282:918967422267
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:58:38 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 919811427942
+api_respose → ACCESS_NUMBER:114156318:919811427942
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:58:42 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 919907903511
+api_respose → ACCESS_NUMBER:114156334:919907903511
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 09:59:10 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone → 60174853190
+api_respose → ACCESS_NUMBER:114156420:60174853190
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:00:01 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 917972893323
+api_respose → ACCESS_NUMBER:114156589:917972893323
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:01:33 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114152311', '918805827381']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:02:48 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 918550009166
+api_respose → ACCESS_NUMBER:114157139:918550009166
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:03:46 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 917499376058
+api_respose → ACCESS_NUMBER:114157336:917499376058
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:03:54 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 917505675449
+api_respose → ACCESS_NUMBER:114157357:917505675449
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:03:54 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114152809', '601124059839']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:06:11 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 60174842443
+api_respose → ACCESS_NUMBER:114157822:60174842443
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → <html>
+<head><title>429 Too Many Requests</title></head>
+<body>
+<center><h1>429 Too Many Requests</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+
+
+=============================================
+
+【 2022-05-19 10:06:40 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 918638895036
+api_respose → ACCESS_NUMBER:114157928:918638895036
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:06:40 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 601123047391
+api_respose → ACCESS_NUMBER:114157936:601123047391
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:07:15 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone → 601124032491
+api_respose → ACCESS_NUMBER:114158053:601124032491
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:08:17 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone_code_hash → 2cf4931f70f1e216b0
+phone → 919744219969
+api_respose → ACCESS_NUMBER:114157986:919744219969
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:09:08 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114154050', '919548367469']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:09:41 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 916299778975
+api_respose → ACCESS_NUMBER:114158508:916299778975
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:09:54 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone_code_hash → 2cf4931f70f1e216b0
+phone → 919744219969
+api_respose → ACCESS_NUMBER:114157986:919744219969
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:11:07 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 919894817373
+api_respose → ACCESS_NUMBER:114158744:919894817373
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:11:24 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone_code_hash → 2cf4931f70f1e216b0
+phone → 919744219969
+api_respose → ACCESS_NUMBER:114157986:919744219969
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:12:22 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 917585935360
+api_respose → ACCESS_NUMBER:114158960:917585935360
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:12:42 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 919918543572
+api_respose → ACCESS_NUMBER:114159002:919918543572
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:12:43 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone_code_hash → 2cf4931f70f1e216b0
+phone → 919744219969
+api_respose → ACCESS_NUMBER:114157986:919744219969
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:13:02 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 918698892320
+api_respose → ACCESS_NUMBER:114159062:918698892320
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:14:06 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 60175139894
+api_respose → ACCESS_NUMBER:114159215:60175139894
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:14:09 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone_code_hash → 2cf4931f70f1e216b0
+phone → 919744219969
+api_respose → ACCESS_NUMBER:114157986:919744219969
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:15:30 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114155228', '918944847933']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:15:41 】
+api_id → 12564222
+api_hash → e5f301c0c350c9a49b7adac287c3100f
+api_code → sms-man
+phone_code_hash → 2cf4931f70f1e216b0
+phone → 919744219969
+api_respose → ACCESS_NUMBER:114157986:919744219969
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:16:40 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114155386', '919269917487']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:17:11 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone_code_hash → 2cf4931f70f1e216b0
+phone → 919744219969
+api_respose → ACCESS_NUMBER:114157986:919744219969
+status → False
+message → The phone code entered was invalid (caused by SignInRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:17:22 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114148352', '60177915724']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:18:25 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone → 918453547422
+api_respose → ACCESS_NUMBER:114159895:918453547422
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:18:32 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone → 919078254927
+api_respose → ACCESS_NUMBER:114159918:919078254927
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:18:34 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114157986', '919744219969']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:19:14 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 918807400841
+api_respose → ACCESS_NUMBER:114160030:918807400841
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:19:23 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 917836866413
+api_respose → ACCESS_NUMBER:114160063:917836866413
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:19:55 】
+api_id → 12564222
+api_hash → e5f301c0c350c9a49b7adac287c3100f
+api_code → sms-man
+phone → 917412844679
+api_respose → ACCESS_NUMBER:114160131:917412844679
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:19:55 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 917383282869
+api_respose → ACCESS_NUMBER:114160130:917383282869
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:20:42 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114156251', '919198220881']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:22:26 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 919086036782
+api_respose → ACCESS_NUMBER:114160549:919086036782
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:23:02 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 919352336567
+api_respose → ACCESS_NUMBER:114160650:919352336567
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:26:47 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 917601951134
+api_respose → ACCESS_NUMBER:114161256:917601951134
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:27:39 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114157336', '917499376058']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:28:00 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 919629875255
+api_respose → ACCESS_NUMBER:114161475:919629875255
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:28:13 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114157999', '917603062645']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:31:49 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114158480', '919056017316']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:33:31 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone → 919465175394
+api_respose → ACCESS_NUMBER:114162482:919465175394
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:33:39 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 916289604086
+api_respose → ACCESS_NUMBER:114162510:916289604086
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:33:50 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 918528926405
+api_respose → ACCESS_NUMBER:114162535:918528926405
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:33:54 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 918370073838
+api_respose → ACCESS_NUMBER:114162549:918370073838
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:35:48 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114159359', '601137579257']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:36:11 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone_code_hash → 470bb2a1dd378a8812
+phone → 917018799643
+api_respose → ACCESS_NUMBER:114162876:917018799643
+status → False
+message → 启用两步验证，需要密码（由SignInRequest引起）Two-steps verification is enabled and a password is required (caused by SignInRequest)
+submit_code → close
+rejectActivation_respose → BAD_STATUS
+
+=============================================
+
+【 2022-05-19 10:36:27 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 919826856133
+api_respose → ACCESS_NUMBER:114163010:919826856133
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:37:54 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114159534', '919665302123']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:38:58 】
+api_id → 12564222
+api_hash → e5f301c0c350c9a49b7adac287c3100f
+api_code → sms-man
+phone_code_hash → d827ed9df28b0c9c0f
+phone → 601124015597
+api_respose → ACCESS_NUMBER:114163364:601124015597
+status → False
+message → 启用两步验证，需要密码（由SignInRequest引起）Two-steps verification is enabled and a password is required (caused by SignInRequest)
+submit_code → close
+rejectActivation_respose → BAD_STATUS
+
+=============================================
+
+【 2022-05-19 10:39:05 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919073343495
+api_respose → ACCESS_NUMBER:114163464:919073343495
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:41:34 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114160276', '919995070410']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:41:55 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 916306940010
+api_respose → ACCESS_NUMBER:114164000:916306940010
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:41:58 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 918800488745
+api_respose → ACCESS_NUMBER:114164013:918800488745
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:41:59 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114160226', '916026106585']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:42:19 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 919170624900
+api_respose → ACCESS_NUMBER:114164083:919170624900
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:42:29 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 917783029047
+api_respose → ACCESS_NUMBER:114164126:917783029047
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:44:07 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 917003104379
+api_respose → ACCESS_NUMBER:114164381:917003104379
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:44:54 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114160666', '60179428758']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:45:20 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 917889717078
+api_respose → ACCESS_NUMBER:114164596:917889717078
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:48:49 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 60105130457
+api_respose → ACCESS_NUMBER:114165165:60105130457
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 10:49:38 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114161554', '60108909825']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:55:48 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114162549', '918370073838']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 10:56:34 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone → 601117591304
+api_respose → ACCESS_NUMBER:114166517:601117591304
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 11:00:34 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114163464', '919073343495']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 11:03:29 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114164000', '916306940010']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 11:03:42 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114164013', '918800488745']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 11:04:57 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 601124023911
+api_respose → ACCESS_NUMBER:114168073:601124023911
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 11:13:41 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 918238242710
+api_respose → ACCESS_NUMBER:114169543:918238242710
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 11:16:46 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114165630', '60175138954']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 11:19:40 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114166948', '601139121738']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 11:26:17 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114168073', '601124023911']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 11:28:48 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114167976', '601137465759']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 11:28:50 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 60175139033
+api_respose → ACCESS_NUMBER:114171962:60175139033
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 11:34:33 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 60174843427
+api_respose → ACCESS_NUMBER:114172769:60174843427
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 11:35:46 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114169618', '919392313679']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 11:41:34 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114170448', '601137512370']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 11:50:34 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114171884', '601124059011']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 12:00:35 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114173384', '601137485659']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 12:14:43 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114174891', '601124068576']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 12:24:45 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114176446:601121987294
+message → ACCESS_NUMBER:114176446:601121987294 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 12:52:26 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 601139172107
+api_respose → ACCESS_NUMBER:114180871:601139172107
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 12:58:27 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114179295', '60177473829']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 13:02:31 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone_code_hash → e9ac7b026a95d410fd
+phone → 60175682522
+api_respose → ACCESS_NUMBER:114181540:60175682522
+status → False
+message → 启用两步验证，需要密码（由SignInRequest引起）Two-steps verification is enabled and a password is required (caused by SignInRequest)
+submit_code → close
+rejectActivation_respose → BAD_STATUS
+
+=============================================
+
+【 2022-05-19 13:09:19 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114180871:601139172107
+message → ACCESS_NUMBER:114180871:601139172107 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 13:13:22 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 601124068624
+api_respose → ACCESS_NUMBER:114182959:601124068624
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 13:34:18 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114183300:601137540637
+message → ACCESS_NUMBER:114183300:601137540637 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 13:34:32 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114182959', '601124068624']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 14:07:30 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60177926228
+api_respose → ACCESS_NUMBER:114188834:60177926228
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 14:21:07 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114187830', '601124059341']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 14:25:34 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114189033:601124062832
+message → ACCESS_NUMBER:114189033:601124062832 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 14:28:32 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114188874', '601124068102']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 14:28:33 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114188853', '601161031295']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 14:28:34 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114188836', '60177933134']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 14:28:35 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114188834', '60177926228']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 14:28:36 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114188816', '601161076521']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 14:31:10 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 601137467672
+api_respose → ACCESS_NUMBER:114192173:601137467672
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 14:47:34 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114192173:601137467672
+message → ACCESS_NUMBER:114192173:601137467672 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 15:10:16 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114195219:601124059688
+message → ACCESS_NUMBER:114195219:601124059688 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 15:38:16 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114198659:601124068479
+message → ACCESS_NUMBER:114198659:601124068479 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 15:47:17 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60174864415
+api_respose → ACCESS_NUMBER:114201330:60174864415
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 16:01:05 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114200485', '601121984216']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 16:03:50 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114200676', '601124062835']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 16:04:31 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114201330:60174864415
+message → ACCESS_NUMBER:114201330:60174864415 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 16:04:35 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114200766', '60175138417']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 16:07:26 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114201142', '60174865211']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 16:08:31 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114201316', '60174864353']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 16:30:20 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114204420:60177950549
+message → ACCESS_NUMBER:114204420:60177950549 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 16:31:31 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114203963', '60177920105']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 16:31:32 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114203960', '601137418332']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 17:18:23 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114209435:601137551605
+message → ACCESS_NUMBER:114209435:601137551605 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 17:29:24 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 60177915396
+api_respose → ACCESS_NUMBER:114211884:60177915396
+status → False
+message → 开发号频繁 A wait of 81648 seconds is required (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 17:59:45 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 601124059469
+api_respose → ACCESS_NUMBER:114213781:601124059469
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 18:22:19 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114213781', '601124059469']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 18:29:22 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114215033', '60177473872']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 18:29:24 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114214691', '601124059483']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 18:35:52 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114163463', '918469424597']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 18:39:48 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 84365769200
+api_respose → ACCESS_NUMBER:114216612:84365769200
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 18:39:48 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 84865326042
+api_respose → ACCESS_NUMBER:114216611:84865326042
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 19:01:04 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114216616', '84921063089']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 19:01:16 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114216642', '84921232974']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 19:01:37 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114216615', '84584595069']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 19:01:43 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114216640', '84819446148']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 19:01:58 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114216618', '84379809604']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 19:02:10 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114216635', '84922994350']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 19:02:24 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114216620', '84355440841']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 19:03:00 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114216613', '84922252364']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 19:03:20 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114216631', '84922253445']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 19:04:14 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114216637', '84386359200']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 19:06:25 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114216617', '84366319160']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 19:19:24 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 84865875080
+api_respose → ACCESS_NUMBER:114219795:84865875080
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 19:22:43 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 84921801957
+api_respose → ACCESS_NUMBER:114220003:84921801957
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 19:40:54 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114219819', '84922241343']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 19:59:48 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114221019', '84346609165']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 20:40:39 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114224541:84364364502
+message → ACCESS_NUMBER:114224541:84364364502 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 20:57:56 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 60174863920
+api_respose → ACCESS_NUMBER:114228277:60174863920
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 21:04:38 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114226568', '84395434087']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 21:19:51 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114228277', '60174863920']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 21:32:51 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 919521321811
+api_respose → ACCESS_NUMBER:114233454:919521321811
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 21:34:29 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 919521321811
+api_respose → ACCESS_NUMBER:114233454:919521321811
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 21:55:38 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114233639', '917592928882']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 22:58:16 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 84339293578
+api_respose → ACCESS_NUMBER:114245448:84339293578
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 22:58:28 】
+api_id → 12564222
+api_hash → e5f301c0c350c9a49b7adac287c3100f
+api_code → sms-man
+phone → 84921843306
+api_respose → ACCESS_NUMBER:114245481:84921843306
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 22:58:33 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 84921968054
+api_respose → ACCESS_NUMBER:114245490:84921968054
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 22:58:48 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 84336774659
+api_respose → ACCESS_NUMBER:114245537:84336774659
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 22:58:52 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 84921367794
+api_respose → ACCESS_NUMBER:114245549:84921367794
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:19:08 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245421', '84921700448']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:19:50 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245557', '84921535041']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:20:15 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245549', '84921367794']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:20:16 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245517', '84765880620']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:20:19 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245537', '84336774659']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:20:23 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245505', '84921252493']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:20:25 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245423', '84813171890']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:20:26 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245477', '84384997849']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:20:32 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245591', '84921571624']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:20:35 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245491', '84922008790']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:20:36 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245448', '84339293578']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:20:38 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245692', '84927597038']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:20:41 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245470', '84336426956']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:21:04 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245602', '84399710394']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:23:33 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '114245798', '84589334566']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:25:17 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone_code_hash → cbaa0f5c0e3dc6e67c
+phone → 639978758049
+api_respose → ACCESS_NUMBER:114249857:639978758049
+status → False
+message → 启用两步验证，需要密码（由SignInRequest引起）Two-steps verification is enabled and a password is required (caused by SignInRequest)
+submit_code → close
+rejectActivation_respose → BAD_STATUS
+
+=============================================
+
+【 2022-05-19 23:25:18 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 639464496325
+api_respose → ACCESS_NUMBER:114249966:639464496325
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:27:41 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 919564654156
+api_respose → ACCESS_NUMBER:114250494:919564654156
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:28:23 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone_code_hash → 01af77a8901b161c62
+phone → 917827544373
+api_respose → ACCESS_NUMBER:114250577:917827544373
+status → False
+message → 启用两步验证，需要密码（由SignInRequest引起）Two-steps verification is enabled and a password is required (caused by SignInRequest)
+submit_code → close
+rejectActivation_respose → BAD_STATUS
+
+=============================================
+
+【 2022-05-19 23:28:36 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 60179425649
+api_respose → ACCESS_NUMBER:114250795:60179425649
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:29:24 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 917488153460
+api_respose → ACCESS_NUMBER:114250986:917488153460
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:29:47 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone → 639109639598
+api_respose → ACCESS_NUMBER:114251061:639109639598
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:30:26 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 919358551630
+api_respose → ACCESS_NUMBER:114251201:919358551630
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:30:35 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone → 639560092506
+api_respose → ACCESS_NUMBER:114251224:639560092506
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:32:26 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 919542739504
+api_respose → ACCESS_NUMBER:114251613:919542739504
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:32:48 】
+api_id → 14849339
+api_hash → 371ec4e9d10e482035d177cd2c55056e
+api_code → sms-man
+phone → 639092959321
+api_respose → ACCESS_NUMBER:114251718:639092959321
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:33:47 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 919319098804
+api_respose → ACCESS_NUMBER:114251905:919319098804
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:36:59 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 639983318776
+api_respose → ACCESS_NUMBER:114252533:639983318776
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:37:36 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:114249839:639652888674
+message → ACCESS_NUMBER:114249839:639652888674 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:38:39 】
+api_id → 15718961
+api_hash → 6355e6f68264228fbf0bff8891ad0370
+api_code → sms-man
+phone → 639455692429
+api_respose → ACCESS_NUMBER:114252818:639455692429
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:40:02 】
+api_id → 12971859
+api_hash → 2f5003c9d36f74d32bbd252391a386f8
+api_code → sms-man
+phone → 918509915505
+api_respose → ACCESS_NUMBER:114253166:918509915505
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:40:05 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 918604903618
+api_respose → ACCESS_NUMBER:114253180:918604903618
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:41:41 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 917037521523
+api_respose → ACCESS_NUMBER:114253547:917037521523
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:43:50 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 639652365276
+api_respose → ACCESS_NUMBER:114253898:639652365276
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:47:21 】
+api_id → 12564222
+api_hash → e5f301c0c350c9a49b7adac287c3100f
+api_code → sms-man
+phone → 601139424852
+api_respose → ACCESS_NUMBER:114254525:601139424852
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:47:27 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 639074499238
+api_respose → ACCESS_NUMBER:114254560:639074499238
+status → False
+message → 开发号频繁 A wait of 15554 seconds is required (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:49:55 】
+api_id → 15579305
+api_hash → 5b139aeb5136fb5d794e9a3eb02d9397
+api_code → sms-man
+phone → 639260756860
+api_respose → ACCESS_NUMBER:114254988:639260756860
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:51:06 】
+api_id → 13869498
+api_hash → 3bb10d91b3b12994f3de37839fa98a3b
+api_code → sms-man
+phone → 919935395351
+api_respose → ACCESS_NUMBER:114255177:919935395351
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:53:10 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 639464833135
+api_respose → ACCESS_NUMBER:114255525:639464833135
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:57:13 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone → 639368817118
+api_respose → ACCESS_NUMBER:114256210:639368817118
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:58:34 】
+api_id → 14545894
+api_hash → 6d3d71e021a42cfe83f03c888f7a8c28
+api_code → sms-man
+phone → 639128078142
+api_respose → ACCESS_NUMBER:114256499:639128078142
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-19 23:58:50 】
+api_id → 18806282
+api_hash → cbfa09dd409ad53fba7ebce2ad477
+api_code → sms-man
+phone → 639350923943
+api_respose → ACCESS_NUMBER:114256551:639350923943
+status → False
+message → The api_id/api_hash combination is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-19 23:59:37 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+api_code → sms-man
+phone → 918459737727
+api_respose → ACCESS_NUMBER:114256695:918459737727
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL

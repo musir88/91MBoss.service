@@ -43,13 +43,59 @@ def proxy_set():
     ]
     return random.choice(proxy)
 
+def get_telethonapi():
+    path = "91MBoss/config/api_config/"
+
+    list = []
+    for file in os.listdir(path):
+        file_name = str(file)
+        list.append(file_name)
+
+    random.shuffle(list)
+    content = list.pop()
+
+    f = open(path + content, encoding="utf-8")
+    content = f.read()
+    content = json.loads(content)
+    f.close()
+    return content
+
+def set_config(path, content):
+    if os.path.exists(path) ==True:
+        os.remove(path)
+    fo = codecs.open(path, "a", 'utf-8')
+    fo.write(json.dumps(content))
+    fo.close()
+    return True
+
+def get_config(path):
+    f = open(path, encoding="utf-8")
+    content = f.read()
+    f.close()
+    return json.loads(content)
+
+
+
 def client_init2(result):
     proxy_param = proxy_set()
 
     proxy = (socks.SOCKS5, proxy_param['host'], proxy_param['port'], proxy_param['username'], proxy_param['password'])
     # print(result)
     # print("client_init2:" + str(proxy_param))
-    return TelegramClient(result['path'] + result['phone'], 18252973, '7996fe1f8cd8223ddbca884fccdfa880')
+
+    api_path = "91MBoss/config/api/"+str(result['phone'])+".json"
+    if not os.path.exists(api_path):
+        api_content = get_telethonapi()
+        api_content['session_phone'] =result['phone']
+        set_config(api_path, api_content)
+    api_content = get_config(api_path)
+
+
+    return TelegramClient(result['path'] + result['phone'], int(api_content['api_id']), str(api_content['api_hash']))
+
+
+
+    # return TelegramClient(result['path'] + result['phone'], 18252973, '7996fe1f8cd8223ddbca884fccdfa880')
     # return TelegramClient('session/' + result['phone'], 18252973, '7996fe1f8cd8223ddbca884fccdfa880', proxy=proxy)
 
 
@@ -294,19 +340,19 @@ def numberList(request):
     # print(BASE_DIR)
     return render(request, 'user/numberList.html',  {'context': context})
 
-def get_config(path):
-    f = open(path, encoding="utf-8")
-    content = f.read()
-    f.close()
-    return json.loads(content)
-
-def set_config(path, content):
-    if os.path.exists(path) == True:
-        os.remove(path)
-    fo = codecs.open(path, "a", 'utf-8')
-    fo.write(json.dumps(content))
-    fo.close()
-    return True
+# def get_config(path):
+#     f = open(path, encoding="utf-8")
+#     content = f.read()
+#     f.close()
+#     return json.loads(content)
+#
+# def set_config(path, content):
+#     if os.path.exists(path) == True:
+#         os.remove(path)
+#     fo = codecs.open(path, "a", 'utf-8')
+#     fo.write(json.dumps(content))
+#     fo.close()
+#     return True
 
 def user_console(request):
     config_path = "91MBoss/config/user_send.config.json"
