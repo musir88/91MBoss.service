@@ -26,33 +26,33 @@ from telethon.tl.functions.account import UpdateUsernameRequest
 from telethon.tl.functions.account import UpdateProfileRequest
 from telethon.tl.functions.channels import LeaveChannelRequest
 # Create your views here.
-
+import base64
 
 
 
 
 
 def client_init(result):
-    proxy_param = proxy_set()
-    proxy = (socks.SOCKS5, "'216.185.46.23", "49161", 'tigerfpv', "V4LEgUcmy7")
+    # proxy_param = proxy_set()
+    # proxy = (socks.SOCKS5, "'216.185.46.23", "49161", 'tigerfpv', "V4LEgUcmy7")
     # proxy = (socks.SOCKS5, proxy_param['host'], proxy_param['port'], proxy_param['username'], proxy_param['password'])
 
     # print("client_init:"+str(proxy_param))
-    config = {}
-    config['proxy'] = proxy
-    config['api'] = {
-        'api_id':int(result['api_id']),
-        'api_hash':str(result['api_hash']),
-    }
+    # config = {}
+    # config['proxy'] = proxy
+    # config['api'] = {
+    #     'api_id':int(result['api_id']),
+    #     'api_hash':str(result['api_hash']),
+    # }
     path = "91MBoss/config/api/"+ str(result['phone']) +".json"
     if os.path.exists(path) == True:
         os.remove(path)
 
     fo = codecs.open(path, "a", 'utf-8')
-    fo.write({
+    fo.write(json.dumps({
         "api_id":int(result['api_id']),
         "api_hash":str(result['api_hash']),
-    })
+    }))
     fo.close()
 
     path = "91MBoss-session/自动注册"
@@ -188,13 +188,18 @@ def error_response(result):
 
 
 def get_config(path):
-    f = open(path, encoding="utf-8")
-    content = f.read()
-    f.close()
-    return json.loads(content)
+    if os.path.exists(path) ==True:
+        f = open(path, encoding="utf-8")
+        content = f.read()
+        f.close()
+        # return content
+        return json.loads(content)
+    else:
+        return {}
 
 def set_config(path, content):
-    os.remove(path)
+    if os.path.exists(path) ==True:
+        os.remove(path)
     fo = codecs.open(path, "a", 'utf-8')
     fo.write(json.dumps(content))
     fo.close()
@@ -468,11 +473,316 @@ def sup_smsmain_getcode(request):
     }, ensure_ascii=False))
 
 def automaticSup_api1(request):
+    path = "91MBoss/config/sup.automaticSup_api1.json"
+
+    if request.method == 'POST':
+        api_string = request.POST['api']
+        area_code = request.POST['area_code']
+        api = []
+        for i in api_string.split("\n"):
+            i = i.replace("\r",'')
+            if len(i) < 1:
+                continue
+            i = str(area_code)+str(i)
+            api.append(i)
+
+        set_config(path, api)
+        return redirect('automaticSup_api1')
+
+
+    string = ""
+    context = get_config(path)
+    for c in context:
+        string = string +"\n" + c
+
+    return render(request, 'AutomaticSup/automaticSup_api1.html', {"context": string})
+
+
+def get_automaticSup_api1Number(request):
+    path = "91MBoss/config/sup.automaticSup_api1.json"
+    string = ""
+    context = get_config(path)
+    for c in context:
+        string = string +"\n" + c
+    string = string.strip()
+
+    if len(context) < 1:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": "没有号了 如果要上号一定要刷新页面之后再操作",
+            "context": string,
+        }, ensure_ascii=False))
+
+    number_ = context.pop(0)
+
+    if len(number_) < 1:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": "没有号了 如果要上号一定要刷新页面之后再操作",
+            "context": string,
+        }, ensure_ascii=False))
+    number = number_.split("\t")
+
+    api = {
+        "phone":str(number[0]),
+        "api_respose":str(number[1]),
+    }
+    # print(api)
+    if len(context) <1:
+        context = []
+    set_config(path, context)
+
+    s = str(api['api_respose'])
+    s = base64.b64encode(s.encode())
+    s = str(s)
+    s = s.replace("b'","")
+    s = s.replace("'","")
+
+    return HttpResponse(json.dumps({
+        "status": True,
+        "api": api,
+        "phone": api['phone'],
+        "api_respose": str(s),
+        "message": "账号:" + str(number_) + "\t" + str(api['api_respose']),
+        "context": string,
+
+    }, ensure_ascii=False))
+
+
+
+async def sup_automaticSup_api(request):
+
+    idhash = api_idhash()
+    result = idhash['api']
+    result['api_id'] = int(result['api_id'])
+    if idhash['status'] == False and request.method == 'GET':
+        result['status'] = False
+        context = {}
+        context['result'] = result
+        return render(request, 'AutomaticSup/sup_automaticSup_api.html', {"context": context})
+
+    result['api_code'] = 'api-1'
+
+    if request.method == 'GET':
+        data = request.GET
+        api_data = {
+            'phone': data['phone'],
+            'api_respose': data['api_respose'],
+            'sup_step': '1',
+        }
+
+    if request.method == 'POST':
+        data = request.POST
+        api_data = {
+            'phone': data['phone'],
+            'api_respose': data['api_respose'],
+            'sup_step': '2',
+            'code': data['code'],
+            'phone_code_hash': data['phone_code_hash']
+        }
+        result['phone_code_hash'] = api_data['phone_code_hash']
+        # print(api_data)
+
+        if "api_hash" in data:
+            result['api_hash'] = data['api_hash']
+
+        if "api_id" in data:
+            result['api_id'] = data['api_id']
+
+
+    context = {
+        "api_data": api_data,
+    }
+
+    result['phone'] = str(api_data['phone'])
+    result['api_respose'] = api_data['api_respose']
+
+
+    try:
+        print(result)
+        client = client_init(result)
+    except Exception as e:
+        result = error_response(result)
+        # 号给加回去
+        s = base64.b64decode(result['api_respose']).decode()
+        s = str(s)
+        path_ = "91MBoss/config/sup.automaticSup_api1.json"
+        number_string = str(result['phone']) + "\t" + s
+        number_string = str(number_string)
+        c = get_config(path_)
+        c.append(number_string)
+        set_config(path_, c)
+
+        result['status'] = False
+        result['message'] = "client_init:"+str(e)
+        context['result'] = result
+        return render(request, 'AutomaticSup/sup_automaticSup_api.html', {"context": context})
+
+    try:
+        await client.connect()
+    except Exception as e:
+        await client.disconnect()
+
+        # 号给加回去
+        # s = base64.b64decode(result['api_respose']).decode()
+        # s = str(s)
+        # path_ = "91MBoss/config/sup.automaticSup_api1.json"
+        # number_string = str(result['phone']) + "\t" + s
+        # number_string = str(number_string)
+        # c = get_config(path_)
+        # c.append(number_string)
+        # set_config(path_, c)
+
+        # result = error_response(result)
+        result['status'] = False
+        result['message'] =  "connect:"+str(e)
+        context['result'] = result
+        return render(request, 'AutomaticSup/sup_automaticSup_api.html', {"context": context})
+
+    if str(api_data['sup_step']) == '1':
+        try:
+            sent = await client.send_code_request(result['phone'], force_sms=True)
+            # print('===================================================')
+            # print(sent)
+            phone_code_hash = sent.phone_code_hash
+            result['status'] = True
+            result['phone_code_hash'] = phone_code_hash
+            result['message'] = '发送验证码成功'
+            context['result'] = result
+            await client.disconnect()
+            return render(request, 'AutomaticSup/sup_automaticSup_api.html', {"context": context})
+        except Exception as e:
+            await client.disconnect()
+            result['status'] = False
+            result['message'] = str(e)
+            result = error_response(result)
+            context['result'] = result
+            return render(request, 'AutomaticSup/sup_automaticSup_api.html', {"context": context})
+
+    if str(api_data['sup_step']) == '2':
+
+        try:
+            first_name = ''.join(random.sample(
+                ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g',
+                 'f', 'e', 'd', 'c', 'b', 'a'], random.randint(7, 13)))
+            last_name = ''.join(random.sample(
+                ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g',
+                 'f', 'e', 'd', 'c', 'b', 'a'], random.randint(8, 15)))
+
+            await client.sign_up(
+                code=api_data['code'],
+                first_name=first_name,
+                last_name=last_name,
+                phone=result['phone'],
+                phone_code_hash=api_data['phone_code_hash']
+            )
+            result['phone_code_hash'] = api_data['phone_code_hash']
+            shutil.copyfile("91MBoss-session/自动注册/" + result['phone'] + ".session", "91MBoss-session/自动注册/注册成功/" + result['phone'] + ".session")
+        except Exception as e:
+            await client.disconnect()
+            result['status'] = False
+            result['message'] = str(e)
+            result = error_response(result)
+            context['result'] = result
+            return render(request, 'AutomaticSup/sup_automaticSup_api.html', {"context": context})
+
+
+        # 设置二次验证码
+        try:
+            await client.edit_2fa(new_password='91m123456')
+        except Exception as e:
+            await client.disconnect()
+            result = error_response(result)
+            result['status'] = False
+            result['message'] = str(e)
+            context['result'] = result
+            return render(request, 'AutomaticSup/sup_automaticSup_api.html', {"context": context})
+
+        # 设置用户名
+        try:
+            username = "boss"+''.join(random.sample(
+                ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g',
+                 'f', 'e', 'd', 'c', 'b', 'a'], random.randint(6, 12)))
+            await client(UpdateUsernameRequest(username))
+            result['username'] = username
+        except Exception as e:
+            await client.disconnect()
+            result = error_response(result)
+            result['status'] = False
+            result['message'] = str(e)
+            context['result'] = result
+            return render(request, 'AutomaticSup/sup_automaticSup_api.html', {"context": context})
+
+        await client.disconnect()
+        result['status'] = True
+        result['message'] = "SUP-注册-成功"
+        result['submit_code'] = "close"
+        context['result'] = result
+        return render(request, 'AutomaticSup/sup_automaticSup_api.html', {"context": context})
+
+def sup_automaticSup_api_getcode(request):
+    data = request.POST
+    timing = data['timing']
+    api_respose = data['api_respose']
+
+    if int(timing) >400:
+        result = error_response({
+            'api_code':"api-1",
+            'api_respose':str(api_respose),
+            'message':str(api_respose)+" 取码400次未出码主动放弃",
+        })
+
+        return HttpResponse(json.dumps({
+            "status": False,
+            "submit_code": "close",
+            "message": str(data['api_respose']) + " → " + str(result['message']),
+        }, ensure_ascii=False))
+
+    api_respose = base64.b64decode(api_respose).decode()
 
 
 
 
-    return render(request, 'AutomaticSup/automaticSup_api1.html', {"context": {
+    respose = requests.get(url=api_respose, verify=False)
+    # respose = requests.post(url=api_respose, data={}, verify=False)
+    respose = respose.text
+    # print('=======================')
+    # print(api_respose)
+    # print(str(respose))
+    # print('=======================')
 
-    }})
+    if str(respose).find('暂未登录或token已经过期') != -1:
+        result = error_response({
+            'api_code':"api-1",
+            'api_respose':str(api_respose),
+            # "submit_code": "close",
+            'message':str(respose),
+        })
+        return HttpResponse(json.dumps({
+            "status": False,
+            # "submit_code": "close",
+            "message": str(data['api_respose']) + " →2 " + str(respose),
+        }, ensure_ascii=False))
+    # print('=======================')
 
+    # respose = "Telegram code 29065"
+    # print(respose)
+    if str(respose).find("Telegram code") != -1:
+        if str(respose).find("https://t.me/login/") != -1:
+            result = respose.split("https://t.me/login/")[1]
+        else:
+            result = respose.split("Telegram code")[1]
+        result = result.strip()
+        # print('===============================================')
+
+        return HttpResponse(json.dumps({
+            # "status": False,
+            "status": True,
+            "message": str(data['api_respose']) + " ==> " + str(respose),
+            "code": str(result),
+        }, ensure_ascii=False))
+    else:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": str(data['api_respose'])+" 未获取到验证码："+str(respose),
+        }, ensure_ascii=False))

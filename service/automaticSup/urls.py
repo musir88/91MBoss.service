@@ -9,6 +9,9 @@ urlpatterns = [
     path('sup_smsmain', views.sup_smsmain, name='sup_smsmain'),
     path('sup_smsmain_getcode', views.sup_smsmain_getcode, name='sup_smsmain_getcode'),
     path('automaticSup_api1', views.automaticSup_api1, name='automaticSup_api1'),
+    path('get_automaticSup_api1Number', views.get_automaticSup_api1Number, name='get_automaticSup_api1Number'),
+    path('sup_automaticSup_api', views.sup_automaticSup_api, name='sup_automaticSup_api'),
+    path('sup_automaticSup_api_getcode', views.sup_automaticSup_api_getcode, name='sup_automaticSup_api_getcode'),
 #
 
 ]

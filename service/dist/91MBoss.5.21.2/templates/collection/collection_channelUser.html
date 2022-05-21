@@ -1,0 +1,152 @@
+{% extends "common/layout.html" %}
+{% block 'content' %}
+
+<style>
+    #console-log{
+        max-height:500px;
+        overflow:auto;
+
+    }
+
+    #console-log::-webkit-scrollbar-track {
+        background-color: #dee2e6;
+    }
+
+    #console-log::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    #console-log::-webkit-scrollbar-thumb {
+        background-color: #adb5bd;
+        border-radius: 15%;
+    }
+
+    .input-group-text{
+        width:160px;
+    }
+
+</style>
+
+<div class="container-fluid">
+
+    <div class="container p-5 my-5 border" >
+
+
+
+
+
+
+
+
+
+
+    <form class="row g-3" action="{% url 'user_console' %}" method="post">
+
+        <div class="g-3 row">
+            <div class="input-group">
+                <span class="input-group-text">channel</span>
+                <textarea required class="form-control" aria-label="With textarea" name="channel" id="channel" style="height:200px;"></textarea>
+            </div>
+        </div>
+
+        <div class="col-auto">
+            <button type="button" class="btn btn-primary mb-3" id="submit">开始</button>
+        </div>
+
+    </form>
+
+
+
+    </div>
+
+    <div style="height:150px;"></div>
+
+</div>
+
+<script>
+
+    function addZero(s){
+        return s<10 ? ('0'+s):s;
+    }
+
+
+
+    function getNowTime(){
+        date = new Date();
+
+        // 年
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+
+
+        return year + "-" + addZero(month) + "-" + addZero(day) + " " + addZero(hour) + ":" + addZero(minute) + ":" +addZero(second);
+    }
+
+    function unique(arr) {
+
+        var array= arr;
+
+        var len = array.length;
+
+
+
+    array.sort(function(a,b){   //排序后更加方便去重
+
+        return a - b;
+
+    })
+
+
+
+    function loop(index){
+
+        if(index >= 1){
+
+            if(array[index] === array[index-1]){
+
+                array.splice(index,1);
+
+            }
+
+            loop(index - 1);    //递归loop，然后数组去重
+
+        }
+
+    }
+
+    loop(len-1);
+
+    return array;
+
+}
+
+
+    var Bs91m = {}
+
+
+    $(function(){
+// https://t.me/bs91m990
+
+
+        $("#submit").click(function(){
+            var channel = $("#channel").val();
+            channel = channel.split("\n");
+            console.log(unique(channel));
+
+        });
+
+    })
+
+
+
+
+
+</script>
+
+
+{% endblock 'content' %}
+
