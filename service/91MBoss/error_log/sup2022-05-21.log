@@ -3307,3 +3307,27 @@ api_respose → aHR0cHM6Ly9hcGkuZHp0YXBpLmNvbS9nZXQvc21zP3Rva2VuPTdkOGY5ZmY0YzFi
 status → False
 message → The phone code entered was invalid (caused by SignInRequest)
 submit_code → 
+
+=============================================
+
+【 2022-05-21 23:36:52 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+phone → 2268550977
+api_code → api-1
+api_respose → aHR0cHM6Ly9hcGkuZHp0YXBpLmNvbS9nZXQvc21zP3Rva2VuPWYxZmUyMmExYmMxODA4YmUzMDg0MWEyOWZiMGEwMjA4
+status → False
+message → The phone number is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-21 23:37:08 】
+api_id → 18806282
+api_hash → 943cbfa09dd409ad53fba7ebce2ad477
+phone → 12268550977
+api_code → api-1
+api_respose → aHR0cHM6Ly9hcGkuZHp0YXBpLmNvbS9nZXQvc21zP3Rva2VuPWYxZmUyMmExYmMxODA4YmUzMDg0MWEyOWZiMGEwMjA4
+status → False
+message → 开发号频繁 A wait of 81351 seconds is required (caused by SendCodeRequest)
+submit_code → close

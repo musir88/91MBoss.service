@@ -572,7 +572,7 @@ async def user_sendsubmit(request):
         }, ensure_ascii=False))
 
 
-    fake_name = ''.join(random.sample(['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f','e', 'd', 'c', 'b', 'a'], random.randint(3,6)))
+    fake_name = ''.join(random.sample(['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f','e', 'd', 'c', 'b', 'a'], random.randint(12,20)))
 
     try:
         config = get_config("91MBoss/config/user_send.config.json")

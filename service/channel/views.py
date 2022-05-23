@@ -508,13 +508,16 @@ async def channel_sendsubmit(request):
             "message": "获取本次发送的广告词错误：" + str(e),
         }, ensure_ascii=False))
 
+    fake_name = ''.join(random.sample(['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e',
+         'd', 'c', 'b', 'a'], random.randint(12, 20)))
+
     param = {
         'session_string': data['session_string'],
         'channel': channel,
         'content': send_content['content']['message'],
         'is_fake_content': config['is_fake_content'],
         'fake_content_sleep_time': config['fake_content_sleep_time'],
-        'fake_content': '你好',
+        'fake_content': fake_name,
     }
     try:
         result = await tg_sendMessage(param)
