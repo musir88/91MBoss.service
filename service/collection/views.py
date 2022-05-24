@@ -34,7 +34,7 @@ from telethon.tl.types import Channel, User, Chat
 import pytz
 from telethon.tl.functions.channels import GetChannelsRequest, GetFullChannelRequest, GetParticipantsRequest
 
-
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 def get_telethonapi():
     path = "91MBoss/config/api_config/"
@@ -244,23 +244,14 @@ def save_user_info(user):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 def collection_channelUser(request):
-    print("collection_channelUser")
+    result_dir = str(BASE_DIR)+"91MBoss/采集结果/"
+    collection_dir = str(BASE_DIR)+"91MBoss-session/采集账号/"
 
     context = {
         'latest_question_list': 'opio',
-
+        'result_dir': result_dir,
+        'collection_dir': collection_dir,
     }
     return render(request, 'collection/collection_channelUser.html', {'context': context})
 
@@ -427,23 +418,30 @@ async def collection_channelUser_submit(request):
         IS_FILTER_PHOTO = int(req_data['IS_FILTER_PHOTO'])
 
 
-
-    print("时间：",TIME_FILTER_DAYS)
-    print("是否指定GROUP：",IS_SPECIFY_GROUP)
-    print("ID长度：",ID_FILTER_LEN)
-    print("头像：",IS_FILTER_PHOTO)
-    print("CHANNEL：",channel)
+    # print("时间：",TIME_FILTER_DAYS)
+    # print("是否指定GROUP：",IS_SPECIFY_GROUP)
+    # print("ID长度：",ID_FILTER_LEN)
+    # print("头像：",IS_FILTER_PHOTO)
+    # print("CHANNEL：",channel)
 
 
     if str(IS_SPECIFY_GROUP) == '1':
-        result = await SPECIFY_GROUP_COLLECTION(
-            phone,
-            channel,
-            IS_FILTER_PHOTO,
-            ID_FILTER_LEN,
-            TIMESTAMP_FILTER
-        )
-        return HttpResponse(json.dumps(result, ensure_ascii=False))
+
+        try:
+            result = await SPECIFY_GROUP_COLLECTION(
+                phone,
+                channel,
+                IS_FILTER_PHOTO,
+                ID_FILTER_LEN,
+                TIMESTAMP_FILTER
+            )
+            return HttpResponse(json.dumps(result, ensure_ascii=False))
+        except Exception as e:
+            return HttpResponse(json.dumps({
+                "status": False,
+                "message": "错误：" + str(e),
+            }, ensure_ascii=False))
+
 
 
     return HttpResponse(json.dumps({

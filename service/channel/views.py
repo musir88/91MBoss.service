@@ -898,7 +898,7 @@ async def channel_joinsubmit(request):
             'message': "session_string 空"
         }, ensure_ascii=False))
 
-
+    # channel = await get_joinChannel(data['session_string'])
     # 本次加的群
     try:
         channel = await get_joinChannel(data['session_string'])

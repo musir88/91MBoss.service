@@ -47,6 +47,9 @@
   ('pyi_rth_multiprocessing',
    'C:\\Users\\Administrator\\PycharmProjects\\91MBoss.service\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_multiprocessing.py',
    'PYSOURCE'),
+  ('pyi_rth_pkgres',
+   'C:\\Users\\Administrator\\PycharmProjects\\91MBoss.service\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgres.py',
+   'PYSOURCE'),
   ('pyi_rth_django',
    'C:\\Users\\Administrator\\PycharmProjects\\91MBoss.service\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_django.py',
    'PYSOURCE'),
@@ -56,7 +59,7 @@
  [],
  False,
  False,
- 1653157658,
+ 1653398863,
  [('run.exe',
    'C:\\Users\\Administrator\\PycharmProjects\\91MBoss.service\\venv\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\run.exe',
    'EXECUTABLE')])

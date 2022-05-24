@@ -15,7 +15,7 @@ class AUTH91MBoss(MiddlewareMixin):
         is_ajax = request.META.get('HTTP_X_REQUESTED_WITH')
 
         # client_number
-        i=2
+        i=1
         if 1==i:
 
             if "/number_list/client_number" != request.path_info:

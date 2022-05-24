@@ -152,7 +152,7 @@
                         $("#console-log").prepend("<p>"+getNowTime() + "错误提示： " + xhr.status + " " + xhr.statusText +"</p>");
                         setTimeout(function(){ channelSend.init_joinChannel() }, 10000);
                     },
-                    async:false,
+                    async:true,
                     success:function(result){
 
                         console.log(result);
@@ -204,29 +204,29 @@
 
 
                 // $("#console-log").prepend("<p>"+getNowTime()+" 账号： " + Work_number.session_string + " 开始发消息</p>");
-                $.post("{% url 'channel_joinsubmit' %}", {session_string:Work_number.session_string}, function(result){
+                // $.post("{% url 'channel_joinsubmit' %}", {session_string:Work_number.session_string}, function(result){
 
 
-                    var string = getNowTime()+" 账号： " + Work_number.session_string
+                //     var string = getNowTime()+" 账号： " + Work_number.session_string
 
-                    if (result.status === false) {
-                        string = string + " → 加群失败：" + result.message;
-                    } else {
-                        string = string + " → " + result.message
-                    }
-                    $("#console-log").prepend("<p>"+string+ " </p>");
-
-
-
-                    console.log(result);
-
-                    setTimeout(function(){
+                //     if (result.status === false) {
+                //         string = string + " → 加群失败：" + result.message;
+                //     } else {
+                //         string = string + " → " + result.message
+                //     }
+                //     $("#console-log").prepend("<p>"+string+ " </p>");
 
 
-                        channelSend.joinchannel_start(number_list)
-                    }, channelSend.sleep_time);
 
-                },'json')
+                //     console.log(result);
+
+                //     setTimeout(function(){
+
+
+                //         channelSend.joinchannel_start(number_list)
+                //     }, channelSend.sleep_time);
+
+                // },'json')
 
 
 
@@ -236,7 +236,7 @@
                         $("#console-log").prepend("<p>"+getNowTime() + "错误提示： " + xhr.status + " " + xhr.statusText +"</p>");
                         setTimeout(function(){ channelSend.joinchannel_start(number_list); }, 10000);
                     },
-                    async:false,
+                    async:true,
                     success:function(result){
 
                         var string = getNowTime()+" 账号： " + Work_number.session_string

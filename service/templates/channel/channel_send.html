@@ -189,7 +189,7 @@
                         $("#console-log").prepend("<p>"+getNowTime() + "错误提示： " + xhr.status + " " + xhr.statusText +"</p>");
                         setTimeout(function(){ channelSend.init_sendMessage() }, 10000);
                     },
-                    async:false,
+                    async:true,
                     success:function(result){
 
                         console.log(result);
@@ -271,7 +271,7 @@
                         $("#console-log").prepend("<p>"+getNowTime() + "错误提示： " + xhr.status + " " + xhr.statusText +"</p>");
                         setTimeout(function(){ channelSend.send_message_start(number_list) }, channelSend.sleep_time);
                     },
-                    async:false,
+                    async:true,
                     success:function(result){
 
                         var string = getNowTime()+" 账号： " + Work_number.session_string
