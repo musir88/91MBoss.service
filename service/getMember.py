@@ -87,7 +87,6 @@ import datetime
 async def main():
     userList = []
     # async for u in client.iter_participants('bs91m990', aggressive=True):
-
     offset = 0
     limit = 200
     filter = []
@@ -95,6 +94,7 @@ async def main():
     channel = 'BAOAA'
     channel = 'thecoinfarm'
     channel = 'bs91m990'
+    channel = 'https://t.me/+sV8AzBkLm2pmYzdl'
     channel = 'sichouzhilu0'
     user_all = []
 
@@ -103,6 +103,9 @@ async def main():
 
     # ID长度过滤 超过则过滤
     ID_FILTER_LEN = 12
+
+    # 是否采
+    IS_SPECIFY_GROUP = 1
 
     # 时间过滤 默认采集3天内在线的
     TIME_FILTER_DAYS = 1
@@ -114,7 +117,7 @@ async def main():
     # 转换为其他字符串格式
     # otherStyleTime = threeDayAgo.strftime("%Y-%m-%d %H:%M:%S")
     # 注:timedelta()的参数有:days,hours,seconds,microseconds
-    print(TIMESTAMP_FILTER)
+
 
     path = 'username.txt'
     if os.path.exists(path) ==True:
@@ -130,9 +133,6 @@ async def main():
                 hash=0
             ))
             if not participants.users:
-                print(participants)
-                print(search_name)
-                print(offset)
                 break
             for user in participants.users:
                  participant_info = save_user_info(user)
@@ -157,23 +157,16 @@ async def main():
                         if str(IS_FILTER_PHOTO) == '1' and participant_info['photo'] == None:
                             continue
 
+                        # 过滤机器人
+                        if participant_info['bot'] == True:
+                            continue
 
                         user_all.append(participant_info['username'])
 
-
                         fo = codecs.open(path, "a", 'utf-8')
                         fo.write(str(participant_info['username']) + "\n")
-                        # fo.write(str(participant_info['username']) + "\n")
+                        # fo.write(str(participant_info) + "\n")
                         fo.close()
-
-            # 数量：39054
-
-                # try:
-                #     if re.findall(r"\b[a-zA-Z]", user.first_name)[0].lower() == search_name:
-                #         user_all.append(user)
-                #
-                # except:
-                #     pass
 
             offset += len(participants.users)
             print(offset)
@@ -181,42 +174,6 @@ async def main():
     print(channel + " → 数量："+str(len(user_all)))
 
     return ''
-
-
-    queryKey = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u','v', 'w', 'x', 'y', 'z']
-    for search_name in queryKey:
-        async for user in client.iter_participants(channel,limit=20000,search=search_name, aggressive=False):
-            # print(user.username)
-            if user.username and user.username != None:
-                user_all.append(user.username)
-                fo = codecs.open(path, "a", 'utf-8')
-                fo.write(user.username+"\n")
-                fo.close()
-                print(user.username, user.id)
-        time.sleep(2)
-
-
-    print(channel + " → 数量："+str(len(user_all)))
-
-
-
-
-
-    while True:
-        participants = await client.get_participants(entity=channel,limit=2,filter=filter)
-        for participant in participants:
-            participant_info = save_user_info(participant)
-            if participant_info['username']:
-                print(participant_info['username'])
-                filter.append(participant_info['id'])
-        # float = len(participants) + float
-
-    # participants = await client.get_participants('BAOAA', limit=6000)
-    # participants_count = len(participants)
-    # participant_list = []
-    # print("BAOAA :共有" + str(participants_count) + "名成员")
-    return ''
-
 
     dialogs = await client.get_dialogs()
 

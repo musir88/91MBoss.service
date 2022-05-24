@@ -92,15 +92,6 @@ def client_init2(result):
     # return TelegramClient('session/' + result['phone'], 18252973, '7996fe1f8cd8223ddbca884fccdfa880', proxy=proxy)
 
 
-def get_config(path):
-    f = open(path, encoding="utf-8")
-    content = f.read()
-    f.close()
-    return json.loads(content)
-
-
-
-
 
 async def telethonErrorMessage(result={}, e='', code='1000'):
     result['code'] = code

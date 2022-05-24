@@ -129,19 +129,48 @@
             // 获取账号  开始分发任务
             channelSend.init_joinChannel = function(){
 
-                $.post("{% url 'get_joinchannel' %}", {}, function(result){
+                // $.post("{% url 'get_joinchannel' %}", {}, function(result){
 
-                    console.log(result);
-                    if (result['status'] == true) {
+                //     console.log(result);
+                //     if (result['status'] == true) {
 
-                        $("#console-log").prepend("<p>"+getNowTime()+" 本轮工作账号： "+result.list.length+" 个</p>");
+                //         $("#console-log").prepend("<p>"+getNowTime()+" 本轮工作账号： "+result.list.length+" 个</p>");
 
-                        channelSend.joinchannel_start(result['list'])
-                    } else {
+                //         channelSend.joinchannel_start(result['list'])
+                //     } else {
+                //         setTimeout(function(){ channelSend.init_joinChannel() }, 10000);
+                //     }
+
+                // },'json')
+
+
+
+
+                $.ajax({
+                    url:"{% url 'get_joinchannel' %}",
+                    error:function(xhr){
+                        $("#console-log").prepend("<p>"+getNowTime() + "错误提示： " + xhr.status + " " + xhr.statusText +"</p>");
                         setTimeout(function(){ channelSend.init_joinChannel() }, 10000);
-                    }
+                    },
+                    async:false,
+                    success:function(result){
 
-                },'json')
+                        console.log(result);
+                        if (result['status'] == true) {
+
+                            $("#console-log").prepend("<p>"+getNowTime()+" 本轮工作账号： "+result.list.length+" 个</p>");
+
+                            channelSend.joinchannel_start(result['list'])
+                        } else {
+                            setTimeout(function(){ channelSend.init_joinChannel() }, 10000);
+                        }
+                    },
+                    timeout:60000,
+                    dataType:"json",
+                    type:"POST",
+                    data:{},
+
+                });
 
             }
 
@@ -201,36 +230,45 @@
 
 
 
+                $.ajax({
+                    url:"{% url 'channel_joinsubmit' %}",
+                    error:function(xhr){
+                        $("#console-log").prepend("<p>"+getNowTime() + "错误提示： " + xhr.status + " " + xhr.statusText +"</p>");
+                        setTimeout(function(){ channelSend.joinchannel_start(number_list); }, 10000);
+                    },
+                    async:false,
+                    success:function(result){
+
+                        var string = getNowTime()+" 账号： " + Work_number.session_string
+
+                        if (result.status === false) {
+                            string = string + " → 加群失败：" + result.message;
+                        } else {
+                            string = string + " → " + result.message
+                        }
+                        $("#console-log").prepend("<p>"+string+ " </p>");
+
+                        console.log(result);
+
+                        setTimeout(function(){
+                            channelSend.joinchannel_start(number_list)
+                        }, channelSend.sleep_time);
+                    },
+                    timeout:60000,
+                    dataType:"json",
+                    type:"POST",
+                    data:{session_string:Work_number.session_string},
+
+                });
+
+
+
 
 
                 return true;
 
-
-
-
-
-
-
-                // $.each(number_list, function(idx, item){
-
-                //     console.log(item);
-
-
-
-
-                // });
-
-                return true;
 
             };
-
-
-
-
-
-
-
-
 
 
 

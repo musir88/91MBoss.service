@@ -27,27 +27,59 @@
 
 </style>
 
+
+
+<!--     'CHANNEL':'https://t.me/sichouzhilu0',
+    'TIME_FILTER_DAYS':1,
+    'IS_SPECIFY_GROUP':1,
+    'IS_FILTER_PHOTO':1,
+    'ID_FILTER_LEN':5,
+ -->
 <div class="container-fluid">
 
     <div class="container p-5 my-5 border" >
 
 
-
-
-
-
-
-
-
-
-    <form class="row g-3" action="{% url 'user_console' %}" method="post">
+    <form class="row g-3" action="" method="post">
 
         <div class="g-3 row">
             <div class="input-group">
-                <span class="input-group-text">channel</span>
+                <span class="input-group-text">模式</span>
+
+                <select class="form-select" aria-label="Default select example" name="IS_SPECIFY_GROUP" id="IS_SPECIFY_GROUP">
+                    <option value="1" selected>指定 URL</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="g-3 row">
+            <div class="input-group">
+                <span class="input-group-text">URL</span>
                 <textarea required class="form-control" aria-label="With textarea" name="channel" id="channel" style="height:200px;"></textarea>
             </div>
         </div>
+
+
+        <div class="g-3 row">
+            <div class="input-group">
+                <span class="input-group-text">头像过滤</span>
+                <select class="form-select" aria-label="Default select example" name="IS_FILTER_PHOTO" id="IS_FILTER_PHOTO">
+                    <option value="1" selected>过滤无头像</option>
+                    <option value="2" selected>不过滤无头像</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="g-3 row">
+            <div class="input-group">
+                <span class="input-group-text">ID长度过滤</span>
+                <input type="number" class="form-control" value="15" name="ID_FILTER_LEN">
+            </div>
+        </div>
+
+
 
         <div class="col-auto">
             <button type="button" class="btn btn-primary mb-3" id="submit">开始</button>
@@ -59,6 +91,7 @@
 
     </div>
 
+    <div class="container p-5 my-5 border" id="console-log"></div>
     <div style="height:150px;"></div>
 
 </div>
@@ -131,11 +164,50 @@
     $(function(){
 // https://t.me/bs91m990
 
+    // 'CHANNEL':'https://t.me/sichouzhilu0',
+    // 'TIME_FILTER_DAYS':1,
+    // 'IS_SPECIFY_GROUP':1,
+    // 'IS_FILTER_PHOTO':1,
+    // 'ID_FILTER_LEN':5,
+
 
         $("#submit").click(function(){
             var channel = $("#channel").val();
             channel = channel.split("\n");
-            console.log(unique(channel));
+            channel = unique(channel);
+            console.log(channel);
+
+            $.each(channel, function (idx, item) {
+
+                $("#console-log").prepend("<p>"+getNowTime() + "正在开始采集： " + item +"</p>");
+
+                $.ajax({
+                    url:"{% url 'collection_channelUser_submit' %}",
+                    error:function(xhr){
+                        $("#console-log").prepend("<p>"+getNowTime() + "错误提示： " + xhr.status + " " + xhr.statusText +"</p>");
+                    },
+                    async:false,
+                    success:function(result){
+
+                        console.log(result);
+                        $("#console-log").prepend("<p>"+getNowTime()+" ： "+result.message+" 个</p>");
+
+                    },
+                    dataType:"json",
+                    data:{
+                        'CHANNEL':item,
+                        'IS_SPECIFY_GROUP':$("#IS_SPECIFY_GROUP"),
+                        'TIME_FILTER_DAYS':$("#TIME_FILTER_DAYS"),
+                        'IS_FILTER_PHOTO':$("#IS_FILTER_PHOTO"),
+                        'ID_FILTER_LEN':$("#ID_FILTER_LEN"),
+                    },
+                    type:"POST",
+                    timeout:1000*60*10,
+                });
+
+            });
+
+
 
         });
 
