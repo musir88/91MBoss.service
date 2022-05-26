@@ -112,7 +112,7 @@ class Command(BaseCommand):
                             if plan_node in recorded_migrations:
                                 output = " [X] %s" % title
                             else:
-                                title += " Run 'manage.py migrate' to finish recording."
+                                title += " Run '91MBoss.c.5.05.26.1.py migrate' to finish recording."
                                 output = " [-] %s" % title
                             if self.verbosity >= 2 and hasattr(
                                 applied_migration, "applied"

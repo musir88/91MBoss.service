@@ -286,7 +286,7 @@ async def SPECIFY_GROUP_COLLECTION(phone, CHANNEL, IS_FILTER_PHOTO, ID_FILTER_LE
         return result
 
 
-    path = "91MBoss/采集结果/"+str(CHANNEL)+'.txt'
+    path = "91MBoss/采集结果/用户ID/"+str(CHANNEL)+'.txt'
     if os.path.exists(path) ==True:
         os.remove(path)
 
@@ -449,3 +449,222 @@ async def collection_channelUser_submit(request):
         "status": False,
         "message": "错误：",
     }, ensure_ascii=False))
+
+
+
+
+
+async def send_Key_words(client, bot_name, Key_words):
+    try:
+        await client.send_message(bot_name,Key_words)
+        return {
+            "status":True,
+            "message":'success'
+        }
+    except Exception as e:
+        return {
+            "status": False,
+            "message": str(e)
+        }
+
+async def Simple_filter_channels(client, bot_name):
+    try:
+        photos = await client.get_messages(bot_name, 1)
+        for x in photos:
+            for r_k, r in enumerate(x.reply_markup.rows):
+                for b_k,b in enumerate(r.buttons):
+                    if str(b.text).find("👥") != -1:
+                        await x.click(r_k, b_k)
+                        break
+        return {
+            "status":True,
+            "message":'success'
+        }
+    except Exception as e:
+        return {
+            "status":True,
+            "message":'success'
+        }
+
+async def extract_channel(client, bot_name, path):
+    all_url = []
+
+    Lasttime_string = ''
+
+    while True:
+        time.sleep(2)
+        try:
+            next_page = False
+
+            photos = await client.get_messages(bot_name, 1)
+            for x in photos:
+
+                string = ''
+
+                if hasattr(x, 'reply_markup') == False:
+                    raise Exception("没有关键字相关链接1")
+                if hasattr(x.reply_markup, 'rows') == False:
+                    raise Exception("没有关键字相关链接2")
+
+
+                for r_k, r in enumerate(x.reply_markup.rows):
+                    for b_k,b in enumerate(r.buttons):
+                        # print(b.text)
+                        string = string+str(b.text)
+                print("string → ", string)
+                print("Lasttime_string → ", Lasttime_string)
+                if string == Lasttime_string:
+                    raise Exception("采集完成")
+                Lasttime_string = string
+
+
+
+                for u in x.entities:
+
+                    if hasattr(u, 'url') == True:
+                        # if all_url.count(u.url) > 0:
+                        #
+                        #     raise Exception("匹配到相同的数据退出采集")
+                            # next_page = True
+                            # break
+
+                        print("正在提取：", u.url)
+                        all_url.append(u.url)
+                        fo = codecs.open(path, "a", 'utf-8')
+                        fo.write(str(u.url) + "\n")
+                        fo.close()
+
+                if next_page == True:
+                    next_page = False
+                    break
+
+                for r_k, r in enumerate(x.reply_markup.rows):
+                    for b_k,b in enumerate(r.buttons):
+                        # print(b)
+                        if str(b.text).find("下一页") != -1:
+                            # print(r_k, b_k, b.text)
+                            next_page = True
+                            await x.click(r_k, b_k)
+                            continue
+            if next_page == False:
+                break
+
+        except Exception as e:
+            await client.disconnect()
+            return {
+                "status": False,
+                "message":"采集完成 → ( " + str(len(all_url)) + " )" + str(e)
+            }
+
+    return {
+        "status": True,
+        "message": "采集完成 → ( " + str(len(all_url)) + " )"
+    }
+
+
+
+
+
+
+async def collection_channelUrl_submit(request):
+    Key_words = ''
+    phone = ''
+
+    req_data = {}
+    if request.method == 'POST':
+        req_data = request.POST
+    if request.method == 'GET':
+        req_data = request.GET
+
+    if 'Key_words' in req_data:
+        Key_words = req_data['Key_words']
+    else:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": "未指定关键词",
+        }, ensure_ascii=False))
+
+    if len(str(Key_words.strip)) < 1:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": "未指定关键词",
+        }, ensure_ascii=False))
+
+    phone = get_collectionSession()
+    if phone['status'] == False:
+        return phone
+    if phone['status'] == True:
+        phone = phone['phone']
+
+    result = {}
+    result['phone'] = phone
+    result['path'] = "91MBoss-session/采集账号/"
+
+    try:
+        client = client_init2(result)
+    except Exception as e:
+        print("初始化失败： " + str(e))
+        result = await telethonErrorMessage(result, e)
+        return result
+
+    try:
+        await client.connect()
+    except Exception as e:
+        await client.disconnect()
+        print("连接失败 " + str(e))
+        result = await telethonErrorMessage(result, e)
+        return result
+
+
+    path = "91MBoss/采集结果/群链接/"+str(Key_words)+'.txt'
+    # if os.path.exists(path) ==True:
+    #     os.remove(path)
+
+
+
+    # Key_words = '图片'
+    bot_name = "@hao1234bot"
+    print("开始采集...")
+
+    send_Key_words_result = await send_Key_words(client, bot_name, Key_words)
+    if send_Key_words_result['status'] == False:
+        print(send_Key_words_result)
+        return send_Key_words_result
+
+    time.sleep(2)
+    print("粗略过滤频道...")
+
+    Simple_filter_channels_result = await Simple_filter_channels(client, bot_name)
+    if Simple_filter_channels_result['status'] == False:
+        print(Simple_filter_channels_result)
+        return Simple_filter_channels_result
+
+    # path = 'channel.txt'
+    # if os.path.exists(path) ==True:
+    #     os.remove(path)
+
+    time.sleep(2)
+    print("开始提取链接...")
+
+    extract_channel_result = await extract_channel(client, bot_name, path)
+    if extract_channel_result['status'] == True:
+        await client.disconnect()
+    extract_channel_result['message'] = str(Key_words) + " → " + str(extract_channel_result['message'])
+
+    print(extract_channel_result)
+    return HttpResponse(json.dumps(extract_channel_result, ensure_ascii=False))
+
+
+def collection_channelUrl(request):
+    print('collection_channelUrl')
+    result_dir = str(BASE_DIR)+"91MBoss/采集结果/"
+    collection_dir = str(BASE_DIR)+"91MBoss-session/采集账号/"
+
+
+
+    context = {
+        'latest_question_list': 'opio',
+        'result_dir': result_dir,
+        'collection_dir': collection_dir,
+    }
+    return render(request, 'collection/collection_channelUrl.html', {'context': context})

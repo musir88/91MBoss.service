@@ -200,7 +200,7 @@ def call_command(command_name, *args, **options):
 
 class ManagementUtility:
     """
-    Encapsulate the logic of the django-admin and manage.py utilities.
+    Encapsulate the logic of the django-admin and 91MBoss.c.5.05.26.1.py utilities.
     """
 
     def __init__(self, argv=None):
@@ -251,7 +251,7 @@ class ManagementUtility:
         """
         Try to fetch the given subcommand, printing a message with the
         appropriate command called from the command line (usually
-        "django-admin" or "manage.py") if it can't be found.
+        "django-admin" or "91MBoss.c.5.05.26.1.py") if it can't be found.
         """
         # Get commands outside of try block to prevent swallowing exceptions
         commands = get_commands()

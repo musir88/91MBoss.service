@@ -36,7 +36,7 @@ class Command(BaseCommand):
     help = (
         "Inspects the given OGR-compatible data source (e.g., a shapefile) and "
         "outputs\na GeoDjango model with the given model name. For example:\n"
-        " ./manage.py ogrinspect zipcode.shp Zipcode"
+        " ./91MBoss.c.5.05.26.1.py ogrinspect zipcode.shp Zipcode"
     )
 
     requires_system_checks = []

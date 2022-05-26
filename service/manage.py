@@ -34,6 +34,8 @@ def main():
             '91MBoss/CronTab',
             '91MBoss/data',
             '91MBoss/采集结果',
+            '91MBoss/采集结果/用户ID',
+            '91MBoss/采集结果/群链接',
             '91MBoss/data/TemplateInfo',
             '91MBoss/template',
             '91MBoss/template-avatar',

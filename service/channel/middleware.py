@@ -17,6 +17,7 @@ class AUTH91MBoss(MiddlewareMixin):
         # client_number
         i=1
         if 1==i:
+            # print(request.path_info)
 
             if "/number_list/client_number" != request.path_info:
 
