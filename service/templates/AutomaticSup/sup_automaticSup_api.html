@@ -1,5 +1,56 @@
-{% extends "common/layout.html" %}
-{% block 'content' %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>91M Boss</title>
+
+<!--    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sidebars/">-->
+<!--    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">-->
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    {% load static %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .sidebar{
+        height:100%,
+        overflow:auto
+      }
+
+
+
+
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'sidebars/sidebars.css' %}" rel="stylesheet">
+    <link href="{% static 'dashboard/dashboard.css' %}" rel="stylesheet">
+    <script>
+      var Bs91m = {}
+    </script>
+
+  </head>
 
 <style>
     #console-log{
@@ -59,6 +110,17 @@
 
            <div class="g-3 row">
                <div class="input-group">
+                    <input type="text" class="form-control" value="{{ context.result.proxy.host }}" name="host" id="proxy_host">
+                    <input type="text" class="form-control" value="{{ context.result.proxy.port }}" name="port" id="proxy_port">
+                    <input type="text" class="form-control" value="{{ context.result.proxy.username }}" name="username" id="proxy_username">
+                    <input type="text" class="form-control" value="{{ context.result.proxy.password }}" name="password" id="proxy_password">
+               </div>
+           </div>
+
+
+
+           <div class="g-3 row">
+               <div class="input-group">
                     <input type="text" class="form-control" value="{{ context.result.phone_code_hash }}" name="phone_code_hash" >
                </div>
            </div>
@@ -88,7 +150,7 @@
     </div>
 
 </div>
-
+ </body>
 <script>
     function addZero(s){
         return s<10 ? ('0'+s):s;
@@ -198,5 +260,10 @@
 </script>
 
 
-{% endblock 'content' %}
 
+
+ <script src="{% static 'assets/dist/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'sidebars/sidebars.js' %}"></script>
+  <script src="{% static 'dashboard/dashboard.js' %}"></script>
+  </body>
+</html>

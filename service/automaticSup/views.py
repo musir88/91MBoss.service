@@ -33,9 +33,37 @@ import base64
 
 
 def client_init(result):
-    # proxy_param = proxy_set()
+    proxy_param = proxy_set()
+
+    proxy_param = ''
+    if 'proxy' in result:
+        proxy_param = result['proxy']
+    else:
+        proxy_path = "91MBoss/config/proxy.json"
+        if os.path.exists(proxy_path) == True:
+            proxy_all = get_config(proxy_path)
+            if len(proxy_all) <1:
+                proxy_param = ''
+            else:
+                proxy_param = proxy_all.pop()
+                if len(proxy_all) < 1:
+                    proxy_all = []
+                set_config(proxy_path, proxy_all)
+        else:
+            proxy_param = ''
+
+
+
+
     # proxy = (socks.SOCKS5, "'216.185.46.23", "49161", 'tigerfpv', "V4LEgUcmy7")
     # proxy = (socks.SOCKS5, proxy_param['host'], proxy_param['port'], proxy_param['username'], proxy_param['password'])
+
+
+
+
+
+
+
 
     # print("client_init:"+str(proxy_param))
     # config = {}
@@ -52,6 +80,7 @@ def client_init(result):
     fo.write(json.dumps({
         "api_id":int(result['api_id']),
         "api_hash":str(result['api_hash']),
+        "proxy":proxy_param
     }))
     fo.close()
 
@@ -61,13 +90,70 @@ def client_init(result):
     if not os.path.exists("91MBoss-session/自动注册/注册成功"):
         os.mkdir("91MBoss-session/自动注册/注册成功")
 
+    # if proxy_param == '':
+    if proxy_param != '':
+        print('==================================')
+        return TelegramClient(
+            path + '/' + str(result['phone']),
+            int(result['api_id']),
+            str(result['api_hash'])
+        )
+    else:
 
-    return TelegramClient(
-        path+'/' + str(result['phone']),
-        int(result['api_id']),
-        str(result['api_hash'])
-        # proxy=proxy
-    )
+        print(socks.SOCKS5)
+        # proxy = (
+        #     int(socks.SOCKS5),
+        #     str(proxy_param['host']),
+        #     str(proxy_param['port']),
+        #     # str(proxy_param['username']),
+        #     'user name',
+        #     str(proxy_param['password'])
+        # )
+        # proxy = {
+        #     'proxy_type': 'SOCKS5',  # (mandatory) protocol to use (see above)
+        #     'addr': str(proxy_param['host']),  # (mandatory) proxy IP address
+        #     'port': int(proxy_param['port']),  # (mandatory) proxy port number
+        #     'username': 'Administrator',  # (optional) username if the proxy requires auth
+        #     # 'username': str(proxy_param['username']),  # (optional) username if the proxy requires auth
+        #     'password': str(proxy_param['password']),  # (optional) password if the proxy requires auth
+        #     'rdns': True  # (optional) whether to use remote or local resolve, default remote
+        # }
+        # {'host': '216.185.47.218', 'port': '49161', 'username': 'tigerfpv', 'password': 'V4LEgUcmy7'}
+
+        # proxy = {
+        #     'proxy_type': 'SOCKS5',  # (mandatory) protocol to use (see above)
+        #     'addr': str('216.185.47.218'),  # (mandatory) proxy IP address
+        #     'port': int('49161'),  # (mandatory) proxy port number
+        #     'username': 'tigerfpv',  # (optional) username if the proxy requires auth
+        #     # 'username': str(proxy_param['username']),  # (optional) username if the proxy requires auth
+        #     'password': str('V4LEgUcmy7'),  # (optional) password if the proxy requires auth
+        #     'rdns': True  # (optional) whether to use remote or local resolve, default remote
+        # }
+
+        # proxy = (socks.SOCKS5, str('52.28.250.157'), int('40000'), 'user name', 'cf1cb611')
+        # proxy = (socks.SOCKS5, str('216.185.47.218'), int('49161'), 'tigerfpv', 'V4LEgUcmy7')
+        print('==================================')
+        print('==================================')
+        # proxy = (socks.SOCKS5, str('50.114.107.228'), int('49161'), 'tigerfpv', 'V4LEgUcmy7')
+        # proxy = (socks.SOCKS5, str('50.114.107.223'), int('49161'), 'tigerfpv', 'V4LEgUcmy7')
+        # proxy = (socks.SOCKS5, str('13.229.197.225'), int('40000'), 'user name', 'bbda6b92')
+        # proxy = (socks.SOCKS5, str('18.139.39.145'), int('40000'), 'user name', '13a164bf')
+        # proxy = (socks.SOCKS5, str('54.83.81.113'), int('11446'), '', '') str(proxy_param['username'])
+        proxy = (socks.SOCKS5, str(proxy_param['host']), int(proxy_param['port']), str(proxy_param['username']), str(proxy_param['password']))
+
+        print('==================================')
+        print('==================================')
+        print('==================================')
+        print('==================================')
+        print('==================================')
+        print('==================================')
+
+        return TelegramClient(
+            path+'/' + str(result['phone']),
+            int(result['api_id']),
+            str(result['api_hash']),
+            proxy=proxy
+        )
 
 
 def proxy_set():
@@ -580,6 +666,15 @@ async def sup_automaticSup_api(request):
             'code': data['code'],
             'phone_code_hash': data['phone_code_hash']
         }
+
+        if 'proxy_host' in data:
+            result['proxy'] = {
+                'host':data['host'],
+                'port':data['port'],
+                'username':data['username'],
+                'password':data['password']
+            }
+
         result['phone_code_hash'] = api_data['phone_code_hash']
         # print(api_data)
 
@@ -598,10 +693,13 @@ async def sup_automaticSup_api(request):
     result['api_respose'] = api_data['api_respose']
 
 
+
     try:
         print(result)
         client = client_init(result)
     except Exception as e:
+        result['message'] = str(e)
+        result['status'] = False
         result = error_response(result)
         # 号给加回去
         s = base64.b64decode(result['api_respose']).decode()
@@ -617,6 +715,16 @@ async def sup_automaticSup_api(request):
         result['message'] = "client_init:"+str(e)
         context['result'] = result
         return render(request, 'AutomaticSup/sup_automaticSup_api.html', {"context": context})
+
+    api_path = "91MBoss/config/api/" + str(result['phone']) + ".json"
+    if os.path.exists(api_path) == True:
+        api_config_s = get_config(api_path)
+        if 'proxy' in api_config_s:
+            result['proxy'] = api_config_s['proxy']
+            print(result)
+
+
+
 
     try:
         await client.connect()
