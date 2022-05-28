@@ -537,6 +537,8 @@ async def channel_sendsubmit(request):
 async def tg_sendMessage(data):
     # print(data)
 
+    is_LeaveChannelRequest = 2
+
     phone = data['session_string']
     channel = data['channel']['channel']
     content = data['content']
@@ -586,10 +588,12 @@ async def tg_sendMessage(data):
 
         try:
             if str(e).find("Chat admin privileges are required to do that in the specified chat") != -1:
-                await client(LeaveChannelRequest(channel))
+                if is_LeaveChannelRequest ==1:
+                    await client(LeaveChannelRequest(channel))
 
             if str(e).find("You can't write in this chat") != -1:
-                await client(LeaveChannelRequest(channel))
+                if is_LeaveChannelRequest == 1:
+                    await client(LeaveChannelRequest(channel))
 
             await client.disconnect()
             result = await telethonErrorMessage(result, e, 10010)

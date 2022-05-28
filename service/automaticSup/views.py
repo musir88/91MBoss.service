@@ -41,14 +41,41 @@ def client_init(result):
     else:
         proxy_path = "91MBoss/config/proxy.json"
         if os.path.exists(proxy_path) == True:
-            proxy_all = get_config(proxy_path)
-            if len(proxy_all) <1:
-                proxy_param = ''
+            # proxy_all = get_config(proxy_path)
+            # if len(proxy_all) <1:
+            #     proxy_param = ''
+            # else:
+            #     proxy_param = proxy_all.pop()
+            #     if len(proxy_all) < 1:
+            #         proxy_all = []
+            #     set_config(proxy_path, proxy_all)
+
+
+            admin_host = "http://api.proxy.ipidea.io/getProxyIp"
+
+            res = requests.post(url=admin_host, data={
+                "num":1,
+                "return_type":'json',
+                "regions":'us',
+                "protocol":'socks5',
+                "flow":1,
+                "lb":1,
+                "sb":0,
+            }, verify=False)
+            pro_response = json.loads(res.text)
+            print(pro_response)
+            if pro_response['success'] == True:
+                print(pro_response['data'])
+                proxy_param = {
+                    'host': pro_response['data'][0]['ip'],
+                    'port': pro_response['data'][0]['port'],
+                    'username': '',
+                    'password': ''
+                }
             else:
-                proxy_param = proxy_all.pop()
-                if len(proxy_all) < 1:
-                    proxy_all = []
-                set_config(proxy_path, proxy_all)
+                proxy_param = ''
+
+
         else:
             proxy_param = ''
 
@@ -324,6 +351,17 @@ async def sup_smsmain(request):
             'code': data['code'],
             'phone_code_hash': data['phone_code_hash']
         }
+
+        if 'proxy_host' in data:
+            result['proxy'] = {
+                'host':data['host'],
+                'port':data['port'],
+                'username':data['username'],
+                'password':data['password']
+            }
+
+
+
         result['phone_code_hash'] = api_data['phone_code_hash']
         # print(api_data)
 
@@ -342,6 +380,9 @@ async def sup_smsmain(request):
     result['api_respose'] = api_data['api_respose']
 
 
+
+
+
     try:
         client = client_init(result)
     except Exception as e:
@@ -349,6 +390,13 @@ async def sup_smsmain(request):
         result['message'] = "client_init:"+str(e)
         context['result'] = result
         return render(request, 'AutomaticSup/sup_smsmain.html', {"context": context})
+
+    api_path = "91MBoss/config/api/" + str(result['phone']) + ".json"
+    if os.path.exists(api_path) == True:
+        api_config_s = get_config(api_path)
+        if 'proxy' in api_config_s:
+            result['proxy'] = api_config_s['proxy']
+
 
     try:
         await client.connect()
