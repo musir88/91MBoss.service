@@ -30,6 +30,25 @@ import base64
 
 
 
+headers={
+  "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+  "Accept-Encoding": "gzip, deflate, br",
+  "Accept-Language": "zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3",
+  "Connection":"keep-alive",
+  "Host":  "36kr.com/newsflashes",
+  "Upgrade-Insecure-Requests":"1",
+  "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:55.0) Gecko/20100101 Firefox/55.0"
+}
+
+ua_list = [
+    'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1',
+    'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0',
+    'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; InfoPath.3)',
+]
+
+
+
+
 
 
 def client_init(result):
@@ -52,11 +71,12 @@ def client_init(result):
 
 
             admin_host = "http://api.proxy.ipidea.io/getProxyIp"
-
+            # "http://api.proxy.ipidea.io/getProxyIp?num=1&return_type=json&lb=1&sb=0&flow=1&regions=vn&protocol=socks5"
             res = requests.post(url=admin_host, data={
                 "num":1,
                 "return_type":'json',
-                "regions":'us',
+                "regions":'vn',
+                # "regions":'us',
                 "protocol":'socks5',
                 "flow":1,
                 "lb":1,
@@ -941,4 +961,307 @@ def sup_automaticSup_api_getcode(request):
         return HttpResponse(json.dumps({
             "status": False,
             "message": str(data['api_respose'])+" 未获取到验证码："+str(respose),
+        }, ensure_ascii=False))
+
+
+def automaticSup_ahasim(request):
+    path = "91MBoss/config/sup.ahasim.json"
+    if request.method == 'POST':
+        data = request.POST
+        config = {
+            'SecretKey': data['SecretKey']
+        }
+        set_config(path, config)
+        return redirect('automaticSup_ahasim')
+
+    context = {
+        "config":get_config(path)
+    }
+
+    return render(request, 'AutomaticSup/automaticSup_ahasim.html', {"context":context})
+
+def get_supNumber(request):
+
+
+
+
+
+    if request.method == 'POST':
+        req_data = request.POST
+        if "action_token" not in req_data:
+            return HttpResponse(json.dumps({
+                "status": False,
+                "message": "ACTION_TOKEN1",
+            }, ensure_ascii=False))
+
+        action_token = req_data['action_token']
+        if str(action_token) == 'ahasim.com':
+            path = "91MBoss/config/sup.ahasim.json"
+            config = get_config(path)
+            if config['SecretKey'] == '' or 'SecretKey' not in config:
+                return HttpResponse(json.dumps({
+                    "status": False,
+                    "message": "请设置秘钥",
+                }, ensure_ascii=False))
+
+            api_host = "http://ahasim.com/api/phone/new-session?token="+config['SecretKey']+"&service=5"
+            res = requests.get(api_host,headers={'User-Agent': random.choice(ua_list)}, verify=False)
+            # res = requests.post(url=api_host, data={
+            #     "token": config['SecretKey'],
+            #     "service": 5,
+            # }, verify=False)
+            response = json.loads(res.text)
+            # print(pro_response)
+            print(response)
+
+            if response['success'] == False:
+                return HttpResponse(json.dumps({
+                    "status": False,
+                    "response": response,
+                    "message": response['message'],
+                }, ensure_ascii=False))
+            else:
+                return HttpResponse(json.dumps({
+                    "status": True,
+                    "response": response,
+                    "phone": "84"+str(response['data']['phone_number']),
+                    "api_respose": response['data']['session'],
+                    "message": "84"+str(response['data']['phone_number']) +' ok',
+                }, ensure_ascii=False))
+
+
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": "ACTION_TOKEN2",
+        }, ensure_ascii=False))
+    else:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": "访问错误",
+        }, ensure_ascii=False))
+
+async def sup_ahasim(request):
+    result = {
+        "api_id": "18806282",
+        "api_hash": "943cbfa09dd409ad53fba7ebce2ad477",
+    }
+
+    idhash = api_idhash()
+    result = idhash['api']
+    if idhash['status'] == False and request.method == 'GET':
+        result['status'] = False
+        context = {}
+        context['result'] = result
+        return render(request, 'AutomaticSup/sup_ahasim.html', {"context": context})
+
+    result['api_code'] = 'ahasim'
+
+    if request.method == 'GET':
+        data = request.GET
+        api_data = {
+            'phone': data['phone'],
+            'api_respose': data['api_respose'],
+            'sup_step': '1',
+        }
+
+    if request.method == 'POST':
+        data = request.POST
+        api_data = {
+            'phone': data['phone'],
+            'api_respose': data['api_respose'],
+            'sup_step': '2',
+            'code': data['code'],
+            'phone_code_hash': data['phone_code_hash']
+        }
+
+        if 'proxy_host' in data:
+            result['proxy'] = {
+                'host': data['host'],
+                'port': data['port'],
+                'username': data['username'],
+                'password': data['password']
+            }
+
+        result['phone_code_hash'] = api_data['phone_code_hash']
+        # print(api_data)
+
+        if "api_hash" in data:
+            result['api_hash'] = data['api_hash']
+
+        if "api_id" in data:
+            result['api_id'] = data['api_id']
+
+    context = {
+        "api_data": api_data,
+    }
+
+    result['phone'] = api_data['phone']
+    result['api_respose'] = api_data['api_respose']
+
+    try:
+        client = client_init(result)
+    except Exception as e:
+        result['status'] = False
+        result['message'] = "client_init:" + str(e)
+        context['result'] = result
+        return render(request, 'AutomaticSup/sup_ahasim.html', {"context": context})
+
+    api_path = "91MBoss/config/api/" + str(result['phone']) + ".json"
+    if os.path.exists(api_path) == True:
+        api_config_s = get_config(api_path)
+        if 'proxy' in api_config_s:
+            result['proxy'] = api_config_s['proxy']
+
+    try:
+        await client.connect()
+    except Exception as e:
+        await client.disconnect()
+        result['status'] = False
+        result['message'] = "connect:" + str(e)
+        context['result'] = result
+        return render(request, 'AutomaticSup/sup_ahasim.html', {"context": context})
+
+    if str(api_data['sup_step']) == '1':
+        try:
+            sent = await client.send_code_request(result['phone'])
+            # sent = await client.send_code_request(result['phone'], force_sms=True)
+            # print('===================================================')
+            # print(sent)
+            phone_code_hash = sent.phone_code_hash
+            result['status'] = True
+            result['phone_code_hash'] = phone_code_hash
+            result['message'] = '发送验证码成功'
+            context['result'] = result
+            await client.disconnect()
+            return render(request, 'AutomaticSup/sup_ahasim.html', {"context": context})
+        except Exception as e:
+            await client.disconnect()
+            result['status'] = False
+            result['message'] = str(e)
+            result = error_response(result)
+            context['result'] = result
+            return render(request, 'AutomaticSup/sup_ahasim.html', {"context": context})
+
+    if str(api_data['sup_step']) == '2':
+
+        try:
+            first_name = ''.join(random.sample(
+                ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g',
+                 'f', 'e', 'd', 'c', 'b', 'a'], random.randint(7, 13)))
+            last_name = ''.join(random.sample(
+                ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g',
+                 'f', 'e', 'd', 'c', 'b', 'a'], random.randint(8, 15)))
+
+            await client.sign_up(
+                code=api_data['code'],
+                first_name=first_name,
+                last_name=last_name,
+                phone=result['phone'],
+                phone_code_hash=api_data['phone_code_hash']
+            )
+            result['phone_code_hash'] = api_data['phone_code_hash']
+            shutil.copyfile("91MBoss-session/自动注册/" + result['phone'] + ".session",
+                            "91MBoss-session/自动注册/注册成功/" + result['phone'] + ".session")
+        except Exception as e:
+            await client.disconnect()
+            result['status'] = False
+            result['message'] = str(e)
+            result = error_response(result)
+            context['result'] = result
+            return render(request, 'AutomaticSup/sup_ahasim.html', {"context": context})
+
+        # 设置二次验证码
+        try:
+            await client.edit_2fa(new_password='91m123456')
+        except Exception as e:
+            await client.disconnect()
+            result['status'] = False
+            result['message'] = str(e)
+            context['result'] = result
+            return render(request, 'AutomaticSup/sup_ahasim.html', {"context": context})
+
+        # 设置用户名
+        try:
+            username = "boss" + ''.join(random.sample(
+                ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g',
+                 'f', 'e', 'd', 'c', 'b', 'a'], random.randint(6, 12)))
+            await client(UpdateUsernameRequest(username))
+            result['username'] = username
+        except Exception as e:
+            await client.disconnect()
+            result['status'] = False
+            result['message'] = str(e)
+            context['result'] = result
+            return render(request, 'AutomaticSup/sup_ahasim.html', {"context": context})
+
+        await client.disconnect()
+        result['status'] = True
+        result['message'] = "SUP-成功"
+        result['submit_code'] = "close"
+        context['result'] = result
+        return render(request, 'AutomaticSup/sup_ahasim.html', {"context": context})
+
+def sup_ahasim_getcode(request):
+    data = request.POST
+    timing = data['timing']
+    api_respose = data['api_respose']
+
+    if int(timing) > 400:
+        result = error_response({
+            'api_code': "ahasim",
+            'api_respose': str(api_respose),
+            'message': str(api_respose) + " 取码400次未出码主动放弃",
+        })
+
+        return HttpResponse(json.dumps({
+            "status": False,
+            "submit_code": "close",
+            "message": str(data['api_respose']) + " → " + str(result['message']),
+        }, ensure_ascii=False))
+
+    # api_respose = base64.b64decode(api_respose).decode()
+
+    path = "91MBoss/config/sup.ahasim.json"
+    config = get_config(path)
+    if config['SecretKey'] == '' or 'SecretKey' not in config:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": "请设置秘钥",
+        }, ensure_ascii=False))
+
+    api_host = "http://ahasim.com/api/session/" + api_respose + "/get-otp?token=" + config['SecretKey']
+    respose = requests.get(api_host, headers={'User-Agent': random.choice(ua_list)}, verify=False)
+    respose = json.loads(respose.text)
+    print('=======================')
+    # print(api_respose)
+    print(respose)
+    print('=======================')
+
+    return HttpResponse(json.dumps({
+        "status": False,
+        "respose": respose,
+        "message": " 未获取到验证码：" + str(respose),
+    }, ensure_ascii=False))
+
+
+    # respose = "Telegram code 29065"
+    # print(respose)
+    if str(respose).find("Telegram code") != -1:
+        if str(respose).find("https://t.me/login/") != -1:
+            result = respose.split("https://t.me/login/")[1]
+        else:
+            result = respose.split("Telegram code")[1]
+        result = result.strip()
+        # print('===============================================')
+
+        return HttpResponse(json.dumps({
+            # "status": False,
+            "status": True,
+            "message": str(data['api_respose']) + " ==> " + str(respose),
+            "code": str(result),
+        }, ensure_ascii=False))
+    else:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": str(data['api_respose']) + " 未获取到验证码：" + str(respose),
         }, ensure_ascii=False))

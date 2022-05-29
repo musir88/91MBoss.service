@@ -1,0 +1,53 @@
+
+
+=============================================
+
+【 2022-05-28 07:52:13 】
+api_id → 11499153
+api_hash → 3f58796061b5c90bec34c055e565c1de
+phone → 925481593
+api_code → ahasim
+api_respose → e9c8f2c0226c4c975202c57440a8212c
+proxy → {'host': '54.167.4.138', 'port': 10718, 'username': '', 'password': ''}
+status → False
+message → The phone number is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-28 07:53:14 】
+api_id → 11499153
+api_hash → 3f58796061b5c90bec34c055e565c1de
+phone → 925481593
+api_code → ahasim
+api_respose → e9c8f2c0226c4c975202c57440a8212c
+proxy → {'host': '54.167.4.138', 'port': 10617, 'username': '', 'password': ''}
+status → False
+message → The phone number is invalid (caused by SendCodeRequest)
+submit_code → 
+
+=============================================
+
+【 2022-05-28 09:50:52 】
+api_id → 11499153
+api_hash → 3f58796061b5c90bec34c055e565c1de
+phone → 84907572946
+api_code → ahasim
+api_respose → d9e83e8f4643c2c65f36b2c007051862
+proxy → {'host': '13.213.67.125', 'port': 14591, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+
+=============================================
+
+【 2022-05-28 13:11:05 】
+api_id → 13978142
+api_hash → aa6fa6139e284c3919882cdaf7a577f5
+phone → 84907808254
+api_code → ahasim
+api_respose → 158ecd9fb8140df6491c09edb05edc9f
+proxy → {'host': '54.169.37.186', 'port': 12434, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close

@@ -1,0 +1,22 @@
+
+
+=============================================
+
+【 2022-05-29 04:47:53 】
+api_code → ahasim
+api_respose → 588d2dfbd80491262e9538f9f44fbae8
+message → 588d2dfbd80491262e9538f9f44fbae8 取码400次未出码主动放弃
+submit_code → close
+
+=============================================
+
+【 2022-05-29 06:16:01 】
+api_id → 11499153
+api_hash → 3f58796061b5c90bec34c055e565c1de
+phone → 84583288719
+api_code → ahasim
+api_respose → 1e0c2a785c05af55011c5e52b5c5b200
+proxy → {'host': '54.169.37.186', 'port': 12435, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
