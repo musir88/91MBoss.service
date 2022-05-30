@@ -25,6 +25,8 @@ from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.account import UpdateUsernameRequest
 from telethon.tl.functions.account import UpdateProfileRequest
 from telethon.tl.functions.channels import LeaveChannelRequest
+from telethon.tl.types import InputPhoneContact
+from telethon.tl.functions.contacts import ImportContactsRequest
 
 # Create your views here.
 
@@ -731,3 +733,60 @@ def send_log(content, prefix=''):
 
     return True
 
+async def addContacts(request):
+
+    if request.method == 'POST':
+        data = request.POST
+    if request.method == 'GET':
+        data = request.GET
+
+    #     919901066213
+
+    result = {}
+    phone = str(data['phone'])
+    result['phone'] = phone
+    result['path'] = "91MBoss-session/私信账号/"
+    contacts_numbere = data['contacts_numbere']
+
+    try:
+        client = client_init2(result)
+    except Exception as e:
+        await client.disconnect()
+        result = await telethonErrorMessage(result, e, 'TelegramClient')
+        return result
+
+    try:
+        await client.connect()
+    except Exception as e:
+        await client.disconnect()
+        result = await telethonErrorMessage(result, e, 'connect')
+        return result
+
+    last_name = "boss" + ''.join(random.sample(
+        ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g',
+         'f', 'e', 'd', 'c', 'b', 'a'], random.randint(1, 2)))
+
+    contact = InputPhoneContact(client_id=0, phone=str(contacts_numbere), first_name=str(contacts_numbere), last_name=last_name)
+    try:
+        result = await client(ImportContactsRequest(contacts=[contact]))
+        # print(result.stringify())
+        users = result.users
+        if len(users) > 0:
+            return HttpResponse(json.dumps({
+                "status": True,
+                "message": contacts_numbere + " 添加成功",
+            }, ensure_ascii=False))
+
+            # print(contacts_numbere + " 已注册")
+        else:
+            # print(contacts_numbere + " 未注册")
+            return HttpResponse(json.dumps({
+                "status": False,
+                "code": 'no_sup',
+                "message": contacts_numbere + " 添加失败",
+            }, ensure_ascii=False))
+    except Exception as e:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": contacts_numbere + " 添加失败-：" + str(e),
+        }, ensure_ascii=False))

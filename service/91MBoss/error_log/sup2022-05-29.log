@@ -20,3 +20,29 @@ proxy → {'host': '54.169.37.186', 'port': 12435, 'username': '', 'password': '
 status → False
 message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
 submit_code → close
+
+=============================================
+
+【 2022-05-29 08:22:55 】
+api_id → 13978142
+api_hash → aa6fa6139e284c3919882cdaf7a577f5
+phone → 19106214812
+api_code → api-1
+api_respose → aHR0cDovL3Ntc3ZrLm5ldC9zdHVicy9oYW5kbGVyX2FwaS5waHA/YXBpX2tleT1jR0Z6Y3owa01ua2tNVEFrYzA5WVdqbHNPVXhJTlVSNmFuRk9TMUZuUjB0SGRXMVhlbWcyTW5kd09YTXlWWGhuV1M5dU56WnNVRUZ2YjJzMllYbzFiUzRtYVdROU1URXlOelU0JmFjdGlvbj1nZXRTdGF0dXMmaWQ9NjE0Njc2NTk=
+proxy → {'host': '13.250.46.50', 'port': 14564, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+
+=============================================
+
+【 2022-05-29 08:39:31 】
+api_id → 13978142
+api_hash → aa6fa6139e284c3919882cdaf7a577f5
+phone → 19094976407
+api_code → api-1
+api_respose → aHR0cDovL3Ntc3ZrLm5ldC9zdHVicy9oYW5kbGVyX2FwaS5waHA/YXBpX2tleT1jR0Z6Y3owa01ua2tNVEFrYzA5WVdqbHNPVXhJTlVSNmFuRk9TMUZuUjB0SGRXMVhlbWcyTW5kd09YTXlWWGhuV1M5dU56WnNVRUZ2YjJzMllYbzFiUzRtYVdROU1URXlOelU0JmFjdGlvbj1nZXRTdGF0dXMmaWQ9NjE0NjgyMzE=
+proxy → {'host': '54.169.37.186', 'port': 12354, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close

@@ -1,0 +1,415 @@
+
+
+=============================================
+
+【 2022-05-30 02:31:19 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+phone → 84922567258
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116174915:84922567258
+proxy → {'host': '13.213.67.125', 'port': 14609, 'username': '', 'password': ''}
+status → False
+message → 开发号频繁 A wait of 40762 seconds is required (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 02:45:39 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '116174242', '84327595474']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-30 02:51:02 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '116175058', '84336152911']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-30 02:56:18 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639497450795
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116177656:639497450795
+proxy → {'host': '54.169.37.186', 'port': 12430, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 03:16:45 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116178423:8801616809811
+message → ACCESS_NUMBER:116178423:8801616809811 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 03:18:31 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '116177852', '8801890370646']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-30 03:40:04 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '116180239', '8801951506507']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-30 03:40:20 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '116180240', '8801920516374']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-30 03:41:51 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116181274:8801742030440
+message → ACCESS_NUMBER:116181274:8801742030440 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 03:41:52 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '116180242', '8801793282924']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-30 03:56:01 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116182841:8801816909059
+message → ACCESS_NUMBER:116182841:8801816909059 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 04:21:48 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639555164668
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116186916:639555164668
+proxy → {'host': '13.213.67.125', 'port': 14834, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 04:22:17 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639556259776
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116186948:639556259776
+proxy → {'host': '13.213.67.125', 'port': 14988, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 04:32:02 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639773967048
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116187749:639773967048
+proxy → {'host': '54.169.37.186', 'port': 12381, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 05:05:46 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639558007016
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116191132:639558007016
+proxy → {'host': '13.213.67.125', 'port': 14958, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 05:06:24 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639129290743
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116191193:639129290743
+proxy → {'host': '13.250.46.50', 'port': 14925, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 05:06:48 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639957645997
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116191226:639957645997
+proxy → {'host': '54.169.37.186', 'port': 12438, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 05:09:41 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639455294571
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116191499:639455294571
+proxy → {'host': '13.250.46.50', 'port': 14582, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 05:16:18 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116190867:639465432428
+message → ACCESS_NUMBER:116190867:639465432428 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 05:18:14 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639307086489
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116192270:639307086489
+proxy → {'host': '13.213.67.125', 'port': 14621, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 05:19:29 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639975819719
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116192398:639975819719
+proxy → {'host': '13.250.46.50', 'port': 14692, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 05:34:49 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639101058858
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116193865:639101058858
+proxy → {'host': '13.213.67.125', 'port': 14643, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 05:39:41 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '116192226', '639975009884']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-30 05:44:30 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '116192763', '639991927455']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-30 05:51:58 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639559560260
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116195485:639559560260
+proxy → {'host': '54.169.37.186', 'port': 12408, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 05:52:24 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639100541001
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116195660:639100541001
+proxy → {'host': '54.169.37.186', 'port': 12363, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 05:59:44 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 639652990097
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116196518:639652990097
+proxy → {'host': '13.213.67.125', 'port': 14643, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 06:08:06 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116195706:639519061208
+message → ACCESS_NUMBER:116195706:639519061208 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 06:08:07 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '116194761', '639388736792']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-30 06:09:19 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '116194617', '639161273245']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-30 06:10:18 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '116193508', '639637578665']
+message → STATUS_CANCEL
+submit_code → 
+
+=============================================
+
+【 2022-05-30 06:24:48 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 8801700697381
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116199714:8801700697381
+proxy → {'host': '13.213.67.125', 'port': 14921, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 06:29:31 】
+api_id → 10747127
+api_hash → ec1120e73205c59c0b2fd140a5456a2b
+phone → 916900524591
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116200409:916900524591
+proxy → {'host': '13.250.46.50', 'port': 14792, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 06:55:51 】
+api_code → sms-man
+api_respose → ACCESS_NUMBER:116201986:8801590069076
+message → ACCESS_NUMBER:116201986:8801590069076 取码400次未出码主动放弃
+submit_code → close
+rejectActivation_respose → ACCESS_CANCEL
+
+=============================================
+
+【 2022-05-30 07:11:54 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+phone → 1 2895641260
+api_code → api-1
+api_respose → aHR0cHM6Ly9hcGkuZHp0YXBpLmNvbS9nZXQvc21zP3Rva2VuPTVhNmQ5MDQzMDhkYjNjMDc3NmViMDlhMDViZWFkMDI2
+proxy → {'host': '13.213.67.125', 'port': 14685, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+
+=============================================
+
+【 2022-05-30 07:12:02 】
+api_id → 17345465
+api_hash → 1fcfcffb77d010b5235b13e840a158ef
+phone → 1 2895631992
+api_code → api-1
+api_respose → aHR0cHM6Ly9hcGkuZHp0YXBpLmNvbS9nZXQvc21zP3Rva2VuPWE2NzJkNzFhOTlmYmVjMjFkZWZlNWRkMWNmNmY0NDA2
+proxy → {'host': '54.169.37.186', 'port': 12398, 'username': '', 'password': ''}
+status → False
+message → 官方禁用 The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+submit_code → close
+
+=============================================
+
+【 2022-05-30 07:21:43 】
+api_code → sms-man
+api_respose → ['ACCESS_NUMBER', '116204601', '8801916848530']
+message → STATUS_CANCEL
+submit_code → 

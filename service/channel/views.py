@@ -18,10 +18,10 @@ import asyncio
 from selectolax.parser import HTMLParser
 from telethon import TelegramClient, events
 from telethon.tl.functions.channels import JoinChannelRequest
-from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.account import UpdateUsernameRequest
 from telethon.tl.functions.account import UpdateProfileRequest
 from telethon.tl.functions.channels import LeaveChannelRequest
+
 
 
 def proxy_set():
@@ -1085,4 +1085,6 @@ async def joinChannel(session, channel=''):
 
     await client.disconnect()
     return result
+
+
 

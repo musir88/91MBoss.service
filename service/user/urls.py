@@ -12,4 +12,5 @@ urlpatterns = [
     path('user_sendsubmit', views.user_sendsubmit, name='user_sendsubmit'),
     path('user_save', views.user_save, name='user_save'),
     path('user_bombingMatch', views.user_bombingMatch, name='user_bombingMatch'),
+    path('addContacts', views.addContacts, name='addContacts'),
 ]

@@ -219,7 +219,7 @@ def proxy_set():
     return random.choice(proxy)
 
 
-def api_idhash():
+def api_idhash(request=None):
     proxy = [
         {'api_id': 18806282, 'api_hash': 'cbfa09dd409ad53fba7ebce2ad477'},
         {'api_id': 15718961, 'api_hash': '6355e6f68264228fbf0bff8891ad0370'},
@@ -245,8 +245,21 @@ def api_idhash():
             'api': ''
         }
 
-    random.shuffle(list)
-    content = list.pop()
+    if request == None:
+        random.shuffle(list)
+        content = list.pop()
+    else:
+        sup_api_id = request.session.get("sup_api_id", None)
+        id_key = 0
+        if sup_api_id != None:
+            if len(list) >= int(sup_api_id):
+                id_key = sup_api_id
+            else:
+                id_key = 0
+        content = list.pop(id_key)
+        request.session.get("sup_api_id", int(id_key)+1)
+
+
 
     f = open(path + content, encoding="utf-8")
     content = f.read()
@@ -344,7 +357,7 @@ async def sup_smsmain(request):
         "api_hash":"943cbfa09dd409ad53fba7ebce2ad477",
     }
 
-    idhash = api_idhash()
+    idhash = api_idhash(request)
     result = idhash['api']
     if idhash['status'] == False and request.method == 'GET':
         result['status'] = False
@@ -507,7 +520,14 @@ async def sup_smsmain(request):
         return render(request, 'AutomaticSup/sup_smsmain.html', {"context": context})
 
 
+
+
+
+from urllib.parse import urlparse
 def sms_man(request):
+    # response = requests.get(str(resolve('/user/addContacts').route)+"?phone=919923144199&contacts_numbere=919923144190",verify=False)
+    # print(response)
+
     path = "91MBoss/config/sup.smsman.json"
     if request.method == 'POST':
         data = request.POST
@@ -550,6 +570,30 @@ def get_smsmainNumber(request):
     if respose.find("ACCESS_NUMBER") != -1:
         result = respose.split(":")
         # print(result[2])
+        # addContacts
+
+        next = request.META.get('HTTP_REFERER', None) or '/'
+        urlp = urlparse(next)
+
+        addContactsApi = str(urlp.scheme) + "://" + str(urlp.netloc) + "/user/addContacts?phone=919923144199&contacts_numbere="+str(result[2])
+        print(addContactsApi)
+        response = requests.get(addContactsApi, verify=False)
+        response = json.loads(response.text)
+        print(response)
+        if response['status'] == True:
+            sms_man_rejectActivation({"api_respose":respose})
+
+            return HttpResponse(json.dumps({
+                "status": False,
+                "message": "该账号已经被注册过:" + str(respose),
+            }, ensure_ascii=False))
+
+
+
+
+
+
+
         return HttpResponse(json.dumps({
             "status": True,
             "phone": result[2],
@@ -817,7 +861,8 @@ async def sup_automaticSup_api(request):
 
     if str(api_data['sup_step']) == '1':
         try:
-            sent = await client.send_code_request(result['phone'], force_sms=True)
+            # sent = await client.send_code_request(result['phone'], force_sms=True)
+            sent = await client.send_code_request(result['phone'])
             # print('===================================================')
             # print(sent)
             phone_code_hash = sent.phone_code_hash
