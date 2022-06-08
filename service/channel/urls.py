@@ -11,6 +11,9 @@ urlpatterns = [
     path('channel_delContent', views.channel_delContent, name='channel_delContent'),
     path('channel_save', views.channel_save, name='channel_save'),
     path('channel_joinsubmit', views.channel_joinsubmit, name='channel_joinsubmit'),
+    path('private_channel_save', views.private_channel_save, name='private_channel_save'),
+    path('private_channel_console', views.private_channel_console, name='private_channel_console'),
+    path('private_channel_joinSubmit', views.private_channel_joinSubmit, name='private_channel_joinSubmit'),
 
 
 ]

@@ -410,8 +410,8 @@ def get_PrivateLetterNumber(request):
         })
 
 
-    if len(session_number) > 1:
-        random.shuffle(session_number)
+    # if len(session_number) > 1:
+    #     random.shuffle(session_number)
 
     session_list = []
     for session in session_number:

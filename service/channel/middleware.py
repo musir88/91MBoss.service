@@ -42,19 +42,21 @@ class AUTH91MBoss(MiddlewareMixin):
 
                     admin_host = "http://91m.live/clientlogin"
                     res = requests.post(url=admin_host, data=client_param, verify=False)
-                    response = json.loads(res.text)
+                    # response = json.loads(res.text)
                     # print(response)
+                    print(res.text)
 
+                    # return ''
 
-                    if response['status'] == False:
-                        request.session['client_number_message'] = response['message']
-                        if is_ajax == 'XMLHttpRequest':
-                            return HttpResponse(json.dumps(response, ensure_ascii=False))
-                        return redirect('client_number')
-
-                    if response['status'] == True:
-                        request.session['auth-sesion'] = response
-                        request.session.set_expiry(600)
+                    # if response['status'] == False:
+                    #     request.session['client_number_message'] = response['message']
+                    #     if is_ajax == 'XMLHttpRequest':
+                    #         return HttpResponse(json.dumps(response, ensure_ascii=False))
+                    #     return redirect('client_number')
+                    #
+                    # if response['status'] == True:
+                    #     request.session['auth-sesion'] = response
+                    #     request.session.set_expiry(600)
 
     def get_request_ip(self, request):
         if request.META.get('HTTP_X_FORWARDED_FOR'):

@@ -57,9 +57,12 @@
         <div class="collapse show" id="jiachannel-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li><a href="{% url 'number_nojoin' %}" class="link-dark rounded">账号列表</a></li>
-              <li><a href="{% url 'channel_join' %}" class="link-dark rounded">控制台</a></li>
-            <li><a href="{% url 'channel_save' %}" class="link-dark rounded">群组库</a></li>
-            <li><a href="{% url 'collection_channelUrl' %}" class="link-dark rounded">采集群链接</a></li>
+              <li><a href="{% url 'channel_join' %}" class="link-dark rounded">控制台 (公开群)</a></li>
+            <li><a href="{% url 'channel_save' %}" class="link-dark rounded">群组库 (公开群)</a></li>
+            <li><a href="{% url 'collection_channelUrl' %}" class="link-dark rounded">采集群链接 (公开群)</a></li>
+             <li class="border-top my-3"></li>
+            <li><a href="{% url 'private_channel_save' %}" class="link-dark rounded">群组库 (私人群)</a></li>
+            <li><a href="{% url 'private_channel_console' %}" class="link-dark rounded">控制台 (私人群)</a></li>
           </ul>
         </div>
       </li>

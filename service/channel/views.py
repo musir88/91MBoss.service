@@ -132,6 +132,18 @@ async def telethonErrorMessage(result={}, e='', code='1000'):
         result['message'] = '群组禁言'
         result['messageChinese'] = '群组禁言'
 
+
+    if str(e).find("The chat the user tried to join has expired and is not valid anymore") != -1:
+        result['message'] = str(result['channel']) +' 用户尝试加入的聊天已过期且不再有效（由 ImportChatInviteRequest 引起）'
+        result['messageChinese'] = '用户尝试加入的聊天已过期且不再有效（由 ImportChatInviteRequest 引起）'
+
+        fo = codecs.open("log/失效链接.log", "a", 'utf-8')
+        fo.write("\n" + result['channel'])
+        fo.close()
+
+
+
+
     if str(e).find(
             "The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it") != -1:
         # del result['messageEnglish']
@@ -778,6 +790,23 @@ def channel_init():
         }))
         fo.close()
 
+
+    path = "91MBoss/data/private.channel.json"
+    if not os.path.exists(path):
+        fo = codecs.open(path, "a", 'utf-8')
+        fo.write(json.dumps([]))
+        fo.close()
+
+    path = "91MBoss/config/private.channel_join.config.json"
+    if not os.path.exists(path):
+        fo = codecs.open(path, "a", 'utf-8')
+        fo.write(json.dumps({
+            "sleep_time1":1,#等待时间
+            "sleep_time2":3,#等待时间
+            "StartGroupJoinTask":'2',#任务执行开关 默认关闭
+        }))
+        fo.close()
+
     return True
 
 
@@ -917,7 +946,7 @@ async def channel_joinsubmit(request):
     # 开始加群
     try:
         channel_result = await joinChannel(data['session_string'], channel['channel'])
-        channel_result['channel'] == channel
+        channel_result['channel'] = channel
         if channel_result['status'] == False:
 
             if str(channel_result['message']).find("A wait of") != -1:
@@ -1087,4 +1116,221 @@ async def joinChannel(session, channel=''):
     return result
 
 
+async def private_channel_save(request):
+    print('private_channel_save')
+    channel_init()
+    path = "91MBoss/data/private.channel.json"
 
+    if os.path.exists("91MBoss/data/private.channel_join.json") == True:
+        os.remove("91MBoss/data/private.channel_join.json")
+
+    if request.method == 'POST':
+        channel_string = request.POST['channel']
+        channel = []
+        for i in channel_string.split("\n"):
+            channel.append(i.replace("\r", ''))
+        os.remove(path)
+        fo = codecs.open(path, "a", 'utf-8')
+        fo.write(json.dumps(channel))
+        fo.close()
+
+        return redirect('private_channel_save')
+
+    f = open(path, encoding="utf-8")
+    channel = f.read()
+    f.close()
+    channel = "\n".join(json.loads(channel))
+
+    context = {
+        'channel': channel,
+    }
+
+
+    return render(request, 'channel/private_channel_save.html', {'context': context})
+
+
+async def private_channel_console(request):
+    channel_init()
+    path = "91MBoss/config/private.channel_join.config.json"
+
+    # print(request)
+
+    if request.method == 'POST':
+        os.remove(path)
+        fo = codecs.open(path, "a", 'utf-8')
+        fo.write(json.dumps({
+            "sleep_time1": request.POST['sleep_time1'],  # 等待时间
+            "sleep_time2": request.POST['sleep_time2'],  # 等待时间
+            "StartGroupJoinTask": request.POST['StartGroupJoinTask'],  # 任务执行开关 默认关闭
+        }))
+        fo.close()
+
+        if os.path.exists("91MBoss/data/private.channel_join.json") == True:
+            os.remove("91MBoss/data/private.channel_join.json")
+
+        return redirect('private_channel_console')
+
+    f = open(path, encoding="utf-8")
+    channel_join_config = f.read()
+    f.close()
+    channel_join_config = json.loads(channel_join_config)
+
+    context = {
+        'channel_join_config': channel_join_config,
+    }
+    return render(request, 'channel/private_channel_console.html', {'context': context})
+
+async def get_privateJoinChannel(session_string):
+    phone = str(session_string)
+    phone = str(session_string)
+    phone = str(session_string)
+
+    path = "91MBoss/data/private.channel_join.json"
+    if not os.path.exists(path):
+        f = open("91MBoss/data/private.channel.json", encoding="utf-8")
+        channel_all = f.read()
+        f.close()
+        channel_all = json.loads(channel_all)
+        if len(channel_all) < 1:
+            return {
+                "status":False,
+                "message":"至少添加一条群链接"
+            }
+
+        fo = codecs.open(path, "a", 'utf-8')
+        fo.write(json.dumps(channel_all))
+        fo.close()
+
+    # 取一条群链接
+    f = open(path, encoding="utf-8")
+    channel_all = f.read()
+    f.close()
+    join_channel_all = json.loads(channel_all)
+    if len(join_channel_all) < 1:
+        return {
+            "status":False,
+            "code":'empty_channel',
+            "message":"已经加完一轮，需要重新开始请再次刷新当前页面"
+        }
+
+
+    # 取这次发的群
+    random.shuffle(join_channel_all)
+    channel = join_channel_all.pop()
+
+    # 保存剩下得 群
+    os.remove(str(path))
+    fo = codecs.open(path, "a", 'utf-8')
+    fo.write(json.dumps(join_channel_all))
+    fo.close()
+
+    return {
+        "status": True,
+        "channel": channel,
+    }
+
+from telethon.tl.functions.messages import ImportChatInviteRequest
+
+async def private_joinChannel(session='', channel=''):
+
+    phone = str(session)
+    channel = str(channel)
+
+    result = {}
+    result['phone'] = phone
+    result['channel'] = channel
+    result['submit'] = 'join_channel'
+
+    result['path'] = "91MBoss-session/加群帐号/"
+
+    try:
+        client = client_init2(result)
+        await client.connect()
+    except Exception as e:
+        await client.disconnect()
+        result = await telethonErrorMessage(result, e, 'connect')
+        return result
+
+    try:
+        # await client(JoinChannelRequest(channel))
+
+        str_channel = channel.split("/")
+        str_channel = str_channel.pop().strip('+').strip('-')
+        result['str_channel'] = str_channel
+
+        # if str(str_channel).find("+") != -1:
+        #     str_channel = re.sub("+", "", str_channel)
+        # if str(str_channel).find("-") != -1:
+        #     str_channel = re.sub("-", "", str_channel)
+
+        updates = await client(ImportChatInviteRequest(str_channel))
+        result['status'] = True
+
+        joinlog_cnotent = str(time.strftime("%Y-%m-%d %H:%M:%S")) + " → " + phone + " → " + channel + " → 加群成功"
+        joinchannel_log(joinlog_cnotent)
+        result['message'] = joinlog_cnotent
+        await client.disconnect()
+        return result
+
+    except Exception as e:
+        await client.disconnect()
+
+        result = await telethonErrorMessage(result, e, 'JoinChannelRequest')
+        joinlog_cnotent = str(time.strftime("%Y-%m-%d %H:%M:%S")) + " → " + phone + " → " + channel + " → 加群失败："+result['message']
+        joinchannel_log(joinlog_cnotent)
+
+        result['message'] = result['message']
+        return result
+
+
+
+
+    return {
+        'phone':session,
+        'status':True,
+        'message':'加私人群'
+    }
+
+async def private_channel_joinSubmit(request):
+
+    data = request.POST
+
+
+    if 'session_string' not in data:
+        return HttpResponse(json.dumps({
+            'status': False,
+            'message': "session_string 空"
+        }, ensure_ascii=False))
+
+    # 本次加的群
+    try:
+        channel = await get_privateJoinChannel(str(data['session_string']))
+        if channel['status'] == False:
+            return HttpResponse(json.dumps(channel, ensure_ascii=False))
+    except Exception as e:
+        return HttpResponse(json.dumps({
+            "status": False,
+            "message": "获取本次加的群错误：" + str(e),
+        }, ensure_ascii=False))
+
+
+    # 开始加群
+    try:
+
+        channel_result = await private_joinChannel(data['session_string'], channel['channel'])
+        channel_result['channel'] = channel
+        if channel_result['status'] == False:
+
+            if str(channel_result['message']).find("A wait of") != -1:
+                channel_result['message'] = "频繁 " + str(channel_result['message'])
+                channel_result['code'] = "Await"
+
+            return HttpResponse(json.dumps(channel_result, ensure_ascii=False))
+        return HttpResponse(json.dumps(channel_result, ensure_ascii=False))
+    except Exception as e:
+
+        return HttpResponse(json.dumps({
+            "channel": channel,
+            "status": False,
+            "message": "本次加群错误：" + str(e),
+        }, ensure_ascii=False))

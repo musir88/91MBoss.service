@@ -17,7 +17,6 @@
     <div class="row">
         <div class="col" >
             <div class="top-message">
-<!--                <p>系统不可以同时加群、群发、私信、私信轰炸、单独自动回复</p>-->
             </div>
         </div>
     </div>
@@ -27,7 +26,18 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                    <th scope="col">群发禁言（{{ context.session_number_count }}）个</th>
+                        <th scope="col">
+                            <button type="button" class="btn btn-danger btn-sm" id="update_mute">更新禁言信息</button>
+                            <button type="button" class="btn btn-danger btn-sm" id="remove_mute">解除禁言</button>
+                        </th>
+                    </tr>
+
+
+
+
+
+                    <tr>
+                        <th scope="col">群发禁言（{{ context.session_number_count }}）个</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +54,20 @@
     </div>
     <div style="height:50px;"></div>
 </div>
+
+
+<style>
+    $(function(){
+
+        //$("#update_mute").
+
+
+    });
+
+
+
+
+</style>
 
 
 {% endblock 'content' %}
