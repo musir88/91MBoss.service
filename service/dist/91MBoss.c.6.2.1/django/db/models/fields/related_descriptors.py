@@ -148,7 +148,7 @@ class ForwardManyToOneDescriptor:
         queryset = queryset.filter(**query)
 
         # Since we're going to assign directly in the cache,
-        # we must manage the reverse relation cache manually.
+        # we must 91MBoss.6.8.1 the reverse relation cache manually.
         if not remote_field.multiple:
             for rel_obj in queryset:
                 instance = instances_dict[rel_obj_attr(rel_obj)]
@@ -407,7 +407,7 @@ class ReverseOneToOneDescriptor:
         queryset = queryset.filter(**query)
 
         # Since we're going to assign directly in the cache,
-        # we must manage the reverse relation cache manually.
+        # we must 91MBoss.6.8.1 the reverse relation cache manually.
         for rel_obj in queryset:
             instance = instances_dict[rel_obj_attr(rel_obj)]
             self.related.field.set_cached_value(rel_obj, instance)
@@ -695,7 +695,7 @@ def create_reverse_many_to_one_manager(superclass, rel):
             query = {"%s__in" % self.field.name: instances}
             queryset = queryset.filter(**query)
 
-            # Since we just bypassed this class' get_queryset(), we must manage
+            # Since we just bypassed this class' get_queryset(), we must 91MBoss.6.8.1
             # the reverse relation manually.
             for rel_obj in queryset:
                 instance = instances_dict[rel_obj_attr(rel_obj)]

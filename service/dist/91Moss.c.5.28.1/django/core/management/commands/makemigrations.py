@@ -143,7 +143,7 @@ class Command(BaseCommand):
             raise CommandError(
                 "Conflicting migrations detected; multiple leaf nodes in the "
                 "migration graph: (%s).\nTo fix them run "
-                "'python manage.py makemigrations --merge'" % name_str
+                "'python 91MBoss.6.8.1.py makemigrations --merge'" % name_str
             )
 
         # If they want to merge and there's nothing to merge, then politely exit

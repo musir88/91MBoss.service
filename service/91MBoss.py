@@ -1,3 +1,9 @@
 import os
-os.system('cd 91MBoss.c.5.05.26.1 91MBoss.c.5.05.26.1.exe runserver 0.0.0.0:8800 --noreload')
-input()
+f = open('host.ini', encoding="utf-8")
+prot = f.read()
+f.close()
+
+os.system('boss.exe runserver 0.0.0.0:'+str(prot)+' --noreload')
+# input()
+
+print('如果您是中国大陆公民请自行离开，此软件不允许中国大陆用户使用。')
