@@ -175,6 +175,7 @@ def channel_send(request):
             'fake_content_sleep_time': data['fake_content_sleep_time'],
             'StartGroupSendTask': data['StartGroupSendTask'],
             'automaticReply': data['automaticReply'],
+            'quit_period': data['quit_period'],
         }
         set_config(config_path, config)
         return redirect('channel_send')
@@ -512,7 +513,7 @@ async def channel_sendsubmit(request):
         }, ensure_ascii=False))
 
     fake_name = ''.join(random.sample(['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e',
-         'd', 'c', 'b', 'a'], random.randint(12, 20)))
+                                       'd', 'c', 'b', 'a'], random.randint(12, 20)))
 
     param = {
         'session_string': data['session_string'],
@@ -522,6 +523,16 @@ async def channel_sendsubmit(request):
         'fake_content_sleep_time': config['fake_content_sleep_time'],
         'fake_content': fake_name,
     }
+
+    if 'quit_period' in config:
+        param['quit_period'] = config['quit_period']
+    else:
+        param['quit_period'] = ''
+    param['quit_period'] = str(param['quit_period']).split(',')
+    while "" in param['quit_period']:
+        param['quit_period'].remove("")
+
+
     try:
         result = await tg_sendMessage(param)
         if result['status'] == False:
@@ -545,11 +556,12 @@ async def channel_sendsubmit(request):
         'send_content': send_content['content']['message'],
     }, ensure_ascii=False))
 
-
+import datetime
 async def tg_sendMessage(data):
     # print(data)
 
-    is_LeaveChannelRequest = 2
+
+    is_LeaveChannelRequest = 1
 
     phone = data['session_string']
     channel = data['channel']['channel']
@@ -572,9 +584,14 @@ async def tg_sendMessage(data):
 
     is_fake_content = str(data['is_fake_content'])
     if is_fake_content == '1':
+
+        print(time.strftime("%Y-%m-%d %H:%M:%S"), "|", "投放（",result['channel'],  "） 使用伪内容：", data['fake_content'])
+
         fake_content = data['fake_content']
         send_content = fake_content
     else:
+        print(time.strftime("%Y-%m-%d %H:%M:%S"), "|","不使用伪内容")
+
         send_content = content
 
     result['is_fake_content'] = is_fake_content
@@ -601,18 +618,35 @@ async def tg_sendMessage(data):
         try:
             if str(e).find("Chat admin privileges are required to do that in the specified chat") != -1:
                 if is_LeaveChannelRequest ==1:
-                    await client(LeaveChannelRequest(channel))
+
+                    print(time.strftime("%Y-%m-%d %H:%M:%S"), "|", "自动退群时间：", data['quit_period'])
+
+                    this_h = datetime.datetime.now().strftime("%H")
+                    if this_h in data['quit_period']:
+                        print('yes--', this_h)
+                        await client(LeaveChannelRequest(channel))
+                        print(time.strftime("%Y-%m-%d %H:%M:%S"), "|", "退出群：", str(channel))
+
 
             if str(e).find("You can't write in this chat") != -1:
                 if is_LeaveChannelRequest == 1:
-                    await client(LeaveChannelRequest(channel))
+
+                    print(time.strftime("%Y-%m-%d %H:%M:%S"), "|", "自动退群时间：", data['quit_period'])
+
+                    this_h = datetime.datetime.now().strftime("%H")
+                    if this_h in data['quit_period']:
+                        print('yes--', this_h)
+                        await client(LeaveChannelRequest(channel))
+                        print(time.strftime("%Y-%m-%d %H:%M:%S"), "|", "退出群：", str(channel))
 
             await client.disconnect()
             result = await telethonErrorMessage(result, e, 10010)
+
+
         except Exception as son_e:
             await client.disconnect()
             result = await telethonErrorMessage(result, e, 10010)
-
+        print(time.strftime("%Y-%m-%d %H:%M:%S"), "|", "投放（",str(channel), "）", result['message'])
         return result
 
     # 如果不是伪内容 直接记录发送日志
@@ -634,11 +668,13 @@ async def tg_sendMessage(data):
                 # 发送伪内容 并记录发送日志
                 await client.edit_message(channel, x.id, content)
 
+                print(time.strftime("%Y-%m-%d %H:%M:%S"), "|", "投放（", str(channel), "）伪内容生效：", content)
+
                 send_log_cnotent = str(
-                    time.strftime("%Y-%m-%d %H:%M:%S")) + " → " + phone + " → " + channel + " → " + content
+                    time.strftime("%Y-%m-%d %H:%M:%S")) + " → " + phone + " → " + str(channel) + " → " + content
                 send_log(send_log_cnotent)
 
-                send_log_cnotent = str(time.strftime("%Y-%m-%d %H:%M:%S")) + channel + " → " + content
+                send_log_cnotent = str(time.strftime("%Y-%m-%d %H:%M:%S")) + str(channel) + " → " + content
                 send_log(send_log_cnotent, 'client')
 
                 break
@@ -650,7 +686,7 @@ async def tg_sendMessage(data):
             channel) + " → " + str(send_content)
         send_log(send_log_cnotent)
 
-        send_log_cnotent = str(time.strftime("%Y-%m-%d %H:%M:%S")) + channel + " → " + send_content
+        send_log_cnotent = str(time.strftime("%Y-%m-%d %H:%M:%S")) + str(channel) + " → " + send_content
         send_log(send_log_cnotent, 'client')
 
     await client.disconnect()

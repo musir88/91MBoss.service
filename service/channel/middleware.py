@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 import requests
 import os
+import time
 import json
 import codecs
 
@@ -42,9 +43,14 @@ class AUTH91MBoss(MiddlewareMixin):
 
                     admin_host = "http://91m.live/clientlogin"
                     res = requests.post(url=admin_host, data=client_param, verify=False)
-                    # response = json.loads(res.text)
+
+                    try:
+                        response = json.loads(res.text)
+                        # print(time.strftime("%Y-%m-%d %H:%M:%S"), "|",response['message'])
+                    except Exception as e:
+                        print(time.strftime("%Y-%m-%d %H:%M:%S"), "|",str(e))
                     # print(response)
-                    print(res.text)
+
 
                     # return ''
 
