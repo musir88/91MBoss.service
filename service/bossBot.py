@@ -17,6 +17,7 @@ path = r'data/config.ini'
 config.read(path)
 api_id = config['base']['api_id']
 api_hash = config['base']['api_hash']
+phone = config['base']['phone']
 
 print(config)
 print(api_id)
@@ -39,7 +40,7 @@ print(time.strftime("%Y-%m-%d %H:%M:%S"), "|", "启动", session)
 
 
 try:
-    client = TelegramClient('session/6285310742570', api_id, api_hash)
+    client = TelegramClient('session/'+str(phone), api_id, api_hash)
 except Exception as e:
     print(time.strftime("%Y-%m-%d %H:%M:%S"), "|", session, "启动失败：", str(e))
     os._exit(0)

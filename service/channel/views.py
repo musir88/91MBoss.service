@@ -474,6 +474,9 @@ async def channel_sendsubmit(request):
         if channel['status'] == False:
             return HttpResponse(json.dumps(channel, ensure_ascii=False))
     except Exception as e:
+
+        print(time.strftime("%Y-%m-%d %H:%M:%S"), "|", str(data['session_string']), "获取本次发送的群错误：" + str(e))
+
         return HttpResponse(json.dumps({
             "status": False,
             "message": "获取本次发送的群错误：" + str(e),
