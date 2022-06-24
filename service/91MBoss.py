@@ -1,9 +1,12 @@
 import os
-f = open('host.ini', encoding="utf-8")
-prot = f.read()
-f.close()
+import configparser
+config = configparser.ConfigParser() # 类实例化
 
-os.system('boss.exe runserver 0.0.0.0:'+str(prot)+' --noreload')
-# input()
+path = r'Bot/host.ini'
+config.read(path)
+prot = config['base']['prot']
 
-print('如果您是中国大陆公民请自行离开，此软件不允许中国大陆用户使用。')
+
+os.system('cd Bot && boss.exe runserver 0.0.0.0:'+str(prot)+' --noreload')
+
+print('此软件不允许中国用户使用。')

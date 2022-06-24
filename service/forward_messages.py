@@ -23,17 +23,32 @@ import codecs
 import time
 import datetime
 import asyncio
+from telethon import events, Button
 
-channel = 'bs91m991'
+channel = 'https://t.me/bs91m991'
 
 async def main():
-    await client(JoinChannelRequest('xoxoshe'))
+    # await client(JoinChannelRequest('https://t.me/bs91m991'))
 
-    photos = await client.get_messages(channel, 10)
-    for x in photos:
-        print(x.id)
-        await client.forward_messages('xoxoshe', [x.id], channel,with_my_score=True)
+    await client.send_message('https://t.me/xoxoshe', '25')
 
+    # photos = await client.get_messages(channel, 10)
+    # async for message in client.get_messages(channel, 10):
+    #     print(message.id)
+    #     # print(message.id, message.text)
+    #     await client.forward_messages('https://t.me/xoxoshe', message.id, 'https://t.me/bs91m991')
+
+
+    # for x in photos:
+    #     print(x.id)
+    #     # await client.forward_messages('xoxoshe', [x.id], channel,with_my_score=True)
+    #     await client.forward_messages('xoxoshe', x, channel,with_my_score=True)
+        # message = await client.send_message('https://t.me/xoxoshe',  "`coffrfrede`")
+        # await client.pin_message('https://t.me/xoxoshe', message, notify=True)
+
+        # await x.forward_to('https://t.me/xoxoshe',with_my_score =True, background=True, silent =True)
+
+        # await client.send_message('https://t.me/xoxoshe', x)
 
 
 
