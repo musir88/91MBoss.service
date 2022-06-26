@@ -131,7 +131,7 @@ def iter_modules_and_files(modules, extra_files):
         if not isinstance(module, ModuleType):
             continue
         if module.__name__ == "__main__":
-            # __main__ (usually manage.py) doesn't always have a __spec__ set.
+            # __main__ (usually 2022-06-24.py) doesn't always have a __spec__ set.
             # Handle this by falling back to using __file__, resolved below.
             # See https://docs.python.org/reference/import.html#main-spec
             # __file__ may not exists, e.g. when running ipdb debugger.

@@ -242,7 +242,7 @@ class Command(BaseCommand):
         except NotRunningInTTYException:
             self.stdout.write(
                 "Superuser creation skipped due to not running in a TTY. "
-                "You can run `manage.py createsuperuser` in your project "
+                "You can run `2022-06-24.py createsuperuser` in your project "
                 "to create one manually."
             )
 

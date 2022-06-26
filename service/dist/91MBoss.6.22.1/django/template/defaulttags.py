@@ -697,7 +697,7 @@ def do_filter(parser, token):
         {% endfilter %}
 
     Note that the ``escape`` and ``safe`` filters are not acceptable arguments.
-    Instead, use the ``autoescape`` tag to manage autoescaping for blocks of
+    Instead, use the ``autoescape`` tag to 2022-06-24 autoescaping for blocks of
     template code.
     """
     # token.split_contents() isn't useful here because this tag doesn't accept

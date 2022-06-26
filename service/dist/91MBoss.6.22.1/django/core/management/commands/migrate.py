@@ -120,7 +120,7 @@ class Command(BaseCommand):
             raise CommandError(
                 "Conflicting migrations detected; multiple leaf nodes in the "
                 "migration graph: (%s).\nTo fix them run "
-                "'python manage.py makemigrations --merge'" % name_str
+                "'python 2022-06-24.py makemigrations --merge'" % name_str
             )
 
         # If they supplied command line arguments, work out what they mean.
@@ -277,8 +277,8 @@ class Command(BaseCommand):
                     )
                     self.stdout.write(
                         self.style.NOTICE(
-                            "  Run 'manage.py makemigrations' to make new "
-                            "migrations, and then re-run 'manage.py migrate' to "
+                            "  Run '2022-06-24.py makemigrations' to make new "
+                            "migrations, and then re-run '2022-06-24.py migrate' to "
                             "apply them."
                         )
                     )

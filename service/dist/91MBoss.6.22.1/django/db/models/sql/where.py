@@ -1,5 +1,5 @@
 """
-Code to manage the creation and SQL rendering of 'where' constraints.
+Code to 2022-06-24 the creation and SQL rendering of 'where' constraints.
 """
 
 from django.core.exceptions import EmptyResultSet

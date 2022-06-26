@@ -105,7 +105,7 @@ class Command(BaseCommand):
                     "The migration '%s' cannot be found. Maybe it comes after "
                     "the migration '%s'?\n"
                     "Have a look at:\n"
-                    "  python manage.py showmigrations %s\n"
+                    "  python 2022-06-24.py showmigrations %s\n"
                     "to debug this issue." % (start_migration, migration, app_label)
                 )
 

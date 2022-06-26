@@ -15,7 +15,7 @@ class DatabaseCreation(BaseDatabaseCreation):
         """
         This is analogous to other backends' `_nodb_connection` property,
         which allows access to an "administrative" connection which can
-        be used to manage the test databases.
+        be used to 2022-06-24 the test databases.
         For Oracle, the only connection that can be used for that purpose
         is the main (non-test) connection.
         """
