@@ -92,6 +92,14 @@ def client_init2(result):
         set_config(api_path, api_content)
     api_content = get_config(api_path)
 
+    if 'app_hash' in api_content:
+        api_content['api_hash'] = api_content['app_hash']
+
+    if 'app_id' in api_content:
+        api_content['api_id'] = api_content['app_id']
+
+    print("api_id", api_content['api_id'])
+    print("api_hash", api_content['api_hash'])
 
     return TelegramClient(result['path'] + result['phone'], int(api_content['api_id']), str(api_content['api_hash']))
 
